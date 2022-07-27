@@ -1,0 +1,108 @@
+* {
+	box-sizing: border-box;
+}
+
+p,ul{
+	padding:5px;
+	background-color:#D1D1D1;
+
+} 
+a{
+	text-decoration:none
+}
+div{
+	/* margin:5px auto; */
+	padding:5px;
+}
+
+label,input,h2{
+	background-color:#D1D1D1;
+	border: 1px outset gray;
+	padding: 5px;
+	margin: 5px;
+}
+
+li, .form-select{
+	background-color:#D1D1D1;
+	padding: 5px;
+	margin: 5px;
+}
+
+body {
+  background-image: url("gg.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.elem{
+	font-family:courier;
+	width: 31%;
+	/* flex: 31%; */
+	float: left;
+	padding: 15px;
+	/* border: 1px solid red; */
+	max-height: 40%;
+
+	overflow-y: hidden;
+    /* white-space: nowrap;*/
+    /* text-overflow: ellipsis;  */
+}
+
+.elem:hover{
+	background-color: #ddd;
+  	color: black;
+}
+
+ .flex-container{
+	flex-direction: row;
+	text-align: center; 
+    margin: 5px auto;
+ }  
+
+  @media only screen and (max-width: 768px) {
+	/* For mobile phones: */
+	[class*="elem"] {
+	  width: 100%;
+	}}
+
+	.pop{
+		display:flex;
+		gap: 40px 30px;
+		align-items:baseline;
+		align-content:stretch;
+		justify-content:center;
+		flex-wrap: wrap;
+	}
+
+.contenedorBotones{
+	display:flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.botonesPrincipales{
+	width:40%;
+	height:50%;
+	padding:5px;
+	margin:5px;
+	background-color:#D1D1D1;
+	text-align: center;
+}
+
+select{
+    width: auto;
+    margin: 5px;
+    padding: 5px;
+}
+
+.perfil{
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    float: right;
+}
+
+#zoom{
+    font-size: 40px;
+}
