@@ -11,9 +11,6 @@
 		<nav class="navbar navbar-expand-lg" style="background-color: #D1D1D1;border: 2px outset gray;">
 			<div class="container-fluid">
 				<a class="navbar-brand" href="#">
-					<!-- <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Base
-					ball_cap_line_drawing.svg/1200px-Baseball_cap_line_drawing.svg.png" alt="" width="50" height="50" class="d-inline-block align-text-top">
-					-->
 					<h2>Hermanos Américanos</h2> 
 				</a>
 			  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -67,6 +64,34 @@
 					</select>
 				</div>
 
+                <div class="col-md-3">
+					<label for="validationDefault02" class="form-label">Oficio</label>
+					<select id="validationDefault02" name="oficio" class="form-select" required>
+						<option value="Oficio" selected>Oficio</option>
+						<option value="Albanileria">Albañilería</option>
+						<option value="Barbero">Barbería</option>
+                        <option value="Carpinteria">Carpintería</option>
+						<option value="Electricista">Electricista</option>
+						<option value="Estilista">Estilista</option>
+                        <option value="Herrero">Herrería</option>
+						<option value="Limpieza">Limpieza</option>
+						<option value="Mecanico">Mecánico</option>
+						<option value="Obrero">Obrero</option>
+                        <option value="Panadero">Panadero</option>
+                        <option value="Plomeria">Plomería</option>
+					</select>
+				</div>
+
+                <div class="col-md-3">
+					<label for="validationDefault03" class="form-label">Experiencia</label>
+					<select id="validationDefault03" name="experiencia" class="form-select" required>
+						<option value="Experiencia" selected>Experiencia</option>
+						<option value="Menos de un anio">Menos de un año</option>
+						<option value="Un anio o mas">Un año o más</option>
+						<option value="Mas de tres anios">Más de tres años</option>
+					</select>
+				</div>
+
 				<div class="col-md-7">
 					<label for="validationDefaultUsername" class="form-label">Correo Electrónico</label>
 					<input type="email" name="correo" class="form-control" id="validationDefaultUsername" required>
@@ -83,7 +108,11 @@
 				<div class="col-md-7">
 					<label for="validationDefault03" class="form-label">Contraseña</label>
 					<input type="password" name="password"class="form-control" id="validationDefault03" aria-describedby="passwordHelpBlock" required>
-				</div>
+                    <div id="passwordHelpBlock" class="form-text">
+						Considere una contraseña segura, con números, mayúsculas y al menos un caracter especial
+					</div> 
+                </div>
+
 				<div class="col-10">
 					<label for="validationDefault04" class="form-label">Dirección</label>
 					<input type="text" name="direccion" class="form-control" id="validationDefault04" placeholder="Av. del Charro" required>
@@ -129,6 +158,6 @@
 	
 	</div>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-		<!-- <script type="text/javascript" src="javascript.js"></script> -->
+		<script type="text/javascript" src="../javascript.js"></script> 
 	</body>
 </html>

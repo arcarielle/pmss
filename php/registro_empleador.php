@@ -11,9 +11,6 @@
 		<nav class="navbar navbar-expand-lg" style="background-color: #D1D1D1;border: 2px outset gray;">
 			<div class="container-fluid">
 				<a class="navbar-brand" href="#">
-					<!-- <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Base
-					ball_cap_line_drawing.svg/1200px-Baseball_cap_line_drawing.svg.png" alt="" width="50" height="50" class="d-inline-block align-text-top">
-					-->
 					<h2>Hermanos Américanos</h2> 
 				</a>
 			  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -77,9 +74,9 @@
 						<div class="col-md-7">
 							<label for="validationDefault03" class="form-label">Contraseña</label>
 							<input type="password" name="password" class="form-control" id="validationDefault03" aria-describedby="passwordHelpBlock" required>
-								<!-- <div id="passwordHelpBlock" class="form-text">
-									Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
-							</div> -->
+							<div id="passwordHelpBlock" class="form-text">
+									Considere una contraseña segura, con números, mayúsculas y al menos un caracter especial
+							</div> 
 						</div>
 						<div class="col-10">
 							<label for="validationDefault04" class="form-label">Dirección</label>
@@ -126,6 +123,6 @@
 	
 	</div>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-		<!-- <script type="text/javascript" src="javascript.js"></script> -->
+		<script type="text/javascript" src="javascript.js"></script> 
 	</body>
 </html>

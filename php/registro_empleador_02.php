@@ -75,7 +75,8 @@
         
             if ($conn->query($sql) === TRUE) {
                 echo "<p><br>Empresa: ". $users_empre ."<br>Nombre: ". $users_nom . " <br>Correo: " . $users_correo.
-                " <br>Contra: " . $users_contra. " <br>Telefono: " . $users_tele. 
+                // " <br>Contra: " . $users_contra.
+                 " <br>Telefono: " . $users_tele. 
                 "<br>Direccion: ". $users_dire ."<br>Descripcion: ". $users_descrip ."<br>";
                 echo "<br>Cuenta registrada exitosamente</p>";
             } else {
@@ -93,8 +94,9 @@
 
             <input type="submit" value="Volver al menu" name="volver">
             <button class="btn btn-primary">
-				<a class="nav-link" href="./ofertas_empleadores.php">Ver Ofertas</a>
+				<a class="nav-link" href="./ofertas.php">Ver Ofertas</a>
             </button>
         </FORM>
+        <script type="text/javascript" src="../javascript.js"></script> 
     </body>
 </html>

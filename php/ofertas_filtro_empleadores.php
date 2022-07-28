@@ -46,6 +46,8 @@
             <button onclick="hide('zoom')" class="btn btn-primary">Cerrar</button>
         </div>
 
+        <h2 style="text-align:center;margin:5px;"><a id="subs">Ofertas de Empleadores (Busco Trabajo)</h2>
+
         <FORM METHOD="POST" ACTION="ofertas_empleadores.php">
         <div class="flex-container" id="main_container">
         <?php
@@ -53,17 +55,8 @@
             $users_fe = $_POST['fecha'];
             $users_exp = $_POST['experiencia'];
 
-            $servername = "sql313.epizy.com";
-			$username = "epiz_32212029";
-			$password = "Td30EDZH5T";
-			$dbname = "epiz_32212029_BaseDatos"; 
-
-            
-            $conn = new mysqli($servername, $username, $password, $dbname);
-            if ($conn->connect_error) {
-                die("Connection failed: " . $conn->connect_error);
-            };
-
+            require('components/head.inc.php');
+        
             if($users_of != 'Oficio' && $users_exp != 'Experiencia'){
                 $sql="SELECT emp.id, emp.Empresa, emp.Representante, emp.Correo, emp.Contra, emp.Telefono,
                 emp.Direccion, emp.Descripcion, trab.Oficio as 'Oficio', trab.Experiencia as 'Experiencia', 
@@ -99,22 +92,22 @@
         if ($result->num_rows > 0) {
             // output data of each row
             while($row = $result->fetch_assoc()) {
-                echo "<div class='elem'><p>
-                <img class='perfil' src='fotos/pere1.JPG'
-				/> 
-                Id: ". $row["id"]. 
-                " </br>Empresa: ". $row["Empresa"]. 
-                " </br>Representante: " . $row["Representante"] . 
-                " </br>Correo: " . $row["Correo"] . 
-                " </br>Password: " . $row["Contra"] . 
-                " </br>Telefono: " . $row["Telefono"] .  
-                " </br>Direccion: " . $row["Direccion"]. 
-                " </br>Descripcion: " . $row["Descripcion"].
-                " </br>Oficio: " . $row["Oficio"].
-                " </br>Experiencia: " . $row["Experiencia"].
-                " </br>Descripcion Trabajo: " . $row["DescripcionTrab"]. 
-                "</p></div>";
-                }
+					echo "<div class='elem' id='".$row["id"]."' onclick='show_zoom()'>
+                    <p class='".$row["id"]."'>
+					<img class='".$row["id"]."' src='fotos/pere1.JPG'/> 
+					<span>Id:<span id='id' class='".$row["id"]."'>". $row["id"]. 
+					" </span></span></br><span>Empresa:<span id= 'Empresa' class='".$row["id"]."' >". $row["Empresa"]. 
+					" </span></span></br><span>Representante:<span id ='Representante' class='".$row["id"]."'>" . $row["Representante"] .
+					" </span></span></br><span>Correo:<span id='correo'class='".$row["id"]."'>" . $row["Correo"]. 
+					" </span></span></br><span>Contra:<span id='contra'class='".$row["id"]."'>" . $row["Contra"] .
+					" </span></span></br><span>Telefono:<span id='telefono'class='".$row["id"]."'>" . $row["Telefono"] .
+					" </span></span></br><span>Direccion:<span id='direccion'class='".$row["id"]."'>" . $row["Direccion"]. 
+					" </span></span></br><span>Descripcion:<span id='descripcion'class='".$row["id"]."'>" . $row["Descripcion"].
+					" </span></span></br><span>Oficio:<span id='oficio'class='".$row["id"]."'>" . $row["Oficio"].   
+					" </span></span></br><span>Experiencia:<span id='experiencia'class='".$row["id"]."'>" . $row["Experiencia"]. 
+					" </span></span></br><span>Descripcion Trabajo:<span id='descripcion-trab'class='".$row["id"]."'>" . $row["DescripcionTrab"].
+					" </span></span></p></div>";
+					}
         }
         else {
             echo "0 users";
@@ -127,6 +120,7 @@
              <input type="submit" value="Volver al menu" name="volver">
         </FORM> 
 
+        <script type="text/javascript" src="../javascript.js"></script> 
         <script>
             $("#main_container").click(function(event) {
                 const text = document.getElementById(event.target.className).innerHTML;

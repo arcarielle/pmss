@@ -1,5 +1,6 @@
 <html> 
     <title>Impulso Migrante</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 		<link rel="shortcut icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Base
 					ball_cap_line_drawing.svg/1200px-Baseball_cap_line_drawing.svg.png">
 		<link rel="stylesheet" type="text/css" href="../mystyle.css" />
@@ -46,12 +47,13 @@
             <button onclick="hide('zoom')" class="btn btn-primary">Cerrar</button>
         </div>
 
+        <h2 style="text-align:center;margin:5px;"><a id="subs">Ofertas de Empleados (Busco Contratar)</h2>
+
         <FORM METHOD="POST" ACTION="ofertas.php">
 
         <div class="flex-container" id="main_container">
         <?php
             $users_of = $_POST['oficio'];
-            $users_fe = $_POST['fecha'];
             $users_exp = $_POST['experiencia'];
 
             $servername = "sql313.epizy.com";
@@ -65,23 +67,11 @@
                 die("Connection failed: " . $conn->connect_error);
             };
 
-            if($users_of != 'Oficio' && $users_fe != 'Fecha' && $users_exp != 'Experiencia'){
-                $sql="SELECT * FROM `Empleados` WHERE Oficio = '{$users_of}' and Fecha = '{$users_fe}' and Experiencia = '{$users_exp}';";
-            }
-            elseif($users_of != 'Oficio' && $users_fe != 'Fecha'){
-                $sql="SELECT * FROM `Empleados` WHERE Oficio = '{$users_of}' and Fecha = '{$users_fe}';";
-            }
-            elseif($users_of != 'Oficio' && $users_exp != 'Experiencia'){
+            if($users_of != 'Oficio' && $users_exp != 'Experiencia'){
                 $sql="SELECT * FROM `Empleados` WHERE Oficio = '{$users_of}' and Experiencia = '{$users_exp}';";
-            }
-            elseif($users_exp != 'Experiencia' && $users_fe != 'Fecha'){
-                $sql="SELECT * FROM `Empleados` WHERE Experiencia = '{$users_exp}' and Fecha = '{$users_fe}';";
             }
             elseif($users_of != 'Oficio'){
                 $sql="SELECT * FROM `Empleados` WHERE Oficio = '{$users_of}';";
-            }
-            elseif($users_fe != 'Fecha'){
-                $sql="SELECT * FROM `Empleados` WHERE Fecha = '{$users_fe}';";
             }
             elseif($users_exp != 'Experiencia'){
                 $sql="SELECT * FROM `Empleados` WHERE Experiencia = '{$users_exp}';";}
@@ -92,25 +82,24 @@
             $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
-            // output data of each row
+
             while($row = $result->fetch_assoc()) {
-                echo "<div class='elem'><p>
-                <img class='perfil' src='fotos/pere1.JPG'
-				/> 
-                Id: ". $row["id"]. 
-                " </br>Nombre: ". $row["Nombre"]. 
-                " </br>Apellido: " . $row["Apellido"] .
-                " </br>Sexo: " . $row["Sexo"] .   
-                //" </br>Oficio: " . $row["Oficio"].
-                //" </br>Experiencia: " . $row["Experiencia"].
-                //" </br>Fecha: " . $row["Fecha"].
-                " </br>Correo: " . $row["Correo"] . 
-                " </br>Password: " . $row["Contra"] . 
-                " </br>Telefono: " . $row["Telefono"] .  
-                " </br>Direccion: " . $row["Direccion"]. 
-                " </br>Descripcion: " . $row["Descripcion"]. 
-                "</p></div>";
-                }
+					echo "<div class='elem' id='".$row["id"]."' onclick='show_zoom()'>
+                    <p class='".$row["id"]."'>
+					<img class='".$row["id"]."' src='fotos/pere1.JPG'/> 
+					<span>Id:<span id='id' class='".$row["id"]."'>". $row["id"]. 
+					" </span></span></br><span>Nombre:<span id= 'nombre' class='".$row["id"]."' >". $row["Nombre"]. 
+					" </span></span></br><span>Apeliido:<span id ='apellido' class='".$row["id"]."'>" . $row["Apellido"] .
+					" </span></span></br><span>Sexo:<span id='sexo'class='".$row["id"]."'>" . $row["Sexo"] .  
+					" </span></span></br><span>Correo:<span id='correo'class='".$row["id"]."'>" . $row["Correo"]. 
+					" </span></span></br><span>Contra:<span id='contra'class='".$row["id"]."'>" . $row["Contra"] .
+					" </span></span></br><span>Telefono:<span id='telefono'class='".$row["id"]."'>" . $row["Telefono"] .
+					" </span></span></br><span>Direccion:<span id='direccion'class='".$row["id"]."'>" . $row["Direccion"]. 
+					" </span></span></br><span>Descripcion:<span id='descripcion'class='".$row["id"]."'>" . $row["Descripcion"]. 
+                    " </span></span></br><span>Oficio:<span id='oficio'class='".$row["id"]."'>" . $row["Oficio"].   
+					" </span></span></br><span>Experiencia:<span id='experiencia'class='".$row["id"]."'>" . $row["Experiencia"]. 
+					" </span></span></p></div>";
+					}
         }
         else {
             echo "0 users";
@@ -123,6 +112,7 @@
              <input type="submit" value="Volver al menu" name="volver">
         </FORM> 
 
+        <script type="text/javascript" src="../javascript.js"></script> 
         <script>
             $("#main_container").click(function(event) {
                 const text = document.getElementById(event.target.className).innerHTML;

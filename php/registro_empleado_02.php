@@ -3,7 +3,7 @@
 		<title>Impulso Migrante</title>
 		<link rel="shortcut icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Base
 					ball_cap_line_drawing.svg/1200px-Baseball_cap_line_drawing.svg.png">
-		<link rel="stylesheet" type="text/css" href="mystyle.css" />
+		<link rel="stylesheet" type="text/css" href="../mystyle.css" />
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     </head>
     <body>
@@ -57,6 +57,8 @@
             $users_tele = $_POST['telefono'];
             $users_dire = $_POST['direccion'];
             $users_descrip = $_POST['descripcion'];
+            $users_ofi = $_POST['oficio'];
+            $users_exp = $_POST['experiencia'];
 
             $servername = "sql313.epizy.com";
             $username = "epiz_32212029";
@@ -70,13 +72,14 @@
                 die("Connection failed: " . $conn->connect_error);
             }
 
-            $sql = "INSERT INTO Empleados (Nombre, Apellido, Sexo, Correo, Contra , Telefono, Direccion, Descripcion) 
-                VALUES ('$users_nom', '$users_ape', '$users_sex', '$users_correo', '$users_contra','$users_tele','$users_dire', '$users_descrip');";
+            $sql = "INSERT INTO Empleados (Nombre, Apellido, Sexo, Correo, Contra , Telefono, Direccion, Descripcion, Oficio, Experiencia) 
+                VALUES ('$users_nom', '$users_ape', '$users_sex', '$users_correo', '$users_contra','$users_tele','$users_dire', '$users_descrip','$users_ofi', '$users_exp');";
         
             if ($conn->query($sql) === TRUE) {
                 echo "<p><br>Nombre: ". $users_nom . " <br>Apellido: " . $users_ape. " <br>Sexo: " . $users_sex." <br>Correo: " . $users_correo.
-                " <br>Contra: " . $users_contra. " <br>Telefono: " . $users_tele. 
-                "<br>Direccion: ". $users_dire ."<br>Descripcion: ". $users_descrip ."<br>";
+                // " <br>Contra: " . $users_contra. 
+                " <br>Telefono: " . $users_tele."<br>Direccion: ". $users_dire .
+                "<br>Descripcion: ".$users_descrip ."<br>Oficio: ". $users_ofi ."<br>Experiencia: ". $users_exp."<br>";
                 echo "<br>Cuenta registrada Exitosamente</p>";
             } else {
                 echo "Error: " . $sql . "<br>" . $conn->error;
@@ -93,8 +96,9 @@
 
             <input type="submit" value="Volver al menu" name="volver">
             <button class="btn btn-primary">
-				<a class="nav-link" href="./ofertas.php">Ver Ofertas</a>
+				<a class="nav-link" href="./ofertas_empleadores.php">Ver Ofertas</a>
             </button>
         </FORM>
+        <script type="text/javascript" src="../javascript.js"></script> 
     </body>
 </html>
