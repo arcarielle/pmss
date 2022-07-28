@@ -8,18 +8,12 @@
             <button onclick="hide('zoom')" class="btn btn-primary">Cerrar</button>
         </div>
 
-        <div id="zoom" class="zoom" style="position:absolute;border:3px solid #73AD21;left: 20px;right:20px;text-align: center;background-color:#D1D1D1;z-index:1;font-size: 20px;">
-            <span id="span_muestra"></span>
-            <button onclick="hide('zoom')" class="btn btn-primary">Cerrar</button>
-        </div>
-
         <h2 style="text-align:center;margin:5px;"><a id="subs">Ofertas de Empleadores (Busco Trabajo)</h2>
 
         <FORM METHOD="POST" ACTION="ofertas_empleadores.php">
         <div class="flex-container" id="main_container">
         <?php
             $users_of = $_POST['oficio'];
-            $users_fe = $_POST['fecha'];
             $users_exp = $_POST['experiencia'];
 
             require('../components/dbconn.inc.php');

@@ -47,7 +47,7 @@
 
 		<div class="flex-container" id="main_container">
 
-			<?php require('../components/dbconn.inc.php');
+			<?php include('../components/dbconn.inc.php');
 			
 			$sql = "SELECT * FROM empleados";
 

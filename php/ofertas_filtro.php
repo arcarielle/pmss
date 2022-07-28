@@ -8,11 +8,6 @@
             <button onclick="hide('zoom')" class="btn btn-primary">Cerrar</button>
         </div>
 
-    <div id="zoom" class="zoom" style="position:absolute;border:3px solid #73AD21;left: 20px;right:20px;text-align: center;background-color:#D1D1D1;z-index:1;font-size: 20px;">
-            <span id="span_muestra"></span>
-            <button onclick="hide('zoom')" class="btn btn-primary">Cerrar</button>
-        </div>
-
         <h2 style="text-align:center;margin:5px;"><a id="subs">Ofertas de Empleados (Busco Contratar)</h2>
 
         <FORM METHOD="POST" ACTION="ofertas.php">

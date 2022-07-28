@@ -45,7 +45,8 @@
 
 		<div class="flex-container" id="main_container">
 
-			<?php require('../components/dbconn.inc.php');
+			<?php 
+			include('../components/dbconn.inc.php');
 
 			$sql="SELECT emp.id, emp.Empresa, emp.Representante, emp.Correo, emp.Contra, emp.Telefono,
                 emp.Direccion, emp.Descripcion, trab.Oficio as 'Oficio', trab.Experiencia as 'Experiencia', 
