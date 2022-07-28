@@ -1,6 +1,6 @@
 <?php include('../components/headreg.inc.php'); ?>
 
-<body onload="bien()">
+<body>
 	<?php include('../components/navbar.inc.php'); ?>
 
 		<div class="grid" style="--bs-gap: .25rem 1rem;--bs-columns:12;">
