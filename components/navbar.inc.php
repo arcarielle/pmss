@@ -14,7 +14,7 @@
                 </button>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link active" aria-current="page" href="#">Inicio</a>
+					<a class="nav-link active" aria-current="page" href="/pmss/index.php">Inicio</a>
 				</li>
 				<li class="nav-item"> 
 				    <button class="btn btn-primary">
