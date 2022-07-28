@@ -29,7 +29,7 @@ li, .form-select{
 }
 
 body {
-  background-image: url("gg.jpg");
+  background-image: url("/pmss/assets/img/gg.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -60,30 +60,25 @@ body {
     margin: 5px auto;
  }  
 
-  @media only screen and (max-width: 768px) {
-	/* For mobile phones: */
-	[class*="elem"] {
-	  width: 100%;
-	}}
-
-	.pop{
-		display:flex;
-		gap: 40px 30px;
-		align-items:baseline;
-		align-content:stretch;
-		justify-content:center;
-		flex-wrap: wrap;
-	}
+.pop{
+    display:flex;
+    gap: 40px 30px;
+    align-items:baseline;
+    align-content:stretch;
+    justify-content:center;
+    flex-wrap: wrap;
+}
 
 .contenedorBotones{
 	display:flex;
-	align-items: center;
+    flex-wrap: wrap;
+	align-items: stretch;
 	justify-content: center;
 }
 
 .botonesPrincipales{
 	width:40%;
-	height:50%;
+	height:auto;
 	padding:5px;
 	margin:5px;
 	background-color:#D1D1D1;
@@ -104,5 +99,28 @@ select{
 }
 
 #zoom{
-    font-size: 40px;
+    position:absolute;
+    border:3px solid #73AD21;
+    left: 20px;
+    right:20px;
+    text-align: center;
+    background-color:#D1D1D1;
+    z-index:1;
+    font-size: 20px;
 }
+
+@media only screen and (max-width: 768px) {
+/* For mobile phones: */
+[class*="elem"] {
+    width: 100%;
+}}
+
+
+
+/* #id, #nombre, #apellido,
+ #oficio, #experiencia, #correo,
+  #telefono, #direccion, #sexo, #descripcion,
+   #empresa,#descripcion-trab,#representante{
+    font-size: 17px;
+} */
+

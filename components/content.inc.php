@@ -1,6 +1,6 @@
 <section class ="Description">
-    <div class="grid" style="--bs-gap: .25rem 1rem;--bs-columns:12;">
-        <div class="g-col-6">
+    <div class="flex-container " id="main_container">
+		<div>
             <p id="text1">Hermanos Americanos es un proyecto que nace de la necesidad de ofrecerle trabajo 
                 a nuestros hermnaos latinoamericanos que se encuentran en calidad de migrantes en nuestra
                 ciudad fronteriza. Al no contar con documentos oficiales, es más complicado el conseguir 

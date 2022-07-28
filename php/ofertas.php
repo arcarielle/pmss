@@ -1,13 +1,15 @@
-<?php include('components/head.inc.php'); ?>
-<?php include('components/navbar.inc.php'); ?>
-<?php include('components/footer.inc.php'); ?>
+<?php include('../components/headreg.inc.php'); ?>
 
+<body onload="hide('zoom')">
+	<?php include('../components/navbar.inc.php'); ?>
 
-        <div id="zoom" class="zoom" style="position:absolute;border:3px solid #73AD21;left: 20px;right:20px;text-align: center;background-color:#D1D1D1;z-index:1;font-size: 20px;">
+        <div id="zoom" class="zoom" style="position:absolute;border:3px solid #73AD21;left: 20px;right:20px;background-color:#D1D1D1;z-index:1;font-size: 20px;">
             
             <span id="span_muestra"></span>
             <button onclick="hide('zoom')" class="btn btn-primary">Cerrar</button>
         </div>
+
+        <h2 style="text-align:center;margin:5px;"><a id="subs">Ofertas de Empleados (Busco Contratar)</h2>
 
 		<nav class="navbar navbar-expand-lg" style="background-color: #D1D1D1; top:10px; 
 			width:80%;margin: 5px auto;border: 2px outset gray;">
@@ -16,29 +18,25 @@
 				<ul class="navbar-nav" style="align-content: center;margin: 5px auto; ">
 				  
 					<li><select class="form-select form-select-lg mb-3" name="oficio" method="post" action="ofertas_filtro.php" required aria-label=".form-select-lg example" style="width:auto">
-						<option value="Oficio" selected>Oficio</option>
-						<option value="Carpinteria">Carpinteria</option>
-						<option value="Plomeria">Plomeria</option>
-						<option value="Albanileria">Albanileria</option>
+                        <option value="Oficio" selected>Oficio</option>
+						<option value="Albanileria">Albañilería</option>
+						<option value="Barbero">Barbería</option>
+                        <option value="Carpinteria">Carpintería</option>
 						<option value="Electricista">Electricista</option>
+						<option value="Estilista">Estilista</option>
+                        <option value="Herrero">Herrería</option>
 						<option value="Limpieza">Limpieza</option>
-						<option value="Mecanico">Mecanico</option>
-						<option value="Barrendero">Barrendero</option>
+						<option value="Mecanico">Mecánico</option>
+						<option value="Obrero">Obrero</option>
+                        <option value="Panadero">Panadero</option>
+                        <option value="Plomeria">Plomería</option>
 					  </select></li>
 
-					  <li><select class="form-select form-select-lg mb-3" name="fecha" method="post" action="ofertas_filtro.php" required aria-label=".form-select-lg example" style="width:auto">
-						<option value="Fecha" selected>Fecha Publicacion</option>
-						<option value="1">Hoy</option>
-						<option value="15">Hace 15 dias</option>
-						<option value="30">Hace mas de 30 dias</option>
-					  </select></li>
-
-					  
 					  <li><select class="form-select form-select-lg mb-3" name="experiencia" method="post" action="ofertas_filtro.php" required aria-label=".form-select-lg example" style="width:auto">
 						<option value="Experiencia" selected>Experiencia</option>
-						<option value="0">Menos de un anio</option>
-						<option value="1">Un anio o mas</option>
-						<option value="3">Mas de tres anios</option>
+						<option value="Menos de un anio">Menos de un año</option>
+						<option value="Un anio o mas">Un año o más</option>
+						<option value="Mas de tres anios">Más de tres años</option>
 					  </select></li>
 
                       <li><button type="submit" class="btn btn-primary">Buscar</button></li>
@@ -49,40 +47,31 @@
 
 		<div class="flex-container" id="main_container">
 
-			<?php
-
-			$servername = "sql313.epizy.com";
-			$username = "epiz_32212029";
-			$password = "Td30EDZH5T";
-			$dbname = "epiz_32212029_BaseDatos"; 
-
-			// Create connection
-			$conn = new mysqli($servername, $username, $password, $dbname);
-			// Check connection
-			if ($conn->connect_error) {
-				die("Connection failed: " . $conn->connect_error);
-			}
-
-			$sql = "SELECT * FROM Empleados";
+			<?php require('../components/dbconn.inc.php');
+			
+			$sql = "SELECT * FROM empleados";
 
 			$result = $conn->query($sql);
 
 			if ($result->num_rows > 0) {
 				// output data of each row
 				while($row = $result->fetch_assoc()) {
+                    $x= rand(1, 6);
 					echo "<div class='elem' id='".$row["id"]."' onclick='show_zoom()'>
                     <p class='".$row["id"]."'>
-					<img class='".$row["id"]."' src='fotos/pere1.JPG'/> 
+					<img class='".$row["id"]."' src='fotos/pere".$x.".JPG'/> 
 					<span>Id:<span id='id' class='".$row["id"]."'>". $row["id"]. 
-					" </span></span></br><span>Nombre:<span id= 'nombre' class='".$row["id"]."' >". $row["Nombre"]. 
-					" </span></span></br><span>Apeliido:<span id ='apellido' class='".$row["id"]."'>" . $row["Apellido"] .
-					" </span></span></br><span>Sexo:<span id='sexo'class='".$row["id"]."'>" . $row["Sexo"] .  
-					" </span></span></br><span>Correo:<span id='correo'class='".$row["id"]."'>" . $row["Correo"]. 
-					" </span></span></br><span>Contra:<span id='contra'class='".$row["id"]."'>" . $row["Contra"] .
-					" </span></span></br><span>Telefono:<span id='telefono'class='".$row["id"]."'>" . $row["Telefono"] .
-					" </span></span></br><span>Direccion:<span id='direccion'class='".$row["id"]."'>" . $row["Direccion"]. 
-					" </span></span></br><span>Descripcion:<span id='descripcion'class='".$row["id"]."'>" . $row["Descripcion"].  
-					" </span></span></p></div>";
+					" </span></span></br><span>Nombre: <span id= 'nombre' class='".$row["id"]."' >". $row["Nombre"]. 
+					" </span></span></br><span>Apellido: <span id ='apellido' class='".$row["id"]."'>" . $row["Apellido"] .
+                    " </span></span></br><span>Oficio: <span id='oficio'class='".$row["id"]."'>" . $row["Oficio"].   
+					" </span></span></br><span>Experiencia: <span id='experiencia'class='".$row["id"]."'>" . $row["Experiencia"]. 
+					" </span></span></br><span>Correo: <span id='correo'class='".$row["id"]."'>" . $row["Correo"]. 
+					// " </span></span></br><span>Contra:<span id='contra'class='".$row["id"]."'>" . $row["Contra"] .
+					" </span></span></br><span>Telefono: <span id='telefono'class='".$row["id"]."'>" . $row["Telefono"] .
+					" </span></span></br><span>Direccion: <span id='direccion'class='".$row["id"]."'>" . $row["Direccion"]. 
+                    " </span></span></br><span>Sexo: <span id='sexo'class='".$row["id"]."'>" . $row["Sexo"] .  
+					" </span></span></br><span>Descripcion: <span id='descripcion'class='".$row["id"]."'>" . $row["Descripcion"]. 
+                    " </span></span></p></div>";
 					}
 			}
 			else {
@@ -93,5 +82,22 @@
 			?>
             </div>
 	
+			<?php include('../components/footer.inc.php'); ?>
 
+         <script>
+            $("#main_container").click(function(event) {
+                const text = document.getElementById(event.target.className).innerHTML;
+                document.getElementById("span_muestra").innerHTML=text;
 
+            });
+            function hide(id){
+                document.getElementById(id).style.display="none";
+                }
+
+            function show_zoom(){
+
+                document.getElementById("zoom").style.display="block";
+                }
+         </script>
+	</body>
+</html>
