@@ -1,4 +1,6 @@
-<?php include('components/head.inc.php'); ?>
+<?php include('../components/head.inc.php'); ?>
+<?php include('../components/subnavbar.inc.php'); ?>
+
 	<div class="grid" style="--bs-gap: .25rem 1rem;--bs-columns:12;">
 
 		<h2 style="text-align:center;width: 50%;margin: 5px auto;"><a id="subs">Iniciar Sesion</h2>
@@ -16,4 +18,5 @@
 				<button type="submit" class="btn btn-primary">Submit</button>
 			</form>
 	</div>
-<?php include('components/footer.inc.php'); ?>
+
+<?php include('../components/footer.inc.php'); ?>
