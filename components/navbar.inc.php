@@ -10,7 +10,7 @@
 			<ul class="navbar-nav" style= "position: absolute;right: 5px;">
                 <li class="nav-item" id="signin"> 
                 <button class="btn btn-primary">
-					<a class="nav-link" href="./index.php">Mi Cuenta</a>
+					<a class="nav-link" href="/pmss/php/perfil_empleado.php">Mi Cuenta</a>
                 </button>
 				</li>
 				<li class="nav-item">
@@ -24,6 +24,11 @@
 				<li class="nav-item"> 
 					<button class="btn btn-primary">
 						<a class="nav-link" href="/pmss/php/login.php">Iniciar Sesión</a>
+					</button>
+				</li>
+				<li class="nav-item"> 
+					<button class="btn btn-primary">
+						<a class="nav-link" href="/pmss/php/logout.php">Cerrar Sesión</a>
 					</button>
 				</li>
 			</ul>

@@ -11,4 +11,4 @@
 		<link rel="stylesheet" type="text/css" href="/pmss/assets/css/mystyle.css"/>
 		<script type="text/javascript" src="/pmss/assets/js/javascript.js"></script>
 	</head>
-    <body onload="hide('signin')">
+    <body>
