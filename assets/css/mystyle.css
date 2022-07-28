@@ -29,7 +29,7 @@ li, .form-select{
 }
 
 body {
-  background-image: url("gg.jpg");
+  background-image: url("/pmss/assets/img/gg.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;

@@ -1,46 +1,12 @@
-<html> 
-    <title>Impulso Migrante</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-		<link rel="shortcut icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Base
-					ball_cap_line_drawing.svg/1200px-Baseball_cap_line_drawing.svg.png">
-		<link rel="stylesheet" type="text/css" href="../mystyle.css" />
-		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-        <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
-	</head>
-    <body onload="hide('zoom')"> 
+<?php include('../components/headreg.inc.php'); ?>
 
-    <nav class="navbar navbar-expand-lg" style="background-color: #D1D1D1;border: 2px outset gray;">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <h2>Hermanos Américanos</h2> 
-            </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav" style= "position: absolute;right: 5px;">
+<body onload="hide('zoom')">
+	<?php include('../components/navbar.inc.php'); ?>
 
-            <li class="nav-item">
-					<a class="nav-link active" aria-current="page" href="../index.php">Inicio</a>
-				  </li>
-
-				  <li class="nav-item"> 
-					<button class="btn btn-primary">
-						<a class="nav-link" href="../index.php">Registrarse</a>
-					</button>
-				  </li>
-
-				  <li class="nav-item"> 
-					<button class="btn btn-primary">
-						<a class="nav-link" href="./login.php">Iniciar Sesión</a>
-					</button>
-				  </li>
-
-            </ul>
+        <div id="zoom" class="zoom" style="position:absolute;border:3px solid #73AD21;left: 20px;right:20px;background-color:#D1D1D1;z-index:1;font-size: 20px;">  
+            <span id="span_muestra"></span>
+            <button onclick="hide('zoom')" class="btn btn-primary">Cerrar</button>
         </div>
-        </div>
-        <div class="collapse navbar-collapse" id="clock"></div>
-    </nav>
 
     <div id="zoom" class="zoom" style="position:absolute;border:3px solid #73AD21;left: 20px;right:20px;text-align: center;background-color:#D1D1D1;z-index:1;font-size: 20px;">
             <span id="span_muestra"></span>
@@ -56,16 +22,7 @@
             $users_of = $_POST['oficio'];
             $users_exp = $_POST['experiencia'];
 
-            $servername = "sql313.epizy.com";
-			$username = "epiz_32212029";
-			$password = "Td30EDZH5T";
-			$dbname = "epiz_32212029_BaseDatos"; 
-
-            
-            $conn = new mysqli($servername, $username, $password, $dbname);
-            if ($conn->connect_error) {
-                die("Connection failed: " . $conn->connect_error);
-            };
+            require('../components/dbconn.inc.php');
 
             if($users_of != 'Oficio' && $users_exp != 'Experiencia'){
                 $sql="SELECT * FROM `Empleados` WHERE Oficio = '{$users_of}' and Experiencia = '{$users_exp}';";
@@ -112,7 +69,8 @@
              <input type="submit" value="Volver al menu" name="volver">
         </FORM> 
 
-        <script type="text/javascript" src="../javascript.js"></script> 
+		<?php include('../components/footer.inc.php'); ?>
+
         <script>
             $("#main_container").click(function(event) {
                 const text = document.getElementById(event.target.className).innerHTML;
@@ -129,6 +87,5 @@
                 document.getElementById("zoom").style.display="block";
                 }
         </script>
-
     </body>
 </html>

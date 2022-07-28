@@ -1,8 +1,7 @@
 <nav class="navbar navbar-expand-lg" style="background-color: #D1D1D1;border: 2px outset gray;">
 	<div class="container-fluid">
-		<a class="navbar-brand" href="./index.php">
+		<a class="navbar-brand" href="/pmss/index.php">
 			<h2>Agencia Migrante</h2>
-			<!--<h2>Hermanos Am&#233ricanos</h2>--> 
 		</a>
 		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
@@ -19,12 +18,12 @@
 				</li>
 				<li class="nav-item"> 
 				    <button class="btn btn-primary">
-						<a class="nav-link" href="./register.php">Registrarse</a>
+						<a class="nav-link" href="/pmss/php/register.php">Registrarse</a>
 					</button>
 				</li>
 				<li class="nav-item"> 
 					<button class="btn btn-primary">
-						<a class="nav-link" href="./login.php">Iniciar Sesión</a>
+						<a class="nav-link" href="/pmss/php/login.php">Iniciar Sesión</a>
 					</button>
 				</li>
 			</ul>
