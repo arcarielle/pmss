@@ -1,7 +1,7 @@
-$servername = "sql313.epizy.com";
-    $username = "epiz_32212029";
-    $password = "Td30EDZH5T";
-    $dbname = "epiz_32212029_BaseDatos"; 
+$servername = "localhost";
+        $username = "root";
+        $password = "";
+        $dbname = "uacj";
  
 $conn = new mysqli($servername, $username, $password, $dbname);
     if ($conn->connect_error) {
