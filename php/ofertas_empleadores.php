@@ -50,7 +50,7 @@
 			$sql="SELECT emp.id, emp.Empresa, emp.Representante, emp.Correo, emp.Contra, emp.Telefono,
                 emp.Direccion, emp.Descripcion, trab.Oficio as 'Oficio', trab.Experiencia as 'Experiencia', 
                 trab.Descripcion as 'DescripcionTrab' 
-                FROM `Empleadores` emp, `Trabajos_Empleadores` trab 
+                FROM `empleadores` emp, `trabajos_empleadores` trab 
                 WHERE emp.id = trab.id;";
 
 			$result = $conn->query($sql);

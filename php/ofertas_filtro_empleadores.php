@@ -28,28 +28,28 @@
                 $sql="SELECT emp.id, emp.Empresa, emp.Representante, emp.Correo, emp.Contra, emp.Telefono,
                 emp.Direccion, emp.Descripcion, trab.Oficio as 'Oficio', trab.Experiencia as 'Experiencia', 
                 trab.Descripcion as 'DescripcionTrab' 
-                FROM `Empleadores` emp, `Trabajos_Empleadores` trab 
+                FROM `empleadores` emp, `trabajos_empleadores` trab 
                 WHERE emp.id = trab.id and Oficio = '{$users_of}' and Experiencia = '{$users_exp}';";
             }
             elseif($users_of != 'Oficio'){
                 $sql="SELECT emp.id, emp.Empresa, emp.Representante, emp.Correo, emp.Contra, emp.Telefono,
                 emp.Direccion, emp.Descripcion, trab.Oficio as 'Oficio', trab.Experiencia as 'Experiencia', 
                 trab.Descripcion as 'DescripcionTrab' 
-                FROM `Empleadores` emp, `Trabajos_Empleadores` trab 
+                FROM `empleadores` emp, `trabajos_empleadores` trab 
                 WHERE emp.id = trab.id and Oficio = '{$users_of}';";
             }
             elseif($users_exp != 'Experiencia'){
                 $sql="SELECT emp.id, emp.Empresa, emp.Representante, emp.Correo, emp.Contra, emp.Telefono,
                 emp.Direccion, emp.Descripcion, trab.Oficio as 'Oficio', trab.Experiencia as 'Experiencia', 
                 trab.Descripcion as 'DescripcionTrab' 
-                FROM `Empleadores` emp, `Trabajos_Empleadores` trab 
+                FROM `empleadores` emp, `trabajos_Empleadores` trab 
                 WHERE emp.id = trab.id and Experiencia = '{$users_exp}';";
             }
             else{
                 $sql="SELECT emp.id, emp.Empresa, emp.Representante, emp.Correo, emp.Contra, emp.Telefono,
                 emp.Direccion, emp.Descripcion, trab.Oficio as 'Oficio', trab.Experiencia as 'Experiencia', 
                 trab.Descripcion as 'DescripcionTrab' 
-                FROM `Empleadores` emp, `Trabajos_Empleadores` trab 
+                FROM `empleadores` emp, `trabajos_Empleadores` trab 
                 WHERE emp.id = trab.id;";
             }
 

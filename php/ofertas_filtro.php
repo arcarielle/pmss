@@ -25,15 +25,15 @@
             require('../components/dbconn.inc.php');
 
             if($users_of != 'Oficio' && $users_exp != 'Experiencia'){
-                $sql="SELECT * FROM `Empleados` WHERE Oficio = '{$users_of}' and Experiencia = '{$users_exp}';";
+                $sql="SELECT * FROM `empleados` WHERE Oficio = '{$users_of}' and Experiencia = '{$users_exp}';";
             }
             elseif($users_of != 'Oficio'){
-                $sql="SELECT * FROM `Empleados` WHERE Oficio = '{$users_of}';";
+                $sql="SELECT * FROM `empleados` WHERE Oficio = '{$users_of}';";
             }
             elseif($users_exp != 'Experiencia'){
-                $sql="SELECT * FROM `Empleados` WHERE Experiencia = '{$users_exp}';";}
+                $sql="SELECT * FROM `empleados` WHERE Experiencia = '{$users_exp}';";}
             else{
-                $sql="SELECT * FROM `Empleados`;";
+                $sql="SELECT * FROM `empleados`;";
             }
 
             $result = $conn->query($sql);

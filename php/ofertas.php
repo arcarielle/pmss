@@ -49,7 +49,7 @@
 
 			<?php require('../components/dbconn.inc.php');
 			
-			$sql = "SELECT * FROM Empleados";
+			$sql = "SELECT * FROM empleados";
 
 			$result = $conn->query($sql);
 

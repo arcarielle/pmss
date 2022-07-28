@@ -18,7 +18,7 @@
 
             require('../components/dbconn.inc.php');
 
-            $sql = "INSERT INTO Empleados (Nombre, Apellido, Sexo, Correo, Contra , Telefono, Direccion, Descripcion, Oficio, Experiencia) 
+            $sql = "INSERT INTO empleados (Nombre, Apellido, Sexo, Correo, Contra , Telefono, Direccion, Descripcion, Oficio, Experiencia) 
                 VALUES ('$users_nom', '$users_ape', '$users_sex', '$users_correo', '$users_contra','$users_tele','$users_dire', '$users_descrip','$users_ofi', '$users_exp');";
         
             if ($conn->query($sql) === TRUE) {
