@@ -19,7 +19,8 @@
 			Descripcion='{$users_descrip}',Oficio='{$users_ofi}',Experiencia='{$users_exp}' WHERE Correo = '{$_SESSION['email']}';";
         
             if ($conn->query($sql) === TRUE) {
-                echo "<br>Cuenta Actualizada Exitosamente</p>";
+                echo "<script>alert('Cuenta Actualizada Exitosamente')</script>";
+                header("Location: ../index.php");
             } else {
                 echo "Error: " . $sql . "<br>" . $conn->error;
             }

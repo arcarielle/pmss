@@ -49,7 +49,20 @@ if(isset($_POST['login']))
     } 
     else  
     {  
-      echo "<script>alert('Email or password is incorrect!')</script>";  
+		$check_user="SELECT * FROM `empleadores` WHERE Correo ='{$user_email}'AND Contra='{$user_pass}'";
+		$run=mysqli_query($conn,$check_user);  
+	
+		if(mysqli_num_rows($run))  
+		{  
+			//$_SESSION['email']=$user_email;
+			echo "<script>window.open('perfil_empleador.php','_self')</script>";  
+	
+			$_SESSION['email']=$user_email; 
+		} 
+		else  
+		{  
+		echo "<script>alert('Correo o contraseña incorrectos!')</script>";  
+		}	
     }  
 }  
 ?>  

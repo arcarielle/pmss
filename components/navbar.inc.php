@@ -8,11 +8,18 @@
 		</button>
 		<div class="collapse navbar-collapse" id="navbarNavDropdown">
 			<ul class="navbar-nav" style= "position: absolute;right: 5px;">
+
                 <li class="nav-item" id="signin"> 
                 <button class="btn btn-primary">
-					<a class="nav-link" href="/pmss/php/perfil_empleado.php">Mi Cuenta</a>
+					<a class="nav-link" href="/pmss/php/perfil_empleado.php">Mi Cuenta Empleado</a>
                 </button>
 				</li>
+				<li class="nav-item" id="signin"> 
+                <button class="btn btn-primary">
+					<a class="nav-link" href="/pmss/php/perfil_empleador.php">Mi Cuenta Empleador</a>
+                </button>
+				</li>
+
 				<li class="nav-item">
 					<a class="nav-link active" aria-current="page" href="/pmss/index.php">Inicio</a>
 				</li>

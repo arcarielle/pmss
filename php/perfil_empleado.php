@@ -1,10 +1,6 @@
 <?php  
 session_start();  
   
-if(!$_SESSION['email'])  
-{  
-	//header("Location: ../index.php");
-}
 ?>
 
 <?php include('../components/headreg.inc.php'); ?>
@@ -135,13 +131,15 @@ if(!$_SESSION['email'])
 			<?php
 			}
 			else {
-				echo "error xd";
+				echo "<h2 style='width:auto;'>No hay una cuenta tipo Empleado iniciada</h2>";
 			}
 	
 				$conn->close();
 			?>
 
-			<input type="submit" value="Volver al menu" name="volver">
+				<button class="btn btn-primary">
+					<a class="nav-link" href="/pmss/index.php">Inicio</a>
+                </button>
 	<?php include('../components/footer.inc.php'); ?>
 	</body>
 </html>
