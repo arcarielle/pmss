@@ -59,7 +59,7 @@
                     $x= rand(1, 6);
 					echo "<div class='elem' id='".$row["id"]."' onclick='show_zoom()'>
                     <p class='".$row["id"]."'>
-					<img class='".$row["id"]."' src='fotos/pere".$x.".JPG'/> 
+					<img class='".$row["id"]."' src='/pmss/assets/img/php/pere".$x.".JPG'/> 
 					<span>Id:<span id='id' class='".$row["id"]."'>". $row["id"]. 
 					" </span></span></br><span>Nombre: <span id= 'nombre' class='".$row["id"]."' >". $row["Nombre"]. 
 					" </span></span></br><span>Apellido: <span id ='apellido' class='".$row["id"]."'>" . $row["Apellido"] .

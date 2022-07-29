@@ -21,6 +21,7 @@ session_start();
 
 					$row = $result->fetch_assoc();
 
+						$users_id = $row['id'];
 						$users_empre = $row['Empresa'];
 						$users_nom = $row['Representante'];
 						$users_correo = $row['Correo'];
@@ -86,15 +87,86 @@ session_start();
 						</div>
 					</form>
 				</div>
-
 						
 			<?php
 			}
 			else {
 				echo "<h2 style='width:auto;'>No hay una cuenta tipo Empleador iniciada</h2>";
 			}
-	
-				$conn->close();
+			
+			require('../components/dbconn.inc.php');
+
+			$sql="SELECT * FROM trabajos_empleadores WHERE id ='{$users_id}'";
+
+            $result = $conn->query($sql);
+
+			if ($result->num_rows > 0) {
+
+				while($row = $result->fetch_assoc()) {
+						$users_id_main = $row['id_main'];
+						$users_ofi = $row['Oficio'];
+						$users_exp = $row['Experiencia'];
+						$users_descrip_trab = $row['Descripcion'];
+			?>
+			<h2 style="text-align:center;width: 50%;"><a id="subs">Proyecto</h2>
+				<div class="g-col-6">
+					<form class="row g-3" action="actualizar_proyecto_empleador.php" method="post">
+
+						<div class="col-md-3">
+							<label for="validationDefault01" class="form-label">Id Proyecto</label>
+							<input type="text" name="id" value="<?php echo $users_id_main; ?>"
+								class="form-control" id="validationDefault01" readonly>
+						</div>
+					
+						<div class="col-md-3">
+							<label for="validationDefault02" class="form-label">Oficio</label>
+							<select id="validationDefault02" name="oficio" class="form-select" required>
+								<option value="<?php echo $users_ofi; ?>" selected> <?php echo $users_ofi; ?></option>
+								<option value="Albanileria">Albañilería</option>
+								<option value="Barbero">Barbería</option>
+								<option value="Carpinteria">Carpintería</option>
+								<option value="Electricista">Electricista</option>
+								<option value="Estilista">Estilista</option>
+								<option value="Herrero">Herrería</option>
+								<option value="Limpieza">Limpieza</option>
+								<option value="Mecanico">Mecánico</option>
+								<option value="Obrero">Obrero</option>
+								<option value="Panadero">Panadero</option>
+								<option value="Plomeria">Plomería</option>
+							</select>
+						</div>
+
+						<div class="col-md-3">
+							<label for="validationDefault03" class="form-label">Experiencia</label>
+							<select id="validationDefault03" name="experiencia" class="form-select" required>
+								<option value="Experiencia" selected>Experiencia</option>
+								<option value="Menos de un anio">Menos de un año</option>
+								<option value="Un anio o mas">Un año o más</option>
+								<option value="Mas de tres anios">Más de tres años</option>
+							</select>
+						</div>
+		
+						<div class="col-md-9">
+							<label for="textareadescrip" class="form-label">Descripción de  Trabajo</label>
+							<textarea class="form-control" name="descripcion" value="<?php echo $users_descrip_trab; ?>" 
+								aria-label="With textarea" id="textareadescrip" required>
+								<?php echo $users_descrip_trab; ?>
+							</textarea>
+						</div>
+
+						<div class="col-12">
+							<button type="submit" class="btn btn-primary">Actualizar</button>
+						</div>
+						
+					</form>
+				</div>
+		
+			<?php
+			}}
+			else {
+				echo "<h2 style='width:auto;'>No hay proyectos</h2>";
+			}
+			$conn->close();
 			?>
 
 				<button class="btn btn-primary">
@@ -103,4 +175,3 @@ session_start();
 	<?php include('../components/footer.inc.php'); ?>
 	</body>
 </html>
-

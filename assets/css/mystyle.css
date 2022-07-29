@@ -33,7 +33,9 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
+  overflow-x: hidden;
 }
+
 
 .elem{
 	font-family:courier;

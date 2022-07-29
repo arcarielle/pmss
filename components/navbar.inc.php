@@ -24,8 +24,9 @@
 					<a class="nav-link active" aria-current="page" href="/pmss/index.php">Inicio</a>
 				</li>
 				<li class="nav-item"> 
-				    <button class="btn btn-primary">
-						<a class="nav-link" href="/pmss/php/register.php">Registrarse</a>
+				    <button class="btn btn-primary" onclick="aviso()">
+						Registrarse
+						<!-- <a class="nav-link" href="/pmss/php/register.php">Registrarse</a> -->
 					</button>
 				</li>
 				<li class="nav-item"> 

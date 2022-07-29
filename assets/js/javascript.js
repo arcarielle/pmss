@@ -6,6 +6,11 @@ function bien(){
       } else {
       window.alert("Hola " + person + "! Cómo estás?");
     }};
+
+function aviso(){
+  window.alert("Para poder registrarte");
+  }
+
   
 function hide(id){
   document.getElementById(id).style.display="none";
