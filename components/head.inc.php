@@ -1,4 +1,13 @@
 <!DOCTYPE html>
+
+<?php    
+	if(session_id() == '' || !isset($_SESSION)){  
+		echo "<script>
+			$( #signin ).css( 'display', 'none' );
+		</script>";
+	}
+?>  
+
 <html lang="en">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<head>

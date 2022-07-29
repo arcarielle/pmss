@@ -1,3 +1,7 @@
+<?php  
+session_start();//session starts here  
+?>
+
 <?php include('../components/head.inc.php'); ?>
 <?php include('../components/navbar.inc.php'); ?>
 
@@ -42,7 +46,7 @@ if(isset($_POST['login']))
         echo "<script>window.open('perfil_empleado.php','_self')</script>";  
   
         $_SESSION['email']=$user_email;//here session is used and value of $user_email store in $_SESSION.  
-    }  
+    } 
     else  
     {  
       echo "<script>alert('Email or password is incorrect!')</script>";  
