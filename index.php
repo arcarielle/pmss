@@ -38,7 +38,7 @@
                     </a>	
                 </div>
 
-                <button onclick="show('signin')"> Prueba</button>
+                <!--<button onclick="show('signin')"> Prueba</button>-->
 
             </div>
         </div>
