@@ -8,7 +8,7 @@ function bien(){
     }};
 
 function aviso(){
-  window.alert("Para poder registrarte");
+  window.alert("Para poder registrarte, ve al inicio\nAhi eligirás entre cuatro botones para registrarte como alguien que busca u ofrece trabajo");
   }
 
   
