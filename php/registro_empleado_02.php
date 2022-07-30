@@ -1,7 +1,7 @@
 <?php include('../components/headreg.inc.php'); ?>
 <body>
     <?php include('../components/navbar.inc.php'); ?>
-
+    <?php include('../components/btnhandler.inc.php'); ?>
       <div><p><b>REGISTRADO</b></p>
         <FORM METHOD="POST" ACTION="../index.php">
         <?php
@@ -46,5 +46,3 @@
             </button>
         </FORM>
         <?php include('../components/footer.inc.php'); ?>
-    </body>
-</html>

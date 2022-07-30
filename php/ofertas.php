@@ -2,6 +2,7 @@
 
 <body onload="hide('zoom')">
 	<?php include('../components/navbar.inc.php'); ?>
+	<?php include('../components/btnhandler.inc.php'); ?>
 
         <div id="zoom" class="zoom" style="position:absolute;border:3px solid #73AD21;left: 20px;right:20px;background-color:#D1D1D1;z-index:1;font-size: 20px;">
             
@@ -81,23 +82,5 @@
 			$conn->close();
 			?>
             </div>
-	
-			<?php include('../components/footer.inc.php'); ?>
 
-         <script>
-            $("#main_container").click(function(event) {
-                const text = document.getElementById(event.target.className).innerHTML;
-                document.getElementById("span_muestra").innerHTML=text;
-
-            });
-            function hide(id){
-                document.getElementById(id).style.display="none";
-                }
-
-            function show_zoom(){
-
-                document.getElementById("zoom").style.display="block";
-                }
-         </script>
-	</body>
-</html>
+		<?php include('../components/footer.inc.php'); ?>

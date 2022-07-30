@@ -1,6 +1,7 @@
 <?php include('../components/headreg.inc.php'); ?>
 <body onload="hide('zoom')">
 	<?php include('../components/navbar.inc.php'); ?>
+	<?php include('../components/btnhandler.inc.php'); ?>
 
         <div id="zoom" class="zoom" style="position:absolute;border:3px solid #73AD21;left: 20px;right:20px;background-color:#D1D1D1;z-index:1;font-size: 20px;">  
             <span id="span_muestra"></span>
@@ -62,7 +63,7 @@
                     $x = rand(1,6);
 					echo "<div class='elem' id='".$row["id"]."' onclick='show_zoom()'>
                     <p class='".$row["id"]."'>
-					<img class='".$row["id"]."' src='fotos/pere".$x.".JPG'/> 
+					<img class='".$row["id"]."' src='/pmss/assets/img/php/pere".$x.".JPG'/>  
 					<span>Id:<span id='id' class='".$row["id"]."'>". $row["id"]. 
 					" </span></span></br><span>Empresa: <span id= 'empresa' class='".$row["id"]."' >". $row["Empresa"]. 
 					" </span></span></br><span>Oficio: <span id='oficio'class='".$row["id"]."'>" . $row["Oficio"].   
@@ -86,21 +87,3 @@
         </div>
 
 		<?php include('../components/footer.inc.php'); ?>
-
-        <script>
-            $("#main_container").click(function(event) {
-                const text = document.getElementById(event.target.className).innerHTML;
-                document.getElementById("span_muestra").innerHTML=text;
-            });
-
-            function hide(id){
-                document.getElementById(id).style.display="none";
-            }
-
-            function show_zoom(){
-
-                document.getElementById("zoom").style.display="block";
-                }
-        </script>
-	</body>
-</html>

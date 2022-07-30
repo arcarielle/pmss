@@ -1,12 +1,8 @@
-<?php  
-session_start();  
-  
-?>
-
 <?php include('../components/headreg.inc.php'); ?>
 
 <body>
 	<?php include('../components/navbar.inc.php'); ?>
+	<?php include('../components/btnhandler.inc.php'); ?>
 
 	<?php
             require('../components/dbconn.inc.php');
@@ -141,6 +137,5 @@ session_start();
 					<a class="nav-link" href="/pmss/index.php">Inicio</a>
                 </button>
 	<?php include('../components/footer.inc.php'); ?>
-	</body>
-</html>
+
 

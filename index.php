@@ -1,5 +1,6 @@
 <?php include('components/head.inc.php'); ?>
 <?php include('components/navbar.inc.php'); ?>
+<?php include('components/btnhandler.inc.php'); ?>
 
     <section class ="Description">
         <div class="flex-container " id="main_container">
@@ -45,13 +46,3 @@
     </section>
 
 <?php include('components/footer.inc.php'); ?>
-        <script>
-            function hide(id){
-                document.getElementById(id).style.display="none";
-            }
-            function show(id){
-                document.getElementById(id).style.display="block";
-            }
-        </script>
-    </body>
-</html>

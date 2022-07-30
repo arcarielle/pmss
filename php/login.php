@@ -1,9 +1,6 @@
-<?php  
-session_start();//session starts here  
-?>
-
 <?php include('../components/head.inc.php'); ?>
 <?php include('../components/navbar.inc.php'); ?>
+<?php include('../components/btnhandler.inc.php'); ?>
 
 <div class="grid" style="--bs-gap: .25rem 1rem;--bs-columns:12;">
 
@@ -23,8 +20,6 @@ session_start();//session starts here
 </div>
 
 <?php include('../components/footer.inc.php'); ?>
-    </body>
-</html>
 
 <?php  
   
@@ -44,7 +39,8 @@ if(isset($_POST['login']))
     {  
 		//$_SESSION['email']=$user_email;
         echo "<script>window.open('perfil_empleado.php','_self')</script>";  
-  
+
+		$_SESSION["estado"] = 'empleado';
         $_SESSION['email']=$user_email;//here session is used and value of $user_email store in $_SESSION.  
     } 
     else  
@@ -57,6 +53,7 @@ if(isset($_POST['login']))
 			//$_SESSION['email']=$user_email;
 			echo "<script>window.open('perfil_empleador.php','_self')</script>";  
 	
+			$_SESSION["estado"] = 'empleador';
 			$_SESSION['email']=$user_email; 
 		} 
 		else  

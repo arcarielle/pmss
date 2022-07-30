@@ -14,7 +14,7 @@
 					<a class="nav-link" href="/pmss/php/perfil_empleado.php">Mi Cuenta Empleado</a>
                 </button>
 				</li>
-				<li class="nav-item" id="signin"> 
+				<li class="nav-item" id="signin2"> 
                 <button class="btn btn-primary">
 					<a class="nav-link" href="/pmss/php/perfil_empleador.php">Mi Cuenta Empleador</a>
                 </button>
@@ -25,8 +25,7 @@
 				</li>
 				<li class="nav-item"> 
 				    <button class="btn btn-primary" onclick="aviso()">
-						Registrarse
-						<!-- <a class="nav-link" href="/pmss/php/register.php">Registrarse</a> -->
+						<a class="nav-link">Registrarse</a>
 					</button>
 				</li>
 				<li class="nav-item"> 

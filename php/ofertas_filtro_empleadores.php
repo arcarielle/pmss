@@ -2,6 +2,7 @@
 
 <body onload="hide('zoom')">
 	<?php include('../components/navbar.inc.php'); ?>
+    <?php include('../components/btnhandler.inc.php'); ?>
 
         <div id="zoom" class="zoom" style="position:absolute;border:3px solid #73AD21;left: 20px;right:20px;background-color:#D1D1D1;z-index:1;font-size: 20px;">  
             <span id="span_muestra"></span>
@@ -55,7 +56,7 @@
             while($row = $result->fetch_assoc()) {
 					echo "<div class='elem' id='".$row["id"]."' onclick='show_zoom()'>
                     <p class='".$row["id"]."'>
-					<img class='".$row["id"]."' src='fotos/pere1.JPG'/> 
+					<img class='".$row["id"]."' src='/pmss/assets/img/php/pere".$x.".JPG'/>  
 					<span>Id:<span id='id' class='".$row["id"]."'>". $row["id"]. 
 					" </span></span></br><span>Empresa:<span id= 'Empresa' class='".$row["id"]."' >". $row["Empresa"]. 
 					" </span></span></br><span>Representante:<span id ='Representante' class='".$row["id"]."'>" . $row["Representante"] .
@@ -82,22 +83,3 @@
         </FORM> 
 
 		<?php include('../components/footer.inc.php'); ?>
-
-        <script>
-            $("#main_container").click(function(event) {
-                const text = document.getElementById(event.target.className).innerHTML;
-                document.getElementById("span_muestra").innerHTML=text;
-
-            });
-
-            function hide(id){
-                document.getElementById(id).style.display="none";
-                }
-
-            function show_zoom(){
-
-                document.getElementById("zoom").style.display="block";
-                }
-        </script>
-    </body>
-</html>

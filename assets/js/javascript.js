@@ -1,3 +1,5 @@
+let session_id; 
+
 function bien(){
     let text;
     let person = prompt("Ingresa tu nombre:", "Users Name");
@@ -5,11 +7,11 @@ function bien(){
       window.alert("Inválido.");
       } else {
       window.alert("Hola " + person + "! Cómo estás?");
-    }};
+}};
 
 function aviso(){
   window.alert("Para poder registrarte, ve al inicio\nAhi eligirás entre cuatro botones para registrarte como alguien que busca u ofrece trabajo");
-  }
+}
 
   
 function hide(id){

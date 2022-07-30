@@ -2,6 +2,7 @@
 
 <body>
 	<?php include('../components/navbar.inc.php'); ?>
+	<?php include('../components/btnhandler.inc.php'); ?>
 
 		<div class="grid" style="--bs-gap: .25rem 1rem;--bs-columns:12;">
 			
@@ -94,5 +95,3 @@
 		</div>
 	</div>
 	<?php include('../components/footer.inc.php'); ?>
-	</body>
-</html>
