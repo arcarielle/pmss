@@ -1,57 +1,49 @@
-<?php include('components/head.inc.php'); ?>
-<?php include('components/navbar.inc.php'); ?>
-
-    <section class ="Description">
-        <div class="flex-container " id="main_container">
-            <div>
-                <p id="text1">Hermanos Americanos es un proyecto que nace de la necesidad de ofrecerle trabajo 
-                    a nuestros hermnaos latinoamericanos que se encuentran en calidad de migrantes en nuestra
-                    ciudad fronteriza. Al no contar con documentos oficiales, es más complicado el conseguir 
-                    trabajo, por lo que nos propusimos el diseñar y mantener una bolsa de trabajo a la que 
-                    ellos puedan acceder para ofrecer su fuerza laboral y encontrar oportunidades de empleo.  
-                </p>
-            </div>
-
-            <div class="contenedorBotones">
-
-                <div class="botonesPrincipales"> 
-                    <a class="nav-link active" aria-current="page" href="php/registro_empleado.php">
-                        <h1>Busco trabajo, quiero registrarme</h1>
-                    </a>	
+<?php
+    include_once 'components/head.inc.php';
+?>
+<body>
+    <?php
+        include_once 'components/header.inc.php';
+    ?>
+    <div class="landing">
+            <div class="mask" style="background-color: rgba(0,0,0,0.67);">
+                <div class="container vh-100">
+                    <div class="container d-flex flex-column justify-content-center align-items-start">
+                        <div class="row">
+                            
+                            <div class="col-12">
+                                <h1 class="lh-base text-light">Bienvenido a este portal para buscar empleo !</h1>
+                                <h3 class="fw-lighter text-light">Indícanos lo que quieres hacer</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container d-flex flex-column align-items-start position-absolute bottom-0">
+                        <div class="p-1 row">
+                            <div class="d-grid gap-2 col-12">
+                                <button class="btn btn-outline-secondary border border-light border-opacity-50 border border-2 text-start text-light" type="button">Solo quiero ver ofertas de empleo ></button>
+                            </div>
+                        </div>
+                        <div class="p-1 row">
+                            <div class="d-grid gap-2 col-12">
+                                <button class="btn btn-outline-secondary border border-light border-opacity-50 border border-2 text-start text-light" type="button">Solo quiero ver perfiles de personas buscando empleo ></button>
+                            </div>
+                        </div>
+                        <div class="p-1 row">
+                            <div class="d-grid gap-2 col-12">
+                                <button class="btn btn-outline-secondary border border-light border-opacity-50 border border-2 text-start text-light" type="button">Quiero registrarme para aplicar a ofertas de empleo ></button>
+                            </div>
+                        </div>
+                        <div class="p-1 row">
+                            <div class="d-grid gap-2 col-12">
+                                <button class="btn btn-outline-secondary border border-light border-opacity-50 border border-2 text-start text-light" type="button">Quiero registrar mi empresa para publicar puestos y/o contratar empleados ></button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-
-                <div class="botonesPrincipales"> 
-                    <a class="nav-link active" aria-current="page" href="php/registro_empleador.php">
-                        <h1>Busco contratar, quiero registrarme</h1>
-                    </a>	
-                </div>
-
-                <div class="botonesPrincipales"> 
-                    <a class="nav-link active" aria-current="page" href="php/ofertas.php">
-                        <h1>Solo ver ofertas empleados</h1>
-                    </a>	
-                </div>
-
-                <div class="botonesPrincipales"> 
-                    <a class="nav-link active" aria-current="page" href="php/ofertas_empleadores.php">
-                        <h1>Solo ver ofertas  empleadores</h1>
-                    </a>	
-                </div>
-
-                <!--<button onclick="show('signin')"> Prueba</button>-->
-
             </div>
         </div>
-    </section>
-
-<?php include('components/footer.inc.php'); ?>
-        <script>
-            function hide(id){
-                document.getElementById(id).style.display="none";
-            }
-            function show(id){
-                document.getElementById(id).style.display="block";
-            }
-        </script>
-    </body>
+    <?php
+        include_once 'components/footer.inc.php';
+    ?>
+</body>
 </html>
