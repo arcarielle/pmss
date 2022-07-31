@@ -22,44 +22,40 @@
 <?php include('../components/footer.inc.php'); ?>
 
 <?php  
-  
-//include("Db_conection.php");  
-require('../components/dbconn.inc.php');  
+	
+	require('../components/dbconn.inc.php');  
 
-if(isset($_POST['login']))  
-{  
-    $user_email=$_POST['email'];  
-    $user_pass=$_POST['pass'];  
-  
-    //$check_user="select * from 'empleados' WHERE Correo ='$user_email'AND Contra='$user_pass'";  
-	$check_user="SELECT * FROM `empleados` WHERE Correo ='{$user_email}'AND Contra='{$user_pass}'";
-    $run=mysqli_query($conn,$check_user);  
-  
-    if(mysqli_num_rows($run))  
-    {  
-		//$_SESSION['email']=$user_email;
-        echo "<script>window.open('perfil_empleado.php','_self')</script>";  
-
-		$_SESSION["estado"] = 'empleado';
-        $_SESSION['email']=$user_email;//here session is used and value of $user_email store in $_SESSION.  
-    } 
-    else  
-    {  
-		$check_user="SELECT * FROM `empleadores` WHERE Correo ='{$user_email}'AND Contra='{$user_pass}'";
+	if(isset($_POST['login']))  
+	{  
+		$user_email=$_POST['email'];  
+		$user_pass=$_POST['pass'];  
+	
+		$check_user="SELECT * FROM `empleados` WHERE Correo ='{$user_email}'AND Contra='{$user_pass}'";
 		$run=mysqli_query($conn,$check_user);  
 	
 		if(mysqli_num_rows($run))  
 		{  
-			//$_SESSION['email']=$user_email;
-			echo "<script>window.open('perfil_empleador.php','_self')</script>";  
-	
-			$_SESSION["estado"] = 'empleador';
-			$_SESSION['email']=$user_email; 
+			echo "<script>window.open('perfil_empleado.php','_self')</script>";  
+
+			$_SESSION["estado"] = 'empleado';
+			$_SESSION['email']=$user_email;
 		} 
 		else  
 		{  
-		echo "<script>alert('Correo o contraseña incorrectos!')</script>";  
-		}	
-    }  
-}  
+			$check_user="SELECT * FROM `empleadores` WHERE Correo ='{$user_email}'AND Contra='{$user_pass}'";
+			$run=mysqli_query($conn,$check_user);  
+		
+			if(mysqli_num_rows($run))  
+			{  
+				echo "<script>window.open('perfil_empleador.php','_self')</script>";  
+		
+				$_SESSION["estado"] = 'empleador';
+				$_SESSION['email']=$user_email; 
+			} 
+			else  
+			{  
+			echo "<script>alert('Correo o contraseña incorrectos!')</script>";  
+			}	
+		}  
+	}  
 ?>  

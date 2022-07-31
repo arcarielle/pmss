@@ -17,22 +17,24 @@
 
 					$row = $result->fetch_assoc();
 
-						$users_id = $row["id"]; 
-						$users_nom = $row["Nombre"];
-						$users_ape = $row["Apellido"];
-						$users_sex = $row["Sexo"];
-						$users_correo = $row["Correo"];
-						$users_contra = $row["Contra"];
-						$users_tele = $row["Telefono"];
-						$users_dire = $row["Direccion"];
-						$users_descrip = $row["Descripcion"];
-						$users_ofi = $row["Oficio"];
-						$users_exp = $row["Experiencia"];
+					$users_id = $row["id"]; 
+					$users_nom = $row["Nombre"];
+					$users_ape = $row["Apellido"];
+					$users_sex = $row["Sexo"];
+					$users_correo = $row["Correo"];
+					$users_contra = $row["Contra"];
+					$users_tele = $row["Telefono"];
+					$users_dire = $row["Direccion"];
+					$users_descrip = $row["Descripcion"];
+					$users_ofi = $row["Oficio"];
+					$users_exp = $row["Experiencia"];
+
 			?>
+				<div class="grid" style="--bs-gap: .25rem 1rem;--bs-columns:12;">		
 				<div class="g-col-6">
 					<h2 style="text-align:center;"><a id="subs">Mi información</h2>
 
-						<form role="form" action="actualizar_empleado.php" method="post">	
+						<form rclass="row g-3" role="form" action="actualizar_empleado.php" method="post">	
 
 						<div class="col-md-4">
 							<label for="validationDefault01" class="form-label">Nombre</label>
@@ -76,7 +78,7 @@
 						<div class="col-md-3">
 							<label for="validationDefault03" class="form-label">Experiencia</label>
 							<select id="validationDefault03" name="experiencia" class="form-select" required>
-								<option value="<?php echo $users_exp; ?>" selected> <?php echo $users_exp; ?></option>
+								<option value="Experiencia" selected>Experiencia</option>
 								<option value="Menos de un anio">Menos de un año</option>
 								<option value="Un anio o mas">Un año o más</option>
 								<option value="Mas de tres anios">Más de tres años</option>
@@ -121,7 +123,14 @@
 						<div class="col-12">
 							<button type="submit" class="btn btn-primary">Actualizar</button>
 						</div>
+
+						<div class="col-12">
+							<button class="btn btn-primary">
+								<a class="nav-link" href="/pmss/index.php">Inicio</a>
+							</button>
+						</div>
 					</form>
+				</div>
 				</div>
 						
 			<?php
@@ -133,9 +142,6 @@
 				$conn->close();
 			?>
 
-				<button class="btn btn-primary">
-					<a class="nav-link" href="/pmss/index.php">Inicio</a>
-                </button>
 	<?php include('../components/footer.inc.php'); ?>
 
 

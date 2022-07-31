@@ -38,9 +38,6 @@
                         <h1>Ofertas de Trabajo</h1>
                     </a>	
                 </div>
-
-                <!-- <button onclick="show('signin')"> Prueba</button> -->
-
             </div>
         </div>
     </section>

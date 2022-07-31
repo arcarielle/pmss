@@ -14,7 +14,7 @@
 
         <h2 style="text-align:center;margin:5px;"><a id="subs">Ofertas para Empresas (Busco Contratar)</h2>
 
-		<nav class="subnav navbar navbar-expand-lg" style="background-color: #D1D1D1; top:10px; 
+		<nav class="navbar navbar-expand-lg" style="background-color: #D1D1D1; top:10px; 
 			width:80%;margin: 5px auto;border: 2px outset gray;">
 			<div class="container-fluid">
 			<form method="post" action="ofertas_filtro.php">
@@ -59,23 +59,29 @@
 			if ($result->num_rows > 0) {
 				// output data of each row
 				while($row = $result->fetch_assoc()) {
+
                     $x= rand(1, 6);
-					echo "<div class='elem' id='".$row["id"]."' onclick='show_zoom()'>
-                    <p class='".$row["id"]."'>
-					<img class='".$row["id"]."' src='/pmss/assets/img/php/pere".$x.".JPG'/> 
-					<span>Id:<span id='id' class='".$row["id"]."'>". $row["id"]. 
-					" </span></span></br><span>Nombre: <span id= 'nombre' class='".$row["id"]."' >". $row["Nombre"]. 
-					" </span></span></br><span>Apellido: <span id ='apellido' class='".$row["id"]."'>" . $row["Apellido"] .
-                    " </span></span></br><span>Oficio: <span id='oficio'class='".$row["id"]."'>" . $row["Oficio"].   
-					" </span></span></br><span>Experiencia: <span id='experiencia'class='".$row["id"]."'>" . $row["Experiencia"]. 
-					" </span></span></br><span>Correo: <span id='correo'class='".$row["id"]."'>" . $row["Correo"]. 
-					// " </span></span></br><span>Contra:<span id='contra'class='".$row["id"]."'>" . $row["Contra"] .
-					" </span></span></br><span>Telefono: <span id='telefono'class='".$row["id"]."'>" . $row["Telefono"] .
-					" </span></span></br><span>Direccion: <span id='direccion'class='".$row["id"]."'>" . $row["Direccion"]. 
-                    " </span></span></br><span>Sexo: <span id='sexo'class='".$row["id"]."'>" . $row["Sexo"] .  
-					" </span></span></br><span>Descripcion: <span id='descripcion'class='".$row["id"]."'>" . $row["Descripcion"]. 
-                    " </span></span></p></div>";
-					}
+			?>
+
+				<div class="elem" id="<?php echo $row["id"];?>" onclick="show_zoom()">
+					<p class="<?php echo $row["id"];?>">
+						<img class="<?php echo $row["id"];?>" src='/pmss/assets/img/php/pere<?php echo $x;?>.JPG'/> 
+						<span id="id" class="<?php echo $row["id"];?>">Id: <?php echo $row["id"];?> </span>
+						</br><span class="<?php echo $row["id"];?>">Nombre: <?php echo $row["Nombre"];?></span>
+						</br><span class="<?php echo $row["id"];?>">Apellido: <?php echo $row["Apellido"];?></span>
+						</br><span class="<?php echo $row["id"];?>">Oficio: <?php echo $row["Oficio"];?></span>
+						</br><span class="<?php echo $row["id"];?>">Experiencia: <?php echo $row["Experiencia"];?></span>
+						</br><span class="<?php echo $row["id"];?>">Correo: <?php echo $row["Correo"];?></span>
+						</br><span class="<?php echo $row["id"];?>">Contra: <?php echo $row["Contra"];?></span>
+						</br><span class="<?php echo $row["id"];?>">Telefono: <?php echo $row["Telefono"];?></span>
+						</br><span class="<?php echo $row["id"];?>">Direccion: <?php echo $row["Direccion"];?></span>
+						</br><span class="<?php echo $row["id"];?>">Sexo: <?php echo $row["Sexo"];?></span>
+						</br><span class="<?php echo $row["id"];?>">Descripcion: <?php echo $row["Descripcion"];?></span>
+					</p>
+				</div>
+			
+			<?php
+				}
 			}
 			else {
 				echo "0 users";

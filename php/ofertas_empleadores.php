@@ -62,21 +62,26 @@
 				// output data of each row
 				while($row = $result->fetch_assoc()) {
                     $x = rand(1,6);
-					echo "<div class='elem' id='".$row["TrabId"]."' onclick='show_zoom()'>
-                    <p class='".$row["TrabId"]."'>
-					<img class='".$row["TrabId"]."' src='/pmss/assets/img/php/pere".$x.".JPG'/>  
-					<span>Id:<span id='id' class='".$row["TrabId"]."'>". $row["id"]. 
-					" </span></span></br><span>Empresa: <span id= 'empresa' class='".$row["TrabId"]."' >". $row["Empresa"]. 
-					" </span></span></br><span>Oficio: <span id='oficio'class='".$row["TrabId"]."'>" . $row["Oficio"].   
-					" </span></span></br><span>Experiencia: <span id='experiencia'class='".$row["TrabId"]."'>" . $row["Experiencia"]. 
-					" </span></span></br><span>Descripcion Trabajo: <span id='descripcion-trab'class='".$row["id"]."'>" . $row["DescripcionTrab"].
-					// " </span></span></br><span>Contra:<span id='contra'class='".$row["id"]."'>" . $row["Contra"] .
-					" </span></span></br><span>Telefono: <span id='telefono'class='".$row["TrabId"]."'>" . $row["Telefono"] .
-                    " </span></span></br><span>Representante: <span id ='representante' class='".$row["TrabId"]."'>" . $row["Representante"] .
-					" </span></span></br><span>Correo: <span id='correo'class='".$row["TrabId"]."'>" . $row["Correo"]. 
-                    " </span></span></br><span>Direccion: <span id='direccion'class='".$row["TrabId"]."'>" . $row["Direccion"]. 
-					" </span></span></br><span>Descripcion: <span id='descripcion'class='".$row["TrabId"]."'>" . $row["Descripcion"].
-					" </span></span></p></div>";
+
+			?>
+					
+				<div class="elem" id="<?php echo $row["TrabId"];?>" onclick="show_zoom()">
+					<p class="<?php echo $row["TrabId"];?>">
+						<img class="<?php echo $row["TrabId"];?>" src='/pmss/assets/img/php/pere<?php echo $x;?>.JPG'/> 
+						<span id="id" class="<?php echo $row["TrabId"];?>">Id: <?php echo $row["TrabId"];?> </span>
+						</br><span class="<?php echo $row["TrabId"];?>">Empresa: <?php echo $row["Empresa"];?></span>
+						</br><span class="<?php echo $row["TrabId"];?>">Oficio: <?php echo $row["Oficio"];?></span>
+						</br><span class="<?php echo $row["TrabId"];?>">Experiencia: <?php echo $row["Experiencia"];?></span>
+						</br><span class="<?php echo $row["TrabId"];?>">Descripcion Trabajo: <?php echo $row["DescripcionTrab"];?></span>
+						</br><span class="<?php echo $row["TrabId"];?>">Telefono: <?php echo $row["Telefono"];?></span>
+						</br><span class="<?php echo $row["TrabId"];?>">Representante: <?php echo $row["Representante"];?></span>
+						</br><span class="<?php echo $row["TrabId"];?>">Correo: <?php echo $row["Correo"];?></span>
+						</br><span class="<?php echo $row["TrabId"];?>">Direccion: <?php echo $row["Direccion"];?></span>
+						</br><span class="<?php echo $row["TrabId"];?>">Descripcion: <?php echo $row["Descripcion"];?></span>
+					</p>
+				</div>
+
+			<?php
 					}
 			}
 			else {

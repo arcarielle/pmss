@@ -1,5 +1,4 @@
 <?php
-
         session_start();  
         $users_empre = $_POST['empresa'];
         $users_nom = $_POST['nombre'];
@@ -9,19 +8,19 @@
         $users_dire = $_POST['direccion'];
         $users_descrip = $_POST['descripcion'];
 
-            require('../components/dbconn.inc.php');
+        require('../components/dbconn.inc.php');
 
-            $sql = "UPDATE empleadores SET Empresa='$users_empre', Representante='$users_nom',
-            Correo='{$users_correo}',Contra='{$users_contra}',Telefono='{$users_tele}',Direccion='{$users_dire}',
-			Descripcion='{$users_descrip}' WHERE Correo = '{$_SESSION['email']}';";
-        
-            if ($conn->query($sql) === TRUE) {
-                echo "<script>alert('Cuenta Actualizada Exitosamente')</script>";
-                header("Location: ../index.php");
-                
-            } else {
-                echo "Error: " . $sql . "<br>" . $conn->error;
-            }
+        $sql = "UPDATE empleadores SET Empresa='$users_empre', Representante='$users_nom',
+        Correo='{$users_correo}',Contra='{$users_contra}',Telefono='{$users_tele}',Direccion='{$users_dire}',
+        Descripcion='{$users_descrip}' WHERE Correo = '{$_SESSION['email']}';";
+    
+        if ($conn->query($sql) === TRUE) {
+            echo "<script>alert('Cuenta Actualizada Exitosamente')</script>";
+            header("Location: ../index.php");
+            
+        } else {
+            echo "Error: " . $sql . "<br>" . $conn->error;
+        }
 
-            $conn->close();
+        $conn->close();
 ?>
