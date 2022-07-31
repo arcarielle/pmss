@@ -31,3 +31,7 @@ $("#main_container").click(function(event) {
     const text = document.getElementById(event.target.className).innerHTML;
     document.getElementById("span_muestra").innerHTML=text;
 });
+
+$(document).ready(function() {
+  $(".dropdown-toggle").dropdown();
+});
