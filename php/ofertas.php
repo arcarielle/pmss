@@ -7,14 +7,14 @@
 	<?php include('../components/navbar.inc.php'); ?>
 	<?php include('../components/btnhandler.inc.php'); ?>
 
-        <div id="zoom" class="zoom" style="position:absolute;border:3px solid #73AD21;left: 20px;right:20px;background-color:#D1D1D1;z-index:1;font-size: 20px;">
+        <div id="zoom" class="zoom">
             <span id="span_muestra"></span>
             <button onclick="hide('zoom')" class="btn btn-primary">Cerrar</button>
         </div>
 
         <h2 style="text-align:center;margin:5px;"><a id="subs">Ofertas para Empresas (Busco Contratar)</h2>
 
-		<nav class="navbar navbar-expand-lg" style="background-color: #D1D1D1; top:10px; 
+		<nav class="subnav navbar navbar-expand-lg" style="background-color: #D1D1D1; top:10px; 
 			width:80%;margin: 5px auto;border: 2px outset gray;">
 			<div class="container-fluid">
 			<form method="post" action="ofertas_filtro.php">

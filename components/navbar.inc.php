@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg" style="background-color: #D1D1D1;border: 2px outset gray;">
+<nav class="navmain navbar navbar-expand-lg" style="background-color: #D1D1D1;border: 2px outset gray;">
 	<div class="container-fluid">
 		<a class="navbar-brand" href="/pmss/index.php">
 			<h2>Agencia Migrante</h2>
@@ -7,7 +7,7 @@
 			<span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse" id="navbarNavDropdown">
-			<ul class="navbar-nav" style= "position: absolute;right: 5px;">
+			<ul class="navbar-nav" style= "position: absolute;right: 5px;z-index:2;">
 
                 <li class="nav-item" id="signin"> 
                 <button class="btn btn-primary">

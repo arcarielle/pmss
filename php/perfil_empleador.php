@@ -27,6 +27,7 @@
 						$users_descrip = $row['Descripcion'];
 			?>
 				<div class="g-col-6">
+				<h2 style="text-align:center;"><a id="subs">Mi información</h2>
 					<form class="row g-3" action="actualizar_empleador.php" method="post">
 
 						<div class="col-md-8">
@@ -151,7 +152,8 @@
 						</div>
 
 						<div class="col-12">
-							<button type="submit" class="btn btn-primary">Actualizar</button>
+							<button type="submit" name="actualizar" class="btn btn-primary">Actualizar</button>
+							<button type="submit" name="eliminar" class="btn btn-primary">Eliminar</button>
 						</div>
 						
 					</form>
@@ -207,18 +209,19 @@
 					</div>
 
 					<div class="col-12">
-						<button type="submit" class="btn btn-primary">Aregar</button>
+						<button type="submit" class="btn btn-primary">Agregar</button>
 					</div>
 					
 				</form>
+				
+			<button class="btn btn-primary">
+				<a class="nav-link" href="/pmss/index.php">Inicio</a>
+			</button>
 			</div>
 
 			<?php
 			$conn->close();
 			?>
 
-			<button class="btn btn-primary">
-				<a class="nav-link" href="/pmss/index.php">Inicio</a>
-			</button>
 			
 	<?php include('../components/footer.inc.php'); ?>
