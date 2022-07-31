@@ -20,10 +20,14 @@ function hide(id){
 
 function show(id){
   document.getElementById(id).style.display="block";
+  
+}
+
+function show_zoom(){
+  document.getElementById('zoom').style.display="block";
 }
 
 $("#main_container").click(function(event) {
     const text = document.getElementById(event.target.className).innerHTML;
     document.getElementById("span_muestra").innerHTML=text;
-
 });

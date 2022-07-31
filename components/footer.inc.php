@@ -1,8 +1,9 @@
+
+		<div class="pseudo"></div>
+
 		<footer class="bg-light text-center text-white" 
 			style="bottom:0; width:100%;">
-			
-
-			
+		
 			<div class="container p-4 pb-0">
 				<!-- Section: Social media -->
 				<section class="mb-4">

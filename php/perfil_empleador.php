@@ -162,10 +162,63 @@
 			else {
 				echo "<h2 style='width:auto;'>No hay proyectos</h2>";
 			}
+
+			require('../components/dbconn.inc.php');
+
+			?>
+
+			<h2 style="text-align:center;width: 50%;"><a id="subs">Proyecto Nuevo</h2>
+			<div class="g-col-6">
+				<form class="row g-3" action="nuevo_proyecto_empleador.php" method="post">
+				
+					<div class="col-md-3">
+						<label for="validationDefault02" class="form-label">Oficio</label>
+						<select id="validationDefault02" name="oficio_new" class="form-select" required>
+							<option value="Oficio" selected>Oficio</option>
+							<option value="Albanileria">Albañilería</option>
+							<option value="Barbero">Barbería</option>
+							<option value="Carpinteria">Carpintería</option>
+							<option value="Electricista">Electricista</option>
+							<option value="Estilista">Estilista</option>
+							<option value="Herrero">Herrería</option>
+							<option value="Limpieza">Limpieza</option>
+							<option value="Mecanico">Mecánico</option>
+							<option value="Obrero">Obrero</option>
+							<option value="Panadero">Panadero</option>
+							<option value="Plomeria">Plomería</option>
+						</select>
+					</div>
+
+					<div class="col-md-3">
+						<label for="validationDefault03" class="form-label">Experiencia</label>
+						<select id="validationDefault03" name="experiencia_new" class="form-select" required>
+							<option value="Experiencia" selected>Experiencia</option>
+							<option value="Menos de un anio">Menos de un año</option>
+							<option value="Un anio o mas">Un año o más</option>
+							<option value="Mas de tres anios">Más de tres años</option>
+						</select>
+					</div>
+	
+					<div class="col-md-9">
+						<label for="textareadescrip" class="form-label">Descripción de  Trabajo</label>
+						<textarea class="form-control" name="descripcion_new"  
+							aria-label="With textarea" id="textareadescrip" required>
+						</textarea>
+					</div>
+
+					<div class="col-12">
+						<button type="submit" class="btn btn-primary">Aregar</button>
+					</div>
+					
+				</form>
+			</div>
+
+			<?php
 			$conn->close();
 			?>
 
-				<button class="btn btn-primary">
-					<a class="nav-link" href="/pmss/index.php">Inicio</a>
-                </button>
+			<button class="btn btn-primary">
+				<a class="nav-link" href="/pmss/index.php">Inicio</a>
+			</button>
+			
 	<?php include('../components/footer.inc.php'); ?>

@@ -4,11 +4,11 @@
 	<?php include('../components/navbar.inc.php'); ?>
 	<?php include('../components/btnhandler.inc.php'); ?>
 
-		<div class="grid" style="--bs-gap: .25rem 1rem;--bs-columns:12;">
-			
+	<div class="grid" style="--bs-gap: .25rem 1rem;--bs-columns:12;">		
 		<div class="g-col-6">
 			<h2 style="text-align:center;"><a id="subs">Suscripción de Empleado (Busco Trabajo)</h2>
-<form class="row g-3" action="./registro_empleado_02.php" method="post">			
+
+		<form class="row g-3" action="/pmss/php/registro_empleado.php" method="post">			
 				<div class="col-md-4">
 					<label for="validationDefault01" class="form-label">Nombre</label>
 					<input type="text" name="nombre" class="form-control" id="validationDefault01" value="Marco" required>
@@ -76,6 +76,12 @@
 					</div> 
                 </div>
 
+				<div class="col-md-7">
+					<label for="validationDefault10" class="form-label">Verificación Contraseña</label>
+					<input type="password" name="passwordver"class="form-control" id="validationDefault10" aria-describedby="passwordHelpVer" required>
+                    <div id="passwordHelpVer" class="form-text"></div> 
+                </div>
+
 				<div class="col-10">
 					<label for="validationDefault04" class="form-label">Dirección</label>
 					<input type="text" name="direccion" class="form-control" id="validationDefault04" placeholder="Av. del Charro" required>
@@ -86,12 +92,56 @@
 					<textarea class="form-control" name="descripcion" aria-label="With textarea" id="textareadescrip" required></textarea>
 				  </div>
 
-
-
 				<div class="col-12">
-					<button type="submit" class="btn btn-primary">Registarse</button>
+					<button type="submit" name="registrarse" class="btn btn-primary">Registarse</button>
 				</div>
-			</form>
-		</div>
+		</form>
 	</div>
+</div>
 	<?php include('../components/footer.inc.php'); ?>
+
+	<?php
+		if(isset($_POST['registrarse'])){  
+
+            $users_nom = $_POST['nombre'];
+            $users_ape = $_POST['apellido'];
+            $users_sex = $_POST['sexo'];
+            $users_correo = $_POST['correo'];
+            $users_contra = $_POST['password'];
+			$users_contraver = $_POST['passwordver'];
+            $users_tele = $_POST['telefono'];
+            $users_dire = $_POST['direccion'];
+            $users_descrip = $_POST['descripcion'];
+            $users_ofi = $_POST['oficio'];
+            $users_exp = $_POST['experiencia'];
+
+            require('../components/dbconn.inc.php');
+			
+			$check_email_query="SELECT * from `empleados` WHERE Correo = '{$users_correo}';";  
+
+			$run_query=mysqli_query($conn,$check_email_query);  
+		
+			if(mysqli_num_rows($run_query)>0){  
+				echo "<script>alert('El correo: .$users_correo. ya existe, elige uno distinto')</script>";  
+				exit();  
+			}  
+
+            $sql = "INSERT INTO empleados (Nombre, Apellido, Sexo, Correo, Contra , Telefono, Direccion, Descripcion, Oficio, Experiencia) 
+                VALUES ('$users_nom', '$users_ape', '$users_sex', '$users_correo', '$users_contra','$users_tele','$users_dire', '$users_descrip','$users_ofi', '$users_exp');";
+        
+			if(strcmp($users_contra, $users_contraver) == 0){
+				if ($conn->query($sql) === TRUE) {
+					echo "<script> alert('Cuenta registrada Exitosamente');
+					window.open('/pmss/index.php','_self'); </script>";
+
+				} else {
+					echo "Error: " . $sql . "<br>" . $conn->error;
+				}
+			}
+			else{
+				echo "<script>alert('La verificacion de contraseñas no coincide')</script>";			
+				exit();
+			}
+            $conn->close();
+		}
+	?>

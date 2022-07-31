@@ -1,16 +1,18 @@
 <?php include('../components/headreg.inc.php'); ?>
 
 <body onload="hide('zoom')">
+
+	<div class=”container”>
+
 	<?php include('../components/navbar.inc.php'); ?>
 	<?php include('../components/btnhandler.inc.php'); ?>
 
         <div id="zoom" class="zoom" style="position:absolute;border:3px solid #73AD21;left: 20px;right:20px;background-color:#D1D1D1;z-index:1;font-size: 20px;">
-            
             <span id="span_muestra"></span>
             <button onclick="hide('zoom')" class="btn btn-primary">Cerrar</button>
         </div>
 
-        <h2 style="text-align:center;margin:5px;"><a id="subs">Ofertas de Empleados (Busco Contratar)</h2>
+        <h2 style="text-align:center;margin:5px;"><a id="subs">Ofertas para Empresas (Busco Contratar)</h2>
 
 		<nav class="navbar navbar-expand-lg" style="background-color: #D1D1D1; top:10px; 
 			width:80%;margin: 5px auto;border: 2px outset gray;">
@@ -46,7 +48,7 @@
 			</div>
 		</nav>
 
-		<div class="flex-container" id="main_container">
+		<div class="container" id="main_container">
 
 			<?php include('../components/dbconn.inc.php');
 			
@@ -82,5 +84,6 @@
 			$conn->close();
 			?>
             </div>
-
+		
+		</div>
 		<?php include('../components/footer.inc.php'); ?>

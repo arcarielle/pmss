@@ -1,5 +1,6 @@
 <?php include('../components/headreg.inc.php'); ?>
 <body onload="hide('zoom')">
+<div class=”container”>
 	<?php include('../components/navbar.inc.php'); ?>
 	<?php include('../components/btnhandler.inc.php'); ?>
 
@@ -8,7 +9,7 @@
             <button onclick="hide('zoom')" class="btn btn-primary">Cerrar</button>
         </div>
 
-        <h2 style="text-align:center;margin:5px;"><a id="subs">Ofertas de Empleadores (Busco Trabajo)</h2>
+        <h2 style="text-align:center;margin:5px;"><a id="subs">Ofertas de Trabajo (Busco Trabajo)</h2>
 
 		<nav class="navbar navbar-expand-lg" style="background-color: #D1D1D1; top:10px; 
 			width:80%;margin: 5px auto;border: 2px outset gray;">
@@ -44,14 +45,14 @@
 			</div>
 		</nav>
 
-		<div class="flex-container" id="main_container">
+		<div class="container" id="main_container">
 
 			<?php 
 			include('../components/dbconn.inc.php');
 
 			$sql="SELECT emp.id, emp.Empresa, emp.Representante, emp.Correo, emp.Contra, emp.Telefono,
                 emp.Direccion, emp.Descripcion, trab.Oficio as 'Oficio', trab.Experiencia as 'Experiencia', 
-                trab.Descripcion as 'DescripcionTrab' 
+                trab.Descripcion as 'DescripcionTrab', trab.id_main as 'TrabId' 
                 FROM `empleadores` emp, `trabajos_empleadores` trab 
                 WHERE emp.id = trab.id;";
 
@@ -61,20 +62,20 @@
 				// output data of each row
 				while($row = $result->fetch_assoc()) {
                     $x = rand(1,6);
-					echo "<div class='elem' id='".$row["id"]."' onclick='show_zoom()'>
-                    <p class='".$row["id"]."'>
-					<img class='".$row["id"]."' src='/pmss/assets/img/php/pere".$x.".JPG'/>  
-					<span>Id:<span id='id' class='".$row["id"]."'>". $row["id"]. 
-					" </span></span></br><span>Empresa: <span id= 'empresa' class='".$row["id"]."' >". $row["Empresa"]. 
-					" </span></span></br><span>Oficio: <span id='oficio'class='".$row["id"]."'>" . $row["Oficio"].   
-					" </span></span></br><span>Experiencia: <span id='experiencia'class='".$row["id"]."'>" . $row["Experiencia"]. 
+					echo "<div class='elem' id='".$row["TrabId"]."' onclick='show_zoom()'>
+                    <p class='".$row["TrabId"]."'>
+					<img class='".$row["TrabId"]."' src='/pmss/assets/img/php/pere".$x.".JPG'/>  
+					<span>Id:<span id='id' class='".$row["TrabId"]."'>". $row["id"]. 
+					" </span></span></br><span>Empresa: <span id= 'empresa' class='".$row["TrabId"]."' >". $row["Empresa"]. 
+					" </span></span></br><span>Oficio: <span id='oficio'class='".$row["TrabId"]."'>" . $row["Oficio"].   
+					" </span></span></br><span>Experiencia: <span id='experiencia'class='".$row["TrabId"]."'>" . $row["Experiencia"]. 
 					" </span></span></br><span>Descripcion Trabajo: <span id='descripcion-trab'class='".$row["id"]."'>" . $row["DescripcionTrab"].
 					// " </span></span></br><span>Contra:<span id='contra'class='".$row["id"]."'>" . $row["Contra"] .
-					" </span></span></br><span>Telefono: <span id='telefono'class='".$row["id"]."'>" . $row["Telefono"] .
-                    " </span></span></br><span>Representante: <span id ='representante' class='".$row["id"]."'>" . $row["Representante"] .
-					" </span></span></br><span>Correo: <span id='correo'class='".$row["id"]."'>" . $row["Correo"]. 
-                    " </span></span></br><span>Direccion: <span id='direccion'class='".$row["id"]."'>" . $row["Direccion"]. 
-					" </span></span></br><span>Descripcion: <span id='descripcion'class='".$row["id"]."'>" . $row["Descripcion"].
+					" </span></span></br><span>Telefono: <span id='telefono'class='".$row["TrabId"]."'>" . $row["Telefono"] .
+                    " </span></span></br><span>Representante: <span id ='representante' class='".$row["TrabId"]."'>" . $row["Representante"] .
+					" </span></span></br><span>Correo: <span id='correo'class='".$row["TrabId"]."'>" . $row["Correo"]. 
+                    " </span></span></br><span>Direccion: <span id='direccion'class='".$row["TrabId"]."'>" . $row["Direccion"]. 
+					" </span></span></br><span>Descripcion: <span id='descripcion'class='".$row["TrabId"]."'>" . $row["Descripcion"].
 					" </span></span></p></div>";
 					}
 			}
@@ -85,5 +86,7 @@
 			$conn->close();
 			?>
         </div>
+
+		</div>
 
 		<?php include('../components/footer.inc.php'); ?>

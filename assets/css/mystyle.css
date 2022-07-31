@@ -5,6 +5,7 @@
 p,ul{
 	padding:5px;
 	background-color:#D1D1D1;
+    overflow-x: hidden;
 
 } 
 a{
@@ -34,21 +35,24 @@ body {
   background-attachment: fixed;
   background-size: cover;
   overflow-x: hidden;
+  display:flex; 
+  flex-direction:column;
 }
 
-
 .elem{
-	font-family:courier;
+	/* font-family:courier; */
 	width: 31%;
+    height: 40%;
 	/* flex: 31%; */
 	float: left;
 	padding: 15px;
 	/* border: 1px solid red; */
-	max-height: 40%;
+	
 
-	overflow-y: hidden;
-    /* white-space: nowrap;*/
+	/* overflow-y: hidden; */
+    white-space: nowrap;
     /* text-overflow: ellipsis;  */
+    /* overflow-x: hidden; */
 }
 
 .elem:hover{
@@ -57,19 +61,13 @@ body {
 }
 
  .flex-container{
-	flex-direction: row;
-	text-align: center; 
+    display: flex;
+	/* flex-direction: row; */
+	/* text-align: center;  */
     margin: 5px auto;
+    justify-content: center;
+    align-items: baseline;
  }  
-
-.pop{
-    display:flex;
-    gap: 40px 30px;
-    align-items:baseline;
-    align-content:stretch;
-    justify-content:center;
-    flex-wrap: wrap;
-}
 
 .contenedorBotones{
 	display:flex;
@@ -111,18 +109,27 @@ select{
     font-size: 20px;
 }
 
+.pseudo{
+    content: '';
+    display: block;
+    height: 50px;
+}
+
+footer {
+    /* position: static;
+    bottom: 0px;
+    left:0px;
+    width: 100%; */
+    margin-top:auto;
+}
+
 @media only screen and (max-width: 768px) {
 /* For mobile phones: */
 [class*="elem"] {
-    width: 100%;
+    width: 46%;
 }}
-
-
-
-/* #id, #nombre, #apellido,
- #oficio, #experiencia, #correo,
-  #telefono, #direccion, #sexo, #descripcion,
-   #empresa,#descripcion-trab,#representante{
-    font-size: 17px;
-} */
-
+@media only screen and (max-width: 500px) {
+    /* For mobile phones: */
+    [class*="elem"] {
+        width: 98%;
+    }}

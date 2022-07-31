@@ -3,7 +3,7 @@
 <?php include('components/btnhandler.inc.php'); ?>
 
     <section class ="Description">
-        <div class="flex-container " id="main_container">
+        <div class="container " id="main_container">
             <div>
                 <p id="text1">Hermanos Americanos es un proyecto que nace de la necesidad de ofrecerle trabajo 
                     a nuestros hermnaos latinoamericanos que se encuentran en calidad de migrantes en nuestra
@@ -29,13 +29,13 @@
 
                 <div class="botonesPrincipales"> 
                     <a class="nav-link active" aria-current="page" href="php/ofertas.php">
-                        <h1>Solo ver ofertas empleados</h1>
+                        <h1>Ofertas para Empresas</h1>
                     </a>	
                 </div>
 
                 <div class="botonesPrincipales"> 
                     <a class="nav-link active" aria-current="page" href="php/ofertas_empleadores.php">
-                        <h1>Solo ver ofertas  empleadores</h1>
+                        <h1>Ofertas de Trabajo</h1>
                     </a>	
                 </div>
 
