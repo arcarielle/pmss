@@ -61,7 +61,6 @@
 					
 				<div class="elem" id="<?php echo $row["TrabId"];?>" onclick="show_zoom()">
 					<p class="<?php echo $row["TrabId"];?>">
-						<img class="<?php echo $row["TrabId"];?>" src='/pmss/assets/img/php/pere<?php echo $x;?>.JPG'/> 
 						<span id="id" class="<?php echo $row["TrabId"];?>">Id: <?php echo $row["TrabId"];?> </span>
 						</br><span class="<?php echo $row["TrabId"];?>">Empresa: <?php echo $row["Empresa"];?></span>
 						</br><span class="<?php echo $row["TrabId"];?>">Oficio: <?php echo $row["Oficio"];?></span>

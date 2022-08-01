@@ -44,7 +44,6 @@
 
 				<div class="elem" id="<?php echo $row["id"];?>" onclick="show_zoom()">
 					<p class="<?php echo $row["id"];?>">
-						<img class="<?php echo $row["id"];?>" src='/pmss/assets/img/php/pere<?php echo $x;?>.JPG'/> 
 						<span id="id" class="<?php echo $row["id"];?>">Id: <?php echo $row["id"];?> </span>
 						</br><span class="<?php echo $row["id"];?>">Nombre: <?php echo $row["Nombre"];?></span>
 						</br><span class="<?php echo $row["id"];?>">Apellido: <?php echo $row["Apellido"];?></span>
