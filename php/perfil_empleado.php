@@ -1,5 +1,4 @@
 <?php include('../components/headreg.inc.php'); ?>
-
 <body>
 	<?php include('../components/navbar.inc.php'); ?>
 	<?php include('../components/btnhandler.inc.php'); ?>
@@ -12,8 +11,6 @@
             $result = $conn->query($check_user);
 
 			if ($result->num_rows > 0) {
-
-				// while($row = $result->fetch_assoc()) {
 
 					$row = $result->fetch_assoc();
 

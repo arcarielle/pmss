@@ -3,6 +3,9 @@
 		<a class="navbar-brand" href="/pmss/index.php">
 			<h2>Agencia Migrante</h2>
 		</a>
+		<a class="navbar-brand" href="/pmss/assets/img/escudo_uacj.png">
+			<img src="/pmss/assets/img/escudo_uacj.png" alt="UACJ" width="150px">
+		</a>
 		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
