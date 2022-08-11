@@ -39,22 +39,22 @@
                         Aplicantes
                     </a>
                 </li>
-                <li>
+                <!-- <li>
                     <hr class="dropdown-divider">
                 </li>
                 <li>
                     <a class="dropdown-item" href="#">
                         Something else here
                     </a>
-                </li>
+                </li> -->
             </ul>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
             <a href="#" class="nav-link px-2 text-white-50">Pricing</a>
         </li>
         <li class="nav-item">
             <a href="#" class="nav-link px-2 text-white-50">FAQs</a>
-        </li>
+        </li> -->
         <li class="nav-item">
             <a href="#" class="nav-link px-2 text-white-50">Acerca De</a>
         </li>

@@ -4,7 +4,7 @@
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <meta http-equiv="x-ua-compatible" content="ie=edge" />
-        <title>Impulso Migrante - Tu portal para encontrar empleo</title>
+        <title>Agencia Migrante - Tu portal para encontrar empleo</title>
         <!-- Icon -->
         <link rel="icon" href="/pmss/assets/img/favicon.ico" type="image/x-icon">
         <!-- Framework -->
@@ -26,3 +26,11 @@
         <script src="/pmss/assets/js/moment.min.js" defer></script>
         <script src="/pmss/assets/js/popper.min.js" defer></script>
     </head>
+    <body>
+        <div>
+            <input type="text" name="dates" id="dates">
+        </div>
+        <script>
+            $('input[name="dates"]').daterangepicker();
+        </script>
+    </body>

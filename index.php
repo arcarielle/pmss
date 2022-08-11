@@ -12,7 +12,7 @@
                         <div class="row">
                             
                             <div class="col-12">
-                                <h1 class="lh-base text-light">Bienvenido a este portal para buscar empleo !</h1>
+                                <h1 class="lh-base text-light">Bienvenido a Impulso Migrante !</h1>
                                 <h3 class="fw-lighter text-light">Indícanos lo que quieres hacer</h2>
                             </div>
                         </div>
@@ -30,7 +30,7 @@
                         </div>
                         <div class="p-1 row">
                             <div class="d-grid gap-2 col-12">
-                                <button class="btn btn-outline-secondary border border-light border-opacity-50 border border-2 text-start text-light" type="button">Quiero registrarme para aplicar a ofertas de empleo ></button>
+                                <button class="btn btn-outline-secondary border border-light border-opacity-50 border border-2 text-start text-light" type="button" onclick="location.href='/pmss/php/registroAplicante.php'">Quiero registrarme para aplicar a ofertas de empleo ></button>
                             </div>
                         </div>
                         <div class="p-1 row">

@@ -18,3 +18,11 @@ mask-image: -webkit-linear-gradient(to left, transparent 25%, black 75%);
 .container{
     height: 200px;
 }
+
+.registroAplicante{
+    background: linear-gradient(45deg, rgb(255, 108, 152), rgb(255, 230, 85, 1) 100%)
+}
+
+.registroContratador{
+    background: linear-gradient(45deg, rgb(90, 128, 252), rgb(85, 255, 156, 1) 100%)
+}
