@@ -55,7 +55,7 @@
 
                                 <div class="col-md-9 mb-3">
                                     <label>Domicilio de la empresa<span class="text-danger"> *</span></label>
-                                    <input type="text" name="address" class="form-control" placeholder="Escribe tu dirección . . ." required>
+                                    <input type="text" name="address" class="form-control" placeholder="Escribe aquí la dirección . . ." required>
                                 </div>
                                 <div class="col-md-3">
                                     <label>Telefono<span class="text-danger"> *</span></label>
