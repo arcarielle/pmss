@@ -2,20 +2,9 @@
     include_once '../components/head.inc.php';
 ?>
 <body class="registroAplicante">
-    <header>
-        <nav class="navbar bg-dark">
-            <div class="container-fluid justify-content-start">
-                <span class="navbar-brand mb-2 h1">
-                    <a class="navbar-brand text-light" href="/pmss/index.php">
-                        Agencia Migrante
-                    </a>
-                </span>
-                <span class="nav-item mb-1 h6">
-                <a class="nav-link active text-white-50" aria-current="page" href="/pmss/index.php">Inicio</a>
-                </span>
-            </div>
-        </nav>
-    </header>
+    <?php
+        include_once '../components/headerreg.inc.php';
+    ?>
     <div class="vh-100">
         <div class="container justify-content-center">
             <div class="row">
