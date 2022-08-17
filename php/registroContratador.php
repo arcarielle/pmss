@@ -57,59 +57,69 @@
                                     </div>
                                     <p class="form-text ms-2 fw-light mb-1">Incluir LADA.</p>
                                 </div>
-                                
+                                <!-- Contacto #1 -->
+                                <div>
+                                    <hr style="border: 1px solid black">
+                                </div>
                                 <div class="col-md-12 mb-1">
                                     Contacto #1 <span class="text-danger"> *</span>
                                 </div>
 
                                 <div class="mb-3 col-md-6">
-                                    <label>Nombre(s)<span class="text-danger"> *</span></label>
-                                    <input type="text" name="nombre" class="form-control" placeholder="Escribe el nombre (o nombres) . . ." required>
+                                    <label>Nombre<span class="text-danger"> *</span></label>
+                                    <input type="text" name="nombre" class="form-control" id="namecont1" placeholder="Escribe el nombre (o nombres) . . ." required>
                                 </div>
         
                                 <div class="mb-3 col-md-6">
                                     <label>Apellidos<span class="text-danger"> *</span></label>
-                                    <input type="text" name="apellido" class="form-control" placeholder="Escribe los apellidos (o único apellido) . . ." required>
+                                    <input type="text" name="apellido" class="form-control" id="surncont1" placeholder="Escribe los apellidos (o único apellido) . . ." required>
                                 </div>
 
                                 <div class="mb-2 col-md-8">
                                     <label for="email">Correo electrónico<span class="text-danger"> *</span></label>
-                                    <input type="email" name="email" id="email" class="form-control" placeholder="Escribe el correo . . ." required>
+                                    <input type="email" name="email" id="emailcont1" class="form-control" placeholder="Escribe el correo . . ." required>
                                 </div>
                                 <div class="col-md-4 mb-1">
                                     <div>
                                         <label>Horario (de preferencia)</label>
-                                        <input class="mt-1" type="time" id="schedule" name="schedule" min="09:00" max="18:00">
+                                        <input class="mt-1" type="time" id="schedule" name="schdcont1" min="09:00" max="18:00">
                                     </div>
                                     <p class="form-text fw-light mb-1">Puede teclear o dar clic en el reloj.</p>
                                 </div>
+                                <div>
+                                    <hr style="border: 1px solid gray">
+                                </div>
                                 <!--Contacto 2-->
                                 <div class="col-md-12 mb-1">
-                                    Contacto #2 (si quiere agregar alguno más)
+                                    Contacto #2 (si quiere agregar uno más)
                                 </div>
 
                                 <div class="mb-3 col-md-6">
-                                    <label>Nombre(s)</label>
-                                    <input type="text" name="nombre" class="form-control" placeholder="Escribe el nombre (o nombres) . . .">
+                                    <label>Nombre</label>
+                                    <input type="text" name="nombre" class="form-control" id="namecont2" placeholder="Escribe el nombre (o nombres) . . .">
                                 </div>
         
                                 <div class="mb-3 col-md-6">
                                     <label>Apellidos</label>
-                                    <input type="text" name="apellido" class="form-control" placeholder="Escribe los apellidos (o único apellido) . . .">
+                                    <input type="text" name="apellido" class="form-control" id="surncont2" placeholder="Escribe los apellidos (o único apellido) . . .">
                                 </div>
 
                                 <div class="mb-3 col-md-8">
                                     <label for="email">Correo electrónico</label>
-                                    <input type="email" name="email" id="email" class="form-control" placeholder="Escribe el correo . . .">
+                                    <input type="email" name="email" id="emailcont2" class="form-control" placeholder="Escribe el correo . . .">
                                 </div>
                                 <div class="col-md-4 mb-3">
                                     <div>
                                         <label>Horario (de preferencia)</label>
-                                        <input class="mt-1" type="time" id="schedule" name="schedule" min="09:00" max="18:00">
+                                        <input class="mt-1" type="time" id="schdcont2" name="schedule" min="09:00" max="18:00">
                                     </div>
                                     <p class="form-text fw-light mb-1">Puede teclear o dar clic en el reloj.</p>
                                 </div>
-                                
+
+                                <div>
+                                    <hr style="border: 1px solid black">
+                                </div>
+
                                 <div class="col-md-12 mb-4">
                                     <label for="description">Descripción del trabajo o la empresa(que busca/necesita que se realice, de que trata)<span class="text-danger"> *</span></label>
                                     <div class="form-floating mt-1">
