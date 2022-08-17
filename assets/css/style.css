@@ -15,12 +15,9 @@ mask-image: -webkit-linear-gradient(to left, transparent 25%, black 75%);
     color: white;
 }
 
-.controlCont{
-    background-color: limegreen
-}
-
-.container{
-    height: 200px;
+.hrsep{
+    border: 10px solid rgba(29, 29, 29, 0.397);
+    border-radius: 5px;
 }
 
 .registroAplicante{

@@ -10,8 +10,7 @@
                 <div class="container vh-100">
                     <div class="container d-flex flex-column justify-content-center align-items-start">
                         <div class="row">
-                            
-                            <div class="col-12">
+                            <div class="col-12 mt-5">
                                 <h1 class="lh-base text-light">Bienvenido a Impulso Migrante !</h1>
                                 <h3 class="fw-lighter text-light">Indícanos lo que quieres hacer</h2>
                             </div>
