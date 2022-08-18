@@ -1,10 +1,10 @@
 <nav class="navmain navbar navbar-expand-lg" style="background-color: #D1D1D1;border: 2px outset gray;">
 	<div class="container-fluid">
-		<a class="navbar-brand" href="/pmss/index.php">
-			<h2>Agencia Migrante</h2>
-		</a>
 		<a class="navbar-brand" href="/pmss/assets/img/escudo_uacj.png">
 			<img src="/pmss/assets/img/escudo_uacj.png" alt="UACJ" width="150px">
+		</a>
+		<a class="navbar-brand" href="/pmss/index.php">
+			<h2>Agencia Migrante</h2>
 		</a>
 		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
