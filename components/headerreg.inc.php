@@ -2,9 +2,9 @@
     <header>
         <nav class="navbar bg-dark">
             <div class="container-fluid justify-content-start">
-                <span class="navbar-brand mb-2 h1">
-                    <a class="navbar-brand text-light" href="/pmss/index.php">
-                        Impulso Migrante
+                <span class="navbar-brand w-25">
+                    <a class="navbar-brand" href="/pmss/index.php">
+                        <img class="img-fluid" src="/pmss/assets/img/logo.png">
                     </a>
                 </span>
                 <span class="nav-item mb-1 h6">

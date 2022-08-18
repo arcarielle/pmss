@@ -9,16 +9,16 @@
             <div class="container justify-content-center">
                 <div class="row" >
                     <div class="col-md-12 justify-content-start">
-                        <h1 class="text-light mb-2 mt-4">Hola!</h1>
+                        <h1 class="text-light mb-2 mt-4">Hola !</h1>
                         <div class="col-md-12">
-                            <p class="fs-4 text-light">Bienvenido al portal</p>
+                            <p class="fs-5 text-light">En esta sección puedes administrar tus puestos disponibles, mensajear con aplicantes y modificar tu información.</p>
                         </div>
                         <!--<span class="fw-light" id="namecont"></span>!-->
                     </div>
                     <div class="col-md-12">
                         <div class="card border border-danger shadow mb-4">
                             <div class="card-header text-danger bg-dark bg-opacity-10">
-                                <i class="fa-solid fa-bell"></i> Notificaciones (<span id="notifs" class="text-danger">0</span>)
+                            <i class="fa-solid fa-bell"></i> Notificaciones (<span id="notifs" class="text-danger">0</span>)
                             </div>
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item text-secondary">No tienes ninguna notificación nueva.</li>
@@ -26,12 +26,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        
-        <div class="container-fluid bg-dark p-3">
-            <div class="container border border border-opacity-10" style="border-radius: 5px;">
-                <h6 class="text-white mt-1 text-center">En esta sección puedes administrar tus puestos disponibles, mensajear con aplicantes y modificar tu información.</h6>                
             </div>
         </div>
 
@@ -42,7 +36,7 @@
                         Selecciona la acción que deseas realizar.
                     </h6>
                 </div>
-                <div class="col-md-12 border-top">
+                <div class="col-md-12 border-top border-bottom">
                     <nav class="nav nav-fill">
                         <a class="nav-link" aria-current="page" href="#"><i class="fa-solid fa-user-plus"></i> Añadir empleo</a>
                         <a class="nav-link" href="#"><i class="fa-solid fa-user-gear"></i> Modificar empleo</a>
@@ -53,8 +47,8 @@
                 </div>
             </div>
         </div>
-        <div class="container-fluid bg-dark py-3">
-            <div class="container-fluid bg-white">
+        <div class="container-fluid bg-dark ps-4 pe-4">
+            <div class="vh-100 container-fluid bg-white">
 
             </div>
         </div>
