@@ -1,0 +1,29 @@
+.landing{
+    background-image: url("../img/xjuarez.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top top;
+    
+}
+    /* background: linear-gradient(45deg, rgba(29,236,197,0.7), rgba(91, 14, 214, 0.7) 100%); 
+    
+mask-image: -webkit-linear-gradient(to left, transparent 25%, black 75%);
+
+    style="background-color: rgba(0,0,0,0.8)
+    */
+.portalinicio{
+    color: white;
+}
+
+.hrsep{
+    border: 10px solid rgba(29, 29, 29, 0.397);
+    border-radius: 5px;
+}
+
+.registroAplicante{
+    background: linear-gradient(45deg, rgb(255, 108, 152), rgb(255, 230, 85, 1) 100%)
+}
+
+.registroContratador{
+    background: linear-gradient(45deg, rgb(90, 128, 252), rgb(85, 255, 156, 1) 100%)
+}
