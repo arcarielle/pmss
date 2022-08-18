@@ -25,4 +25,5 @@
         <script src="/pmss/assets/js/daterangepicker.min.js" defer></script>
         <script src="/pmss/assets/js/moment.min.js" defer></script>
         <script src="/pmss/assets/js/popper.min.js" defer></script>
+        <script type="text/javascript" src="/pmss/assets/js/impmig.js" defer></script>
     </head>

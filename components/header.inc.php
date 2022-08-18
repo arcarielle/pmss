@@ -10,7 +10,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item ">
-                        <a class="nav-link active text-white-50" aria-current="page" href="#">Inicio</a>
+                        <a class="nav-link active text-white-50" aria-current="page" href="/pmss/index.php">Inicio</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-white-50" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -18,7 +18,7 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a class="dropdown-item" href="#">
+                                <a class="dropdown-item" href="/pmss/php/ofertasEmpleo.php">
                                     Empleos
                                 </a>
                             </li>
@@ -26,7 +26,7 @@
                                 <hr class="dropdown-divider">
                             </li>
                             <li>
-                                <a class="dropdown-item" href="#">
+                                <a class="dropdown-item" href="/pmss/php/perfilesAplicantes.php">
                                     Aplicantes
                                 </a>
                             </li>
@@ -64,10 +64,10 @@
                 else{ ?>
                     <div class="btn-group" role="group" aria-label="register-login">
                         <button type="button" class="btn btn-outline-success" onclick="location.href='/pmss/php/registroAplicante.php'">
-                            Registrarse
+                            <i class="fa-solid fa-pen-to-square"></i> Registrarse
                         </button>
-                        <button type="button" class="btn btn-success" onclick="location.href='/pmss/php/registroAplicante.php'">
-                            Iniciar Sesión
+                        <button type="button" class="btn btn-success" onclick="location.href='/pmss/php/inicioSesion.php'">
+                            Iniciar Sesión <i class="fa-solid fa-arrow-right-to-bracket"></i>
                         </button>
                     </div>
                 <?php } 
