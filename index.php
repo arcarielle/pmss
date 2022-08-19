@@ -23,16 +23,16 @@
                     </div>
                     <div class="container d-flex flex-column align-items-start position-absolute bottom-0">
                         <div class="p-1 row">
-                            <div class="d-grid gap-2 col-12">
-                                <button class="btn btn-outline-secondary border border-light border-opacity-50 border border-2 text-start text-light" type="button" onclick="location.href='/pmss/php/controlAplicante.php'">Solo quiero ver ofertas de empleo ></button>
+                            <div class="d-grid gap-2 col-12 p-1">
+                                <button class="btn btn-outline-secondary border border-light border-opacity-50 border border-2 text-start text-light" type="button" onclick="location.href='/pmss/php/controlAplicante.php'">Solo quiero ver ofertas de empleo <i class="fa-solid fa-arrow-right"></i></button>
                             </div>
                         </div>
                         <div class="p-1 row">
-                            <div class="d-grid gap-2 col-12">
-                                <button class="btn btn-outline-secondary border border-light border-opacity-50 border border-2 text-start text-light" type="button" onclick="location.href='/pmss/php/controlContratador.php'">Solo quiero ver perfiles de personas buscando empleo ></button>
+                            <div class="d-grid gap-2 col-12 p-1">
+                                <button class="btn btn-outline-secondary border border-light border-opacity-50 border border-2 text-start text-light" type="button" onclick="location.href='/pmss/php/controlContratador.php'">Solo quiero ver perfiles de personas buscando empleo <i class="fa-solid fa-arrow-right"></i></i></button>
                             </div>
                         </div>
-                        <div class="p-1 row">
+                        <!-- <div class="p-1 row">
                             <div class="d-grid gap-2 col-12">
                                 <button class="btn btn-outline-secondary border border-light border-opacity-50 border border-2 text-start text-light" type="button" onclick="location.href='/pmss/php/registroAplicante.php'">Quiero registrarme para aplicar a ofertas de empleo ></button>
                             </div>
@@ -41,7 +41,7 @@
                             <div class="d-grid gap-2 col-12">
                                 <button class="btn btn-outline-secondary border border-light border-opacity-50 border border-2 text-start text-light" type="button" onclick="location.href='/pmss/php/registroContratador.php'">Quiero registrar mi empresa para publicar puestos y/o contratar empleados ></button>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>

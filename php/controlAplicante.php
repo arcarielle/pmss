@@ -11,7 +11,7 @@
                 <div class="col-md-12 justify-content-start mb-5">
                     <h1 class="text-light mb-2 mt-4">Hola!</h1>
                     <div class="col-md-12">
-                        <p class="fs-4 text-light">Bienvenido al portal de administración</p>
+                        <p class="fs-4 text-light">Bienvenido al portal de administración.</p>
                     </div>
                 </div>
                 <div class="col-md-12 mb-3">
@@ -49,10 +49,10 @@
             </nav>
         </div>
     </div>
-
+    <div class="">
     <div class="container-fluid" id="mensajeria"></div>
     <div class="container-fluid" id="miInformacionA" style="background-image: linear-gradient( 135deg, #81FBB8 10%, #28C76F 100%);"></div>
-
+    </div>
     <?php
         include_once '../components/footer.inc.php';
     ?>

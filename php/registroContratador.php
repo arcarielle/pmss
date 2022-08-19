@@ -132,7 +132,7 @@
                                     <p class="fs-6 text-danger">Toda la información marcada con un asterisco (*) es obligatoria.</h6>
                                 </div>
                                 <div class="col-md-4">
-                                    <button class="btn btn-primary float-end">Registrarse</button>
+                                    <button class="btn btn-primary float-end"><i class="fa-solid fa-pen-to-square"></i> Registrarse</button>
                                 </div>
                             </div>
                         </form>

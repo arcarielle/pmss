@@ -109,7 +109,7 @@ background: linear-gradient(to right, #71B280, #134E5E); /* W3C, IE 10+/ Edge, F
         <input type="checkbox" value="remember-me"> Recuérdame
       </label>
     </div>
-    <button class="w-100 btn btn-lg btn-primary" type="submit">Entrar</button>
+    <button class="w-100 btn btn-lg text-gray" style="background-color: rgb(255, 240, 165)" type="submit">Entrar</button>
     <p class="mt-5 mb-3 text-muted">&copy; Impulso Migrante 2022</p>
   </form>
 </main>
