@@ -5,7 +5,6 @@
     <?php
         include_once '../components/header.inc.php';
     ?>
-    <div class="">
         <div style="background-color: rgb(156, 0, 0)">
             <div class="container justify-content-center">
                 <div class="row" >
@@ -44,7 +43,7 @@
             </div>
             <div class="col-md-12 border-top border-bottom">
                 <nav class="nav nav-fill"><a name="administracion"></a>
-                    <a class="nav-link" aria-current="page" onclick="añadirEmpleo()" href="#administracion"><i class="fa-solid fa-user-plus"></i> Añadir empleo</a>
+                    <a class="nav-link" onclick="añadirEmpleo()" href="#administracion"><i class="fa-solid fa-user-plus"></i> Añadir empleo</a>
                     <a class="nav-link" onclick="modificarEmpleo()" href="#administracion"><i class="fa-solid fa-user-gear"></i> Modificar empleo</a>
                     <a class="nav-link" onclick="eliminarEmpleo()" href="#administracion"><i class="fa-solid fa-user-minus"></i> Eliminar empleo</a>
                     <a class="nav-link" onclick="mensajeria()" href="#administracion"><i class="fa-brands fa-rocketchat"></i> Mensajería</a>
@@ -52,20 +51,13 @@
                 </nav>
             </div>
         </div>
-
         
-        <div class="container-fluid border-top py-2" style="background-color: rgb(0, 84, 68)">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12" id="añadirEmpleo"></div>
-                    <div id="modificarEmpleo"></a></div>
-                    <div id="eliminarEmpleo"></a></div>
-                    <div id="mensajeria"></div>
-                    <div id="miInformacionC"></div>
-                </div>
-            </div>
-        </div>
-    </div>
+        <div class="container-fluid" id="añadirEmpleo" style="background-image: linear-gradient( 135deg, #FCCF31 10%, #F55555 100%);"></div>
+        <div class="container-fluid" id="modificarEmpleo" style="background-image: linear-gradient( 135deg, #ABDCFF 10%, #0396FF 100%)"></div>
+        <div class="container-fluid" id="eliminarEmpleo"></div>
+        <div class="container-fluid" id="mensajeria"></div>
+        <div class="container-fluid" id="miInformacionC"></div>
+
 
     <?php
         include_once '../components/footer.inc.php';
