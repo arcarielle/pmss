@@ -12,12 +12,12 @@
                         <div class="row">
                             <div class="col-12 mt-5">
                                 <h1 class="lh-base text-light">Bienvenido a Impulso Migrante !</h1>
-                                <h4 class="fw-lighter text-light">
+                                <h5 class="fw-lighter text-light">
                                     La Universidad Autónoma de Ciudad Juárez preocupada por la migración en nuestra ciudad, implementa un proyecto de servicio social, por medio del portal denominado IMPULSO MIGRANTE el cual es una iniciativa de bolsa de trabajo para los hermanos migrantes que buscan una oportunidad laboral en su estancia migratoria mientras resuelven su situación de asilo en los Estados Unidos de América. 
-                                </h4>
-                                <h4 class="fw-lighter text-light">
+                                </h5>
+                                <h5 class="fw-lighter text-light">
                                     En esta plataforma pueden encontrar una oferta de trabajo o bien cualquier empresa puede tener la oportunidad de promover sus ofertas laborales o personas físicas que requieran de algún apoyo semiprofesional. 
-                                </h4>
+                                </h5>
                             </div>
                         </div>
                     </div>

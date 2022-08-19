@@ -1,11 +1,3 @@
-<?php
-    include_once '../components/head.inc.php';
-?>
-<body class="registroContratador">
-    <?php
-        include_once '../components/headerreg.inc.php';
-    ?>
-    <div class="vh-100">
         <div class="container justify-content-center">
             <div class="row">
                 <div class="col-md-10 offset-md-1">
@@ -14,12 +6,7 @@
                             <h3 class="mb-2 text-secondary">Modifica tu información aquí</h4>
                             <h6 class="mb-4 text-black-50">Rellena toda la información solicitada.</h2>
                             <div class="row">
-                                <!-- <div class="mb-3 col-md-6 input-group">
-                                    <span class="input-group-text bg-secondary" style="--bs-bg-opacity: .4">Nombre y apellido</span>
-                                    <input type="text" aria-label="First name" class="form-control" placeholder="Nombres">
-                                    <input type="text" aria-label="Last name" class="form-control" placeholder="Apellidos">
-                                </div> -->
-
+                                
                                 <div class="mb-3 col-md-6">
                                     <label>Nombre de la empresa<span class="text-danger"> *</span></label>
                                     <input type="text" name="nombre" class="form-control" placeholder="Escribe aquí el nombre . . ." required>
@@ -141,6 +128,3 @@
                 </div>
             </div>
         </div>
-    </div>
-</body>
-</html>

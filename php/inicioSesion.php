@@ -82,7 +82,10 @@
     </head>
     
 
-<body class="text-center container bg-success bg-opacity-50">
+<body class="text-center container" style="background: #134E5E;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #71B280, #134E5E);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #71B280, #134E5E); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+">
 
     <!-- Custom styles for this template -->
     <link href="/pmss/assets/css/signin.css" rel="stylesheet">
@@ -90,7 +93,7 @@
 <main class="form-signin w-100 m-auto">
   <form>
     <a href="/pmss/index.php"><img class="mb-4" src="/pmss/assets/img/logo.png" alt="" width="300" height="57"></a>
-    <h1 class="h3 mb-3 fw-normal">Inicio de Sesión</h1>
+    <h1 class="h3 mb-3 text-white fw-normal">Inicio de Sesión</h1>
 
     <div class="form-floating">
       <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
@@ -100,13 +103,13 @@
       <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
       <label for="floatingPassword">Contraseña</label>
     </div>
-
+    
     <div class="checkbox mb-3">
-      <label>
+      <label class="text-white">
         <input type="checkbox" value="remember-me"> Recuérdame
       </label>
     </div>
-    <button class="w-100 btn btn-lg btn-primary" type="submit">Iniciar Sesión</button>
+    <button class="w-100 btn btn-lg btn-primary" type="submit">Entrar</button>
     <p class="mt-5 mb-3 text-muted">&copy; Impulso Migrante 2022</p>
   </form>
 </main>

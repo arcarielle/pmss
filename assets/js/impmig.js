@@ -33,3 +33,8 @@ function miInformacionC(){
         $("#miInformacionC").load("/pmss/php/administracion/miInformacionC.php");
     });
 }
+function modSelReg(){
+    $(document).ready(function(){
+        $('#selRegistro').modal('show');
+        });
+    }

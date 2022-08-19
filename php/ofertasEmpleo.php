@@ -27,15 +27,15 @@
                     </div>
                 </div>
             </div>
-            <div class="container-fluid p-3 mask bg-dark bg-opacity-50">
-                <div class="container ">
-                    <h6 class="text-white mt-1 text-center">Usa la barra de búsqueda para facilitar el encontrar un empleo adecuado para tí.</h6>                
+            <div class="container-fluid p-3 mask bg-dark bg-opacity-50 rounded-3">
+                <div class="container">
+                    <h6 class="text-white mt-1 text-center">Usa la barra de búsqueda para facilitar el encontrar un empleo adecuado para ti.</h6>                
                 </div>
             </div>
         </div>
 
             <<div class="container px-4 py-5" id="custom-cards">
-                <h1 class="pb-2 border-bottom text-dark">Lista de Empleos </h1>
+                <h1 class="pb-2 border-bottom fw-light text-dark">Lista de Empleos </h1>
 
                 <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
                     <div class="col">

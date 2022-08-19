@@ -63,7 +63,7 @@
                 }
                 else{ ?>
                     <div class="btn-group" role="group" aria-label="register-login">
-                        <button type="button" class="btn btn-outline-success" onclick="location.href='/pmss/php/registroAplicante.php'">
+                        <button type="button" class="btn btn-outline-success" onclick="location.href='/pmss/php/selRegistro.php'" data-bs-toggle="modal" data-bs-target="#exampleModal">
                             <i class="fa-solid fa-pen-to-square"></i> Registrarse
                         </button>
                         <button type="button" class="btn btn-success" onclick="location.href='/pmss/php/inicioSesion.php'">
