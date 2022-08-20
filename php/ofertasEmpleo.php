@@ -41,7 +41,7 @@
                     <div class="col">
                         <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('/pmss/assets/img/recepcionista.jpg'); background-size: cover;">
                         <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1 bg-dark bg-opacity-50">
-                            <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Recepcionista</h2>
+                            <h2 class="pt-5 mt-5 mb-4 display-7 lh-1 fw-bold">Recepcionista</h2>
                             <ul class="d-flex list-unstyled mt-auto">
                             <li class="me-auto">
                                 <img src="/pmss/assets/img/x.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">

@@ -6,7 +6,7 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge" />
         <title>Impulso Migrante - Tu portal para encontrar empleo</title>
         <!-- Icon -->
-        <link rel="icon" href="/pmss/assets/img/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/pmss/assets/img/x.png" type="image/x-icon">
         <!-- Framework -->
         <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous"> -->
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />

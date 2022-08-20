@@ -8,9 +8,9 @@
     <div class="landing">
             <div class="mask" style="background-color: rgba(0,0,0,0.67);">
                 <div class="container vh-100">
-                    <div class="container d-flex flex-column justify-content-center align-items-start">
+                    <div class="col-md-12 d-flex flex-column justify-content-center align-items-start">
                         <div class="row">
-                            <div class="col-12 mt-5">
+                            <div class="col-12-md mt-5">
                                 <h1 class="lh-base text-light">Bienvenido a Impulso Migrante !</h1>
                                 <h5 class="fw-lighter text-light">
                                     La Universidad Autónoma de Ciudad Juárez preocupada por la migración en nuestra ciudad, implementa un proyecto de servicio social, por medio del portal denominado IMPULSO MIGRANTE el cual es una iniciativa de bolsa de trabajo para los hermanos migrantes que buscan una oportunidad laboral en su estancia migratoria mientras resuelven su situación de asilo en los Estados Unidos de América. 
@@ -21,15 +21,15 @@
                             </div>
                         </div>
                     </div>
-                    <div class="container d-flex flex-column align-items-start position-absolute bottom-0">
+                    <div class="mt-3 col-md-12 d-flex flex-column align-items-start bottom-0">
                         <div class="p-1 row">
-                            <div class="d-grid gap-2 col-12 p-1">
+                            <div class="d-grid gap-2 col-12-md p-1">
                                 <button class="btn btn-outline-secondary border border-light border-opacity-50 border border-2 text-start text-light" type="button" onclick="location.href='/pmss/php/controlAplicante.php'">Solo quiero ver ofertas de empleo <i class="fa-solid fa-arrow-right"></i></button>
                             </div>
                         </div>
                         <div class="p-1 row">
-                            <div class="d-grid gap-2 col-12 p-1">
-                                <button class="btn btn-outline-secondary border border-light border-opacity-50 border border-2 text-start text-light" type="button" onclick="location.href='/pmss/php/controlContratador.php'">Solo quiero ver perfiles de personas buscando empleo <i class="fa-solid fa-arrow-right"></i></i></button>
+                            <div class="d-grid gap-2 col-12-md p-1">
+                                <button class="btn btn-outline-secondary border border-light border-opacity-50 border border-2 text-start text-light" type="button" onclick="location.href='/pmss/php/controlContratador.php'">Solo quiero ver perfiles de personas ofreciendo sus servicios <i class="fa-solid fa-arrow-right"></i></i></button>
                             </div>
                         </div>
                         <!-- <div class="p-1 row">
