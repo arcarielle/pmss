@@ -1,9 +1,13 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-        <meta http-equiv="x-ua-compatible" content="ie=edge" />
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
         <title>Impulso Migrante - Tu portal para encontrar empleo</title>
         <!-- Icon -->
         <link rel="icon" href="/pmss/assets/img/x.png" type="image/x-icon">
@@ -26,4 +30,5 @@
         <script src="/pmss/assets/js/moment.min.js" defer></script>
         <script src="/pmss/assets/js/popper.min.js" defer></script>
         <script type="text/javascript" src="/pmss/assets/js/impmig.js" defer></script>
+        <script type="text/javascript" src="/pmss/assets/js/functions.js" defer></script>
     </head>

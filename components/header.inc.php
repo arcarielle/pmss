@@ -40,24 +40,59 @@
                             </li> -->
                         </ul>
                     </li>
-                    <!-- <li class="nav-item">
-                        <a class="nav-link disabled text-white-50">
-                            Deshabilitao
+
+                    <!-- <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white-50" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Perfiles
                         </a>
-                    </li> -->
-                </ul>
-                <?php if( isset($_SESSION['username']) && !empty($_SESSION['username']) )
-                {
-                ?>
-                    <div class="btn-group" role="group">
-                        <button type="button" class="btn btn-secondary text-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                            Perfil
-                        </button>
-                        <ul class="dropdown-menu bg-secondary">
-                            <li><a class="dropdown-item" href="#">Mi Información</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">Cerrar Sesión</a></li>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a class="dropdown-item" href="/pmss/php/controlAplicante.php">
+                                    <i class="fa-solid fa-suitcase"></i>  
+                                        Perfil para Migrante 
+                                </a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="/pmss/php/controlContratador.php">
+                                    <i class="fa-solid fa-address-book"></i>  
+                                        Perfil para Empleador
+                                </a>
+                            </li>
                         </ul>
+                    </li> -->
+
+                </ul>
+                <?php
+                 if(isset($_SESSION['userid'])){
+                ?>
+                
+                    <div class="btn-group" role="group" aria-label="register-login">
+                <?php
+                    if($_SESSION["userType"]=="migrante"){
+                ?>
+                        <button type="button" onclick="window.location.href='/pmss/php/controlAplicante.php';" class="btn btn-outline-success">
+                            <i class="fa-solid fa-pen-to-square"></i> 
+                            Perfil Migrante
+                        </button>
+                <?php
+                        }
+                    else if($_SESSION["userType"]=="empleador"){
+                ?>
+                        <button type="button" onclick="window.location.href='/pmss/php/controlContratador.php';" class="btn btn-outline-success">
+                            <i class="fa-solid fa-pen-to-square"></i> 
+                            Perfil Empleador
+                        </button>
+                <?php
+                        }
+                ?>
+
+                        <button type="button" onclick="window.location.href='/pmss/assets/includes/logout.inc.php';" class="btn btn-success" onclick="" href="/pmss/assets/includes/logout.inc.php">
+                            Cerrar Sesión
+                            <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                        </button>
                     </div>
                 <?php 
                 }
@@ -66,12 +101,13 @@
                         <button type="button" class="btn btn-outline-success"  data-bs-toggle="modal" data-bs-target="#selRegistro">
                             <i class="fa-solid fa-pen-to-square"></i> Registrarse
                         </button>
-                        <button type="button" class="btn btn-success" onclick="location.href='/pmss/php/inicioSesion.php'">
+                        <button type="button" onclick="window.location.href='/pmss/php/inicioSesion.php';" class="btn btn-success">
                             Iniciar Sesión <i class="fa-solid fa-arrow-right-to-bracket"></i>
                         </button>
                     </div>
                 <?php } 
                 ?>
+
                 <div class="modal fade" id="selRegistro" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
@@ -93,12 +129,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success">
-                        
-                    </button>
-                </form> -->
             </div>
         </div>
     </nav>

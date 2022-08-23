@@ -9,10 +9,40 @@
         <div class="container justify-content-center">
             <div class="row" >
                 <div class="col-md-12 justify-content-start mb-5">
-                    <h1 class="text-light mb-2 mt-4">Hola!</h1>
-                    <div class="col-md-12">
-                        <p class="fs-4 text-light">Bienvenido al portal de administración.</p>
-                    </div>
+                    <!-- <h1 class="text-light mb-2 mt-4">Hola!</h1> -->
+                    <?php
+                        if(!isset($_GET["error"])){
+                    ?>
+                            <h1 class="text-light mb-2 mt-4">Hola!</h1>
+                            <div class="col-md-12">
+                                <p class="fs-4 text-light">Bienvenido al portal de administración.</p>
+                            </div>
+                    <?php
+                        }
+                        else{
+                    ?>
+                        <h1 class="text-light mb-2 mt-4">Error</h1>
+                    
+                    <?php
+                        if(isset($_GET["error"])){
+                            if($_GET["error"] == "stmtfailed"){
+                                echo "<h2 class='fs-12 text-danger'>Algo salió mal</h2>";
+                            }
+                            else if($_GET["error"] == "pwdsdontmatch"){
+                                echo "<h2 class='fs-12 text-danger'>Contraseñas no coinciden</h2>";
+                            }
+                            else if($_GET["error"] == "alrdyexists"){
+                                echo "<h2 class='fs-12 text-danger'>Ya existe una cuenta con este correo</h2>";
+                            }
+                            else if($_GET["error"] == "eresMig"){
+                                echo "<h2 class='fs-12 text-danger'>Iniciaste sesión con una cuenta tipo migrante, inicia sesión como empleador para agregar una oferta</h2>";
+                            }
+                            else if($_GET["error"] == "none"){
+                                echo "<h2 class='fs-12 text-success'>Registro exitoso, inicia sesión volviendo al inicio</h2>";
+                            }
+                        }
+                        }
+                    ?>
                 </div>
                 <div class="col-md-12 mb-3">
                     <div class="card border border-danger shadow mb-4">

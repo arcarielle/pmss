@@ -10,15 +10,27 @@
             <div class="row">
                 <div class="col-md-10 offset-md-1">
                     <div class="signup-form">
-                        <form action="" class="mt-5 border p-4 bg-light shadow">
+                        <form action="/pmss/assets/includes/signup_migrante.inc.php" method="post" class="mt-5 border p-4 bg-light shadow">
                             <h3 class="mb-2 text-secondary">Crea tu cuenta para Aplicar</h4>
+                            <?php
+                                if(isset($_GET["error"])){
+                                    if($_GET["error"] == "stmtfailed"){
+                                        echo "<h2 class='fs-12 text-danger'>Algo salió mal</h2>";
+                                    }
+                                    else if($_GET["error"] == "pwdsdontmatch"){
+                                        echo "<h2 class='fs-12 text-danger'>Contraseñas no coinciden</h2>";
+                                    }
+                                    else if($_GET["error"] == "alrdyexists"){
+                                        echo "<h2 class='fs-12 text-danger'>Ya existe una cuenta con este correo</h2>";
+                                    }
+                                    else if($_GET["error"] == "none"){
+                                        echo "<h2 class='fs-12 text-success'>Registro exitoso, inicia sesión volviendo al inicio</h2>";
+                                    }
+                                }
+                             ?>
                             <h6 class="mb-4 text-black-50">Rellena toda la información solicitada.</h2>
+                             
                             <div class="row">
-                                <!-- <div class="mb-3 col-md-6 input-group">
-                                    <span class="input-group-text bg-secondary" style="--bs-bg-opacity: .4">Nombre y apellido</span>
-                                    <input type="text" aria-label="First name" class="form-control" placeholder="Nombres">
-                                    <input type="text" aria-label="Last name" class="form-control" placeholder="Apellidos">
-                                </div> -->
 
                                 <div class="mb-3 col-md-6">
                                     <label>Nombre(s)<span class="text-danger"> *</span></label>
@@ -42,33 +54,22 @@
                                     Tu contraseña debe ser de entre 8 y 20 caracteres, contener letras y numeros, sin espacios ni caracteres especiales. 
                                 </div>
 
-                                <!-- <div class="col-md-12" id="pwdHelp">
-                                    <p class="ms-2">
-                                        <small class="fw-lighter lh-sm text-black-50">
-                                            Tu contraseña debe contener por lo menos un numero y un signo para ser más segura
-                                        </small>
-                                    </p>
-                                </div> -->
-
                                 <div class="mb-3 col-md-8">
                                     <label for="email">Correo electrónico<span class="text-danger"> *</span></label>
                                     <input type="email" name="email" id="email" class="form-control" placeholder="Escribe tu correo . . ." required>
                                 </div>
-                                <!-- <div class="mb-3 col-md-5">
-                                    <label>Sexo<span class="text-danger"> *</span></label>
-                                    <input type="password" name="confPwd" class="form-control" placeholder="Escribir contraseña nuevamente">
-                                </div> -->
+                                
                                 <div class="mb-3 col-md-4">
                                     <label>Sexo<span class="text-danger"> *</span></label>
                                     <div class="hstack mt-2">
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="sex" id="sex1" required>
+                                            <input class="form-check-input" type="radio" name="sex" id="sex1" value="Hombre" required>
                                             <label class="form-check-label" for="sex1">
                                                 Hombre
                                             </label>
                                         </div>
                                         <div class="form-check ms-3">
-                                            <input class="form-check-input" type="radio" name="sex" id="sex2" required>
+                                            <input class="form-check-input" type="radio" name="sex" id="sex2" value="Mujer" required>
                                             <label class="form-check-label" for="sex2">
                                                 Mujer
                                             </label>
@@ -80,37 +81,32 @@
                                     <label>Conocimiento de Español<span class="text-danger"> *</span></label>
                                     <div class="hstack mt-2">
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="lang" id="lang1" required>
+                                            <input class="form-check-input" type="radio" name="lang" id="lang1" value="Nada" required>
                                             <label class="form-check-label" for="lang1">
                                                 Nada
                                             </label>
                                         </div>
                                         <div class="form-check ms-3">
-                                            <input class="form-check-input" type="radio" name="lang" id="lang2" required>
+                                            <input class="form-check-input" type="radio" name="lang" id="lang2" value="Poco" required>
                                             <label class="form-check-label" for="lang2">
                                                 Poco
                                             </label>
                                         </div>
                                         <div class="form-check ms-3">
-                                            <input class="form-check-input" type="radio" name="lang" id="lang3" required>
+                                            <input class="form-check-input" type="radio" name="lang" id="lang3" value="Regular" required>
                                             <label class="form-check-label" for="lang3">
                                                 Regular
                                             </label>
                                         </div>
                                         <div class="form-check ms-3">
-                                            <input class="form-check-input" type="radio" name="lang" id="lang4" required>
+                                            <input class="form-check-input" type="radio" name="lang" id="lang4" value="Muy Bueno" required>
                                             <label class="form-check-label" for="lang4">
                                                 Muy bueno
                                             </label>
                                         </div>
                                     </div>
-                                    <!-- <div class="btn-group btn-group-toggle" role="group" aria-label="lenguaje">
-                                        <button type="button" class="btn btn-secondary">Nada</button>
-                                        <button type="button" class="btn btn-secondary">Poco</button>
-                                        <button type="button" class="btn btn-secondary">Regular</button>
-                                        <button type="button" class="btn btn-secondary">Muy bueno</button>
-                                    </div> -->
                                 </div>
+                                
                                 <div class="col-md-4">
                                     <label>Fecha de nacimiento<span class="text-danger"> *</span></label>
                                     <div class="input-group">
@@ -121,11 +117,12 @@
                                     </div>
                                     <p class="form-text ms-2 fw-light mb-1">Toca para seleccionar una fecha.</p>
                                 </div>
+
                                 <div class="col-md-3">
                                     <label>Telefono<span class="text-danger"> *</span></label>
                                     <div class="input-group">
                                         <span class="input-group-text bg-secondary" style="--bs-bg-opacity: 0.3" id="lada">+</span>
-                                        <input type="tel" name="phone" id="phone" class="form-control" placeholder="Número" minlength="9" maxlength="12" required>
+                                        <input type="tel" name="phone" id="phone" class="form-control" placeholder="Número" minlength="9" maxlength="13" required>
                                             <span class="input-group-text d-block">
                                                 <i class="fa fa-phone"></i>
                                             </span>
@@ -140,7 +137,7 @@
                                 
                                 <div class="col-md-6 mb-3">
                                     <label>Oficio (en el que se ha desempeñado)<span class="text-danger"> *</span></label>
-                                    <select class="form-select" aria-label="job" required>                                        
+                                    <select class="form-select" name="oficio1" aria-label="job" required>                                        
                                         <option selected disabled>Abre este menu de selección</option>
                                         <option value="Albañilería">Albañilería</option>
                                         <option value="Recepcionista">Recepcionista</option>
@@ -155,17 +152,17 @@
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <label>Experiencia del oficio<span class="text-danger"> *</span></label>
-                                    <select class="form-select" aria-label="exp1" required>
+                                    <select class="form-select" name="oficio1-exp" aria-label="exp1" required>
                                         <option selected disabled>Abre este menu de selección</option>
-                                        <option value="1 o menos">Menos de un año</option>
-                                        <option value="2 a 5">2 a 5 años</option>
-                                        <option value="5 o mas">5 años o más</option>
+                                        <option value="Menos de un año">Menos de un año</option>
+                                        <option value="2 a 5 años">2 a 5 años</option>
+                                        <option value="5 años o más">5 años o más</option>
                                     </select>
                                 </div>
                                 <div class="col-md-6">
-                                    <label>Oficio (en el que se ha desempeñado)</label>
-                                    <select class="form-select" aria-label="job" required>                                        
-                                        <option selected disabled>Abre este menu de selección</option>
+                                    <label>Oficio #2 (en el que se ha desempeñado)</label>
+                                    <select class="form-select" name="oficio2" aria-label="job" required>                                        
+                                        <option selected value="def">Abre este menu de selección</option>
                                         <option value="Albañilería">Albañilería</option>
                                         <option value="Recepcionista">Recepcionista</option>
                                         <option value="Barbería">Barbería</option>
@@ -179,21 +176,21 @@
                                 </div>
                                 <div class="col-md-6">
                                     <label>Experiencia del oficio</label>
-                                    <select class="form-select" aria-label="exp1" required>
-                                        <option selected disabled>Abre este menu de selección</option>
-                                        <option value="1 o menos">Menos de un año</option>
-                                        <option value="2 a 5">2 a 5 años</option>
-                                        <option value="5 o mas">5 años o más</option>
+                                    <select class="form-select" name="oficio2-exp" aria-label="exp1" required>
+                                        <option selected value="def">Abre este menu de selección</option>
+                                        <option value="Menos de un año">Menos de un año</option>
+                                        <option value="2 a 5 años">2 a 5 años</option>
+                                        <option value="5 años o más">5 años o más</option>
                                     </select>
                                 </div>
                                 <div class="mb-3 col-md-12 form-text fw-light ms-2" id="pwdHelp">
-                                    Puede escoger más de un oficio.
+                                    Puede escoger uno o dos oficios o profesiones.
                                 </div>
                                 
                                 <div class="col-md-12 mb-4">
                                     <label for="description">Descripción de ti (puede incluir otras habilidades u oficios desempeñados)</label>
                                     <div class="form-floating mt-1">
-                                        <textarea class="form-control" maxlength="330" placeholder="Pon tu descripción aquí" id="desc" style="height: 100px"></textarea>
+                                        <textarea class="form-control" name="description" maxlength="330" placeholder="Pon tu descripción aquí" id="desc" style="height: 100px"></textarea>
                                         <label for="floatingTextarea2">Descripción</label>
                                     </div>
                                 </div>
@@ -202,7 +199,7 @@
                                     <p class="fs-6 text-danger">Toda la información marcada con un asterisco (*) es obligatoria.</h6>
                                 </div>
                                 <div class="col-md-4">
-                                    <button class="btn btn-primary float-end"><i class="fa-solid fa-pen-to-square"></i> Registrarse</button>
+                                    <button type="submit" name="registrarse" class="btn btn-primary float-end"><i class="fa-solid fa-pen-to-square"></i> Registrarse</button>
                                 </div>
                             </div>
                         </form>

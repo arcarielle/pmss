@@ -15,11 +15,6 @@
         <link rel="stylesheet" href="/pmss/assets/css/style.css">
         <script src="/pmss/assets/js/bootstrap.bundle.js" defer></script>
         <script src="https://kit.fontawesome.com/de3c5b6510.js" crossorigin="anonymous" defer></script>
-        <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous" defer></script>
-        <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js" integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous" defer></script>
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js" defer></script>
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js" defer></script>
-        <script type="text/javascript" src="https://unpkg.com/@popperjs/core@2"></script> -->
         <script src="/pmss/assets/js/jquery-3.6.0.min.js" defer></script>
         <script src="/pmss/assets/js/jquery-ui.min.js" defer></script>
         <script src="/pmss/assets/js/daterangepicker.min.js" defer></script>
@@ -91,25 +86,36 @@ background: linear-gradient(to right, #71B280, #134E5E); /* W3C, IE 10+/ Edge, F
     <link href="/pmss/assets/css/signin.css" rel="stylesheet">
     
 <main class="form-signin w-100 m-auto">
-  <form>
+  <form action="/pmss/assets/includes/login.inc.php" method="post">
     <a href="/pmss/index.php"><img class="mb-4" src="/pmss/assets/img/logo.png" alt="" width="300" height="57"></a>
     <h1 class="h3 mb-3 text-white fw-normal">Inicio de Sesión</h1>
 
     <div class="form-floating">
-      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+      <input type="email" name="email" class="form-control" id="floatingInput" placeholder="name@example.com">
       <label for="floatingInput">Correo Electrónico</label>
     </div>
     <div class="form-floating">
-      <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+      <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Password">
       <label for="floatingPassword">Contraseña</label>
     </div>
-    
+    <div>
+    <?php
+      if(isset($_GET["error"])){
+          if($_GET["error"] == "pwdNoMatch"){
+              echo "<h2 class='fs-12 text-danger'>Contraseña Incorrecta</h2>";
+          }
+          else if($_GET["error"] == "notFound"){
+              echo "<h2 class='fs-12 text-danger'>No existe usuario con esta cuenta</h2>";
+          }
+      }
+    ?>
+    </div>
     <div class="checkbox mb-3">
       <label class="text-white">
         <input type="checkbox" value="remember-me"> Recuérdame
       </label>
     </div>
-    <button class="w-100 btn btn-lg text-light" style="background-color: rgb(27, 159, 71)" type="submit">Entrar</button>
+    <button class="w-100 btn btn-lg text-light" style="background-color: rgb(27, 159, 71)" name ="login" type="submit">Entrar</button>
     <p class="mt-5 mb-3 text-muted">&copy; Impulso Migrante 2022</p>
   </form>
 </main>

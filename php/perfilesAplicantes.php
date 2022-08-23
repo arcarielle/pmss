@@ -34,81 +34,78 @@
             </div>
         </div>
 
-            <<div class="container px-4 py-5" id="custom-cards">
+            <div class="container px-4 py-5" id="custom-cards">
                 <h1 class="pb-2 border-bottom text-dark">Lista de Aplicantes </h1>
 
                 <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
-                    <div class="col">
-                        <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('/pmss/assets/img/recepcionista.jpg'); background-size: cover;">
-                        <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1 bg-dark bg-opacity-50">
-                            <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Recepcionista</h2>
-                            <ul class="d-flex list-unstyled mt-auto">
-                            <li class="me-auto">
-                                <img src="/pmss/assets/img/x.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
-                            </li>
-                            <li class="d-flex align-items-center me-3">
-                                <i class="fa-solid fa-dollar-sign"></i>
-                                <small>&nbsp2,200</small>
-                            </li>
-                            <li class="d-flex align-items-center">
-                                <i class="fa-solid fa-calendar-days"></i>
-                                <small>&nbsp3d</small>
-                            </li>
-                            <li class="d-flex align-items-center ms-3">
-                                <button type="button" class="btn btn-outline-info">Aplicar</button>
-                            </li>
-                            </ul>
+                    <?php
+
+                        require_once '../assets/includes/dbh.inc.php';
+                        require_once '../assets/includes/functions.inc.php';
+
+                        $sql = "SELECT * FROM migrantes";
+
+                        $result = $conn->query($sql);
+
+                        if ($result->num_rows > 0) {
+                            while($row = $result->fetch_assoc()) {
+                                
+
+                        $str = $row["descripcion"];
+                        if (strlen($str) > 177) {
+                            $str = substr($str,0,178).'...';
+                        }
+
+
+                    ?>
+
+                    <div class="card" style="width: 18rem;margin:10px;">
+                        <div class="card-body">
+                            
+                            <h5 class="card-title"><?php echo $row["nombre"];?></h5>
+                            <p class="card-text"><?php echo $str;?></p>
+                        
+                            <h6 class="card-title"><?php echo $row["oficio1"];?></h6>
+                            <p class="card-text">Experiencia: <?php echo $row["oficio1_exp"];?></p>
+
+                    <?php
+                        if($row["oficio2"]!=="def"){
+                    ?>
+                        <h6 class="card-title"><?php echo $row["oficio2"];?></h6>
+                        <p class="card-text">Experiencia: <?php echo $row["oficio2_exp"];?></p>
+
+                    <?php
+                        }
+                    ?>
+
+                            <h6 class="card-title">Español</h6>
+                            <p class="card-text"><?php echo $row["lengua"];?></p>
+                            
+                            <h6 class="card-title">Teléfono</h6>
+                            <p class="card-text"><?php echo $row["telefono"];?></p>
+                            
+                            <h6 class="card-title">Domicilio</h6>
+                            <p class="card-text"><?php echo $row["domicilio"];?></p>
                         </div>
+                        <div class="card-body">
+                            <form action="/pmss/php/desplegarMigrante.php" method="post">
+                                <button type="submit" name="ver_mas" value="<?php echo $row["id_mig"];?>" class="btn btn-primary float-end">Ver mas</button>
+                            </form>
+                            <!-- <a href="#" class="card-link">Más Información</a> -->
+                            <!-- <a href="#" class="card-link">Another link</a> -->
                         </div>
                     </div>
 
-                    <div class="col">
-                        <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('/pmss/assets/img/jardineria.jpg'); background-size: cover; opacity: 0.9;">
-                        <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1 bg-dark bg-opacity-50">
-                            <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Jardinero</h2>
-                            <ul class="d-flex list-unstyled mt-auto">
-                            <li class="me-auto">
-                                <img src="/pmss/assets/img/x.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
-                            </li>
-                            <li class="d-flex align-items-center me-3">
-                            <i class="fa-solid fa-dollar-sign"></i>
-                                <small>&nbsp2,000</small>
-                            </li>
-                            <li class="d-flex align-items-center">
-                                <i class="fa-solid fa-calendar-days"></i>
-                                <small>&nbsp4d</small>
-                            </li>
-                            <li class="d-flex align-items-center ms-3">
-                                <button type="button" class="btn btn-outline-info">Aplicar</button>
-                            </li>
-                            </ul>
-                        </div>
-                        </div>
-                    </div>
-
-                    <div class="col">
-                        <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('/pmss/assets/img/cocinero.jpg'); background-size: cover;">
-                        <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1 bg-dark bg-opacity-50">
-                            <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Cocinero</h2>
-                            <ul class="d-flex list-unstyled mt-auto">
-                            <li class="me-auto">
-                                <img src="/pmss/assets/img/x.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
-                            </li>
-                            <li class="d-flex align-items-center me-3">
-                                <i class="fa-solid fa-dollar-sign"></i>
-                                <small>&nbsp2,300</small>
-                            </li>
-                            <li class="d-flex align-items-center">
-                                <i class="fa-solid fa-calendar-days"></i>
-                                <small>&nbsp5d</small>
-                            </li>
-                            <li class="d-flex align-items-center ms-3">
-                                <button type="button" class="btn btn-outline-info">Aplicar</button>
-                            </li>
-                            </ul>
-                        </div>
-                        </div>
-                    </div>
+                    <?php
+                        }
+                    }
+                    else {
+                        echo "0 users";
+                    }
+        
+                    $conn->close();
+                    ?>
+                    
                 </div>
             </div>
         
