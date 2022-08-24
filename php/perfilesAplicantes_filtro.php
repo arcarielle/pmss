@@ -15,6 +15,7 @@
                             <p class="fs-4 text-light">En esta sección puedes buscar los distintos aplicantes para poder contactar con ellos.</p>
                         </div>
                     </div>
+
                     <div class="col-md-12 my-5">
                         <section>
                             <div class="input-group p-3 mask bg-white bg-opacity-25"> 
@@ -81,7 +82,17 @@
                         require_once '../assets/includes/dbh.inc.php';
                         require_once '../assets/includes/functions.inc.php';
 
-                        $sql = "SELECT * FROM migrantes";
+                        if($users_of != 'Oficio' && $users_exp != 'Experiencia'){
+                            $sql="SELECT * FROM migrantes WHERE (oficio1 = '{$users_of}' and oficio1_exp = '{$users_exp}') or (oficio2 = '{$users_of}' and oficio2_exp = '{$users_exp}');";
+                        }
+                        elseif($users_of != 'Oficio'){
+                            $sql="SELECT * FROM migrantes WHERE (oficio1 = '{$users_of}') or (oficio2 = '{$users_of}');";
+                        }
+                        elseif($users_exp != 'Experiencia'){
+                            $sql="SELECT * FROM migrantes WHERE (oficio1_exp = '{$users_exp}') or (oficio2_exp = '{$users_exp}');";}
+                        else{
+                            $sql="SELECT * FROM migrantes;";
+                        }
 
                         $result = $conn->query($sql);
 

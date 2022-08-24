@@ -30,7 +30,6 @@
                 </div>
             </div>
 
-
         <nav class="navbar navbar-expand-lg" style="width:80%;margin:5px auto;border:2px outset gray;">
 			<div class="container-fluid">
 			<form method="post" action="ofertasEmpleo_filtro.php">
@@ -84,25 +83,47 @@
                     require_once '../assets/includes/dbh.inc.php';
                     require_once '../assets/includes/functions.inc.php';
 
-                    $sql="SELECT pro.id_empresa, pro.id_proyecto, pro.oficio, pro.experiencia, pro.sexo, pro.hora1, pro.hora2, pro.lengua,
-                        pro.tipo, pro.sueldo, pro.descripcion, 
-                        emp.empresa as 'Empresa', emp.giro as 'Giro', emp.correo as 'Correo',
-                        emp.direccion as 'Direccion', emp.telefono as 'Telefono', emp.giro as 'Giro'  
+                    $users_of = $_POST['oficio'];
+                    $users_exp = $_POST['experiencia'];
+
+                    if($users_of != 'Cualquiera' && $users_exp != 'Cualquiera'){
+
+                        $sql="SELECT pro.id_proyecto, pro.oficio, pro.experiencia, pro.hora1, pro.hora2, 
+                        pro.tipo, pro.sueldo,  
+                        emp.empresa as 'Empresa', emp.direccion as 'Direccion', emp.telefono as 'Telefono'  
+                        FROM `proyectos_empleadores` pro, `empleadores` emp 
+                        WHERE pro.id_empresa = emp.id_emp AND pro.oficio='{$users_of}' and pro.experiencia = '{$users_exp}';";
+
+                    }
+                    elseif($users_of != 'Cualquiera'){
+                    
+                        $sql="SELECT pro.id_proyecto, pro.oficio, pro.experiencia, pro.hora1, pro.hora2, 
+                        pro.tipo, pro.sueldo,  
+                        emp.empresa as 'Empresa', emp.direccion as 'Direccion', emp.telefono as 'Telefono'  
+                        FROM `proyectos_empleadores` pro, `empleadores` emp 
+                        WHERE pro.id_empresa = emp.id_emp AND pro.oficio='{$users_of}';";
+
+                    }
+                    elseif($users_exp != 'Cualquiera'){                        
+                        $sql="SELECT pro.id_proyecto, pro.oficio, pro.experiencia, pro.hora1, pro.hora2, 
+                        pro.tipo, pro.sueldo,  
+                        emp.empresa as 'Empresa', emp.direccion as 'Direccion', emp.telefono as 'Telefono'  
+                        FROM `proyectos_empleadores` pro, `empleadores` emp 
+                        WHERE pro.id_empresa = emp.id_emp AND pro.experiencia = '{$users_exp}';";
+                    }
+                    else{
+                        $sql="SELECT pro.id_proyecto, pro.oficio, pro.experiencia, pro.hora1, pro.hora2, 
+                        pro.tipo, pro.sueldo,  
+                        emp.empresa as 'Empresa', emp.direccion as 'Direccion', emp.telefono as 'Telefono'  
                         FROM `proyectos_empleadores` pro, `empleadores` emp 
                         WHERE pro.id_empresa = emp.id_emp;";
-
-
-                    // $var_test=filtro_empleadores();
+                    }
 
                     $result = $conn->query($sql);
 
                     if ($result->num_rows > 0) {
                         while($row = $result->fetch_assoc()) {
                             
-                        // $str = $row["descripcion"];
-                        // if (strlen($str) > 140) {
-                        //     $str = substr($str,0,141).'...';
-                        // }
                     ?>
 
                     <div class="card" style="width: 18rem;margin:10px;">
@@ -133,8 +154,6 @@
                         <form action="/pmss/php/desplegarEmpleador.php" method="post">
                             <button type="submit" name="ver_mas" value="<?php echo $row["id_proyecto"];?>" class="btn btn-primary float-end">Ver mas</button>
                         </form>
-                        <!-- <a href="#" class="card-link">Más Información</a> -->
-                        <!-- <a href="#" class="card-link">Another link</a> -->
                     </div>
                     </div>
 
@@ -149,23 +168,12 @@
                     ?>
 
                 </div>
-
-        <!-- Prueba -->
-        <!-- <button onclick="change('contenedor_cards', '<p><?php echo filtro_empleadores();?></p>')" class="btn btn-primary">Cambiar</button> -->
             </div>
         </div>
 
     <?php
         include_once '../components/footer.inc.php';
     ?>
-
-        <!-- <script>
-            function change(element, inner) {
-                document.getElementById(element).innerHTML = inner;
-            }
-            // var div = document.getElementById("dom-target");
-            // var myData = div.innerHTML;
-        </script> -->
 
 </body>
 </html>

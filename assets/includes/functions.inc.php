@@ -258,4 +258,52 @@ function login($conn, $users_correo, $users_contra){
 
 }
 
+
+
+
+// function filtro_empleadores(){
+    
+//     $servername = "localhost";
+//     $username = "root";
+//     $password = "";
+//     $dbname = "bdmigrantes2.0";
+ 
+//     $conn = new mysqli($servername, $username, $password, $dbname);
+//         if ($conn->connect_error) {
+//             die("Connection failed: " . $conn->connect_error);
+//     };
+
+//     $sql="SELECT pro.id_empresa, pro.id_proyecto, pro.oficio, pro.experiencia, pro.sexo, pro.hora1, pro.hora2, pro.lengua,
+//         pro.tipo, pro.sueldo, pro.descripcion, 
+//         emp.empresa as 'Empresa', emp.giro as 'Giro', emp.correo as 'Correo',
+//         emp.direccion as 'Direccion', emp.telefono as 'Telefono', emp.giro as 'Giro'  
+//         FROM `proyectos_empleadores` pro, `empleadores` emp 
+//         WHERE pro.id_empresa = emp.id_emp;";
+
+//     $result = $conn->query($sql);
+
+//     if ($result->num_rows > 0) {
+//         while($row = $result->fetch_assoc()) {
+
+//         echo "
+    
+//     <div class='card' style='width: 18rem;margin:10px;'>
+//         <div class='card-body'>
+            
+//             <h5 class='card-title'>".$row['Empresa']."</h5>
+
+//             <h6 class='card-title'>".$row['oficio']."</h6>
+//             <p class='card-text'>Experiencia: ".$row['experiencia']."</p>
+//         </div>
+//     </div>
+
+//         ";}
+//     }
+//     else {
+//     echo "0 users";
+//     }
+
+//     $conn->close();
+// }
+
 ?>
