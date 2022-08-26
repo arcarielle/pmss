@@ -46,15 +46,10 @@
                                     <!-- <input type="text" name="giro" class="form-control" placeholder="Escribe aquí el de que trata . . ." required> -->
                                     <select class="form-select" name="giro" aria-label="job" required>                                        
                                         <option selected disabled>Abre este menu de selección</option>
-                                        <option value="Albañilería">Albañilería</option>
-                                        <option value="Recepcionista">Recepcionista</option>
-                                        <option value="Barbería">Barbería</option>
-                                        <option value="Plomería">Plomería</option>
-                                        <option value="Electricista">Electricista</option>
-                                        <option value="Mecánica">Mecánica</option>
-                                        <option value="Limpieza">Limpieza</option>
-                                        <option value="Herrería">Herrería</option>
-                                        <option value="Carpintería">Carpintería</option>
+                                        <option value="Comercial">Comercial</option>
+                                        <option value="Industrial">Industrial</option>
+                                        <option value="Servicios">Servicios</option>
+                                        <option value="Servicios">Ninguno</option>
                                     </select>
                                 </div>
                                 

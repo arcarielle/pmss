@@ -96,34 +96,28 @@
                         </div>
 
                         <div class="col-md-5">
-                            <label>Conocimiento de Español (Actualmente: 
+                            <label>¿Sabes español? (Actualmente: 
                                 <?php
                                     echo $users_lang;  
                                 ?>    
                             )<span class="text-danger"> *</span></label>
                             <div class="hstack mt-2">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="lang" id="lang1" value="Nada" required>
+                                    <input class="form-check-input" type="radio" name="lang" id="lang1" value="Si" required>
                                     <label class="form-check-label" for="lang1">
-                                        Nada
+                                        Si 
                                     </label>
                                 </div>
                                 <div class="form-check ms-3">
-                                    <input class="form-check-input" type="radio" name="lang" id="lang2" value="Poco" required>
+                                    <input class="form-check-input" type="radio" name="lang" id="lang2" value="No" required>
                                     <label class="form-check-label" for="lang2">
-                                        Poco
+                                        No
                                     </label>
                                 </div>
                                 <div class="form-check ms-3">
-                                    <input class="form-check-input" type="radio" name="lang" id="lang3" value="Regular" required>
+                                    <input class="form-check-input" type="radio" name="lang" id="lang3" value="Al menos un poco" required>
                                     <label class="form-check-label" for="lang3">
-                                        Regular
-                                    </label>
-                                </div>
-                                <div class="form-check ms-3">
-                                    <input class="form-check-input" type="radio" name="lang" id="lang4" value="Muy Bueno" required>
-                                    <label class="form-check-label" for="lang4">
-                                        Muy bueno
+                                        Al menos un poco
                                     </label>
                                 </div>
                             </div>
@@ -159,20 +153,56 @@
                         </div>
                         
                         <div class="col-md-6 mb-3">
-                            <label>Oficio (en el que se ha desempeñado)<span class="text-danger"> *</span></label>
+                            <label>Oficio, Carrera Técnica o Profesión (en el que se ha desempeñado)<span class="text-danger"> *</span></label>
                             <select class="form-select" name="oficio1" aria-label="job" required>                                        
                                 <option selected value="<?php echo $users_ofi1; ?>"><?php echo $users_ofi1; ?></option>
-                                <option value="Albañilería">Albañilería</option>
-                                <option value="Recepcionista">Recepcionista</option>
-                                <option value="Barbería">Barbería</option>
-                                <option value="Plomería">Plomería</option>
-                                <option value="Electricista">Electricista</option>
-                                <option value="Mecánica">Mecánica</option>
-                                <option value="Limpieza">Limpieza</option>
-                                <option value="Herrería">Herrería</option>
-                                <option value="Carpintería">Carpintería</option>
+                                <optgroup label="Oficios">
+                                    <option value="Albañilería">Albañilería</option>
+                                    <option value="Barbería">Barbería</option>
+                                    <option value="Carpintería">Carpintería</option>
+                                    <option value="Cocina">Cocina</option>
+                                    <option value="Electricista">Electricista</option>
+                                    <option value="Herrería">Herrería</option>
+                                    <option value="Limpieza">Limpieza</option>
+                                    <option value="Mecánica">Mecánica</option>
+                                    <option value="Panadería">Panadería</option>
+                                    <option value="Plomería">Plomería</option>
+                                </optgroup>
+                                <optgroup label="Licencias Técnicas">
+                                    <option value="Técnico en Administración de Empresas">Técnico en Administración de Empresas</option>
+                                    <option value="Técnico en Computación e Informática">Técnico en Computación e Informática</option>
+                                    <option value="Técnico en Diseño Gráfico">Técnico en Diseño Gráfico</option>
+                                    <option value="Técnico en Electrónica Insutrial">Técnico en Electrónica Insutrial</option>
+                                    <option value="Técnico en Marketing">Técnico en Marketing</option>
+                                    <option value="Técnico en Mecatrónica">Técnico en Mecatrónica</option>
+                                    <option value="Técnico en Negocios Internacionales">Técnico en Negocios Internacionales</option>
+
+                                </optgroup>
+                                <optgroup label="Profesiones">
+                                        <optgroup label="Ingenierías">
+                                            <option value="Ing. Aeronáutica">Ing. Aeronáutica</option>
+                                            <option value="Ing. Agrónomo">Ing. Agrónomo</option>
+                                            <option value="Ing. Civil">Ing. Civil</option>
+                                            <option value="Ing. Eléctrica">Ing. Eléctrica</option>
+                                            <option value="Ing. Electrónica">Ing. Electrónica</option>
+                                            <option value="Ing. Informática">Ing. Informática</option>
+                                            <option value="Ing. Mecatrónica">Ing. Mecatrónica</option>
+                                            <option value="Ing. Sistemas">Ing. Sistemas</option>
+                                        </optgroup>
+                                        <optgroup label="Licenciaturas">
+                                            <option value="Lic. Administración de Empresas">Lic. Administración de Empresas</option>
+                                            <option value="Lic. Comunicación">Lic. Comunicación</option>
+                                            <option value="Lic. Criminología">Lic. Criminología</option>
+                                            <option value="Lic. Economía">Lic. Economía</option>
+                                            <option value="Lic. Educación">Lic. Educación</option>
+                                            <option value="Lic. Finanazas">Lic. Finanazas</option>
+                                            <option value="Lic. Médico General">Lic. Médico General</option>
+                                            <option value="Lic. Turismo">Lic. Turismo</option>
+                                        </optgroup>
+                                </optgroup>
                             </select>
                         </div>
+
                         <div class="col-md-6 mb-3">
                             <label>Experiencia del oficio<span class="text-danger"> *</span></label>
                             <select class="form-select" name="oficio1-exp" aria-label="exp1" required>
@@ -186,15 +216,50 @@
                             <label>Oficio #2 (en el que se ha desempeñado)</label>
                             <select class="form-select" name="oficio2" aria-label="job" required>                                        
                                 <option selected value="<?php echo $users_ofi2; ?>"><?php echo $users_ofi2; ?></option>
-                                <option value="Albañilería">Albañilería</option>
-                                <option value="Recepcionista">Recepcionista</option>
-                                <option value="Barbería">Barbería</option>
-                                <option value="Plomería">Plomería</option>
-                                <option value="Electricista">Electricista</option>
-                                <option value="Mecánica">Mecánica</option>
-                                <option value="Limpieza">Limpieza</option>
-                                <option value="Herrería">Herrería</option>
-                                <option value="Carpintería">Carpintería</option>
+                                <optgroup label="Oficios">
+                                    <option value="Albañilería">Albañilería</option>
+                                    <option value="Barbería">Barbería</option>
+                                    <option value="Carpintería">Carpintería</option>
+                                    <option value="Cocina">Cocina</option>
+                                    <option value="Electricista">Electricista</option>
+                                    <option value="Herrería">Herrería</option>
+                                    <option value="Limpieza">Limpieza</option>
+                                    <option value="Mecánica">Mecánica</option>
+                                    <option value="Panadería">Panadería</option>
+                                    <option value="Plomería">Plomería</option>
+                                </optgroup>
+                                <optgroup label="Licencias Técnicas">
+                                    <option value="Técnico en Administración de Empresas">Técnico en Administración de Empresas</option>
+                                    <option value="Técnico en Computación e Informática">Técnico en Computación e Informática</option>
+                                    <option value="Técnico en Diseño Gráfico">Técnico en Diseño Gráfico</option>
+                                    <option value="Técnico en Electrónica Insutrial">Técnico en Electrónica Insutrial</option>
+                                    <option value="Técnico en Marketing">Técnico en Marketing</option>
+                                    <option value="Técnico en Mecatrónica">Técnico en Mecatrónica</option>
+                                    <option value="Técnico en Negocios Internacionales">Técnico en Negocios Internacionales</option>
+
+                                </optgroup>
+                                <optgroup label="Profesiones">
+                                    <optgroup label="Ingenierías">
+                                        <option value="Ing. Aeronáutica">Ing. Aeronáutica</option>
+                                        <option value="Ing. Agrónomo">Ing. Agrónomo</option>
+                                        <option value="Ing. Civil">Ing. Civil</option>
+                                        <option value="Ing. Eléctrica">Ing. Eléctrica</option>
+                                        <option value="Ing. Electrónica">Ing. Electrónica</option>
+                                        <option value="Ing. Informática">Ing. Informática</option>
+                                        <option value="Ing. Mecatrónica">Ing. Mecatrónica</option>
+                                        <option value="Ing. Sistemas">Ing. Sistemas</option>
+                                    </optgroup>
+                                    <optgroup label="Licenciaturas">
+                                        <option value="Lic. Administración de Empresas">Lic. Administración de Empresas</option>
+                                        <option value="Lic. Comunicación">Lic. Comunicación</option>
+                                        <option value="Lic. Criminología">Lic. Criminología</option>
+                                        <option value="Lic. Economía">Lic. Economía</option>
+                                        <option value="Lic. Educación">Lic. Educación</option>
+                                        <option value="Lic. Finanazas">Lic. Finanazas</option>
+                                        <option value="Lic. Médico General">Lic. Médico General</option>
+                                        <option value="Lic. Turismo">Lic. Turismo</option>
+                                    </optgroup>
+                                </optgroup>
                             </select>
                         </div>
                         <div class="col-md-6">

@@ -79,7 +79,7 @@
                     </select>
                 </div>
 
-                <div class="mb-3 col-md-3">
+                <div class="mb-3 col-md-4">
                     <label>Sexo (Actualmente: 
                         <?php
                             echo $users_sex;  
