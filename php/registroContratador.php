@@ -49,7 +49,7 @@
                                         <option value="Comercial">Comercial</option>
                                         <option value="Industrial">Industrial</option>
                                         <option value="Servicios">Servicios</option>
-                                        <option value="Servicios">Ninguno</option>
+                                        <option value="Ninguno">Ninguno</option>
                                     </select>
                                 </div>
                                 

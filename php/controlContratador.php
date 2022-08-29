@@ -75,7 +75,7 @@
             <nav class="nav nav-fill"><a name="administracion"></a>
                 <a class="nav-link" onclick="añadirEmpleo()" href="#administracion"><i class="fa-solid fa-user-plus"></i> Añadir empleo</a>
                 <a class="nav-link" onclick="modificarEmpleo()" href="#administracion"><i class="fa-solid fa-user-gear"></i> Modificar empleo</a>
-                <a class="nav-link" onclick="eliminarEmpleo()" href="#administracion"><i class="fa-solid fa-user-minus"></i> Eliminar empleo</a>
+                <!-- <a class="nav-link" onclick="eliminarEmpleo()" href="#administracion"><i class="fa-solid fa-user-minus"></i> Eliminar empleo</a> -->
                 <a class="nav-link" onclick="mensajeria()" href="#administracion"><i class="fa-brands fa-rocketchat"></i> Mensajería</a>
                 <a class="nav-link" onclick="miInformacionC()" href="#administracion"><i class="fa-solid fa-address-card"></i> Mi información</a>
             </nav>

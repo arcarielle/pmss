@@ -21,7 +21,7 @@
     <?php
 
     $sql="SELECT pro.id_empresa, pro.id_proyecto, pro.oficio, pro.experiencia, pro.sexo, pro.hora1, pro.hora2, pro.lengua,
-        pro.tipo, pro.sueldo, pro.descripcion, 
+        pro.tipo, pro.sueldo, pro.descripcion, pro.disponibilidad,
         emp.empresa as 'Empresa', emp.giro as 'Giro', emp.correo as 'Correo',
         emp.direccion as 'Direccion', emp.telefono as 'Telefono', emp.giro as 'Giro', 
         emp.descripcion as 'Descripcion'
@@ -66,6 +66,9 @@
 
     <h4>Horas</h4>
     <p><?php echo $row["hora1"];?> a <?php echo $row["hora2"];?></p>
+
+    <h4>¿Qué días de la semana?</h4>
+    <p><?php echo $row["disponibilidad"];?></p>
 
     <h4>Lengua</h4>
     <p><?php echo $row["lengua"];?></p>

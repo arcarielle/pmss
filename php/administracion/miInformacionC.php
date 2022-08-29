@@ -69,11 +69,11 @@
                             <label>Area de trabajo o Giro de la empresa<span class="text-danger"> *</span></label>
                             <!-- <input type="text" name="giro" class="form-control" placeholder="Escribe aquí el de que trata . . ." required> -->
                             <select class="form-select" name="giro" aria-label="job" required>                                        
-                                <option selected value="<?php echo $users_giro; ?>"><?php echo $users_giro; ?></option>
+                                <option selected><?php echo $users_giro; ?></option>
                                 <option value="Comercial">Comercial</option>
                                 <option value="Industrial">Industrial</option>
                                 <option value="Servicios">Servicios</option>
-                                <option value="Servicios">Ninguno</option>
+                                <option value="Ninguno">Ninguno</option>
                             </select>
                         </div>
                         

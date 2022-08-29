@@ -60,11 +60,11 @@ function user_exists_emp($conn, $users_correo){
 }
 
 function createMig($conn, $users_nom, $users_ape, $users_sex, $users_correo,
-    $users_contra, $users_lang, $users_birth, $users_tele, $users_dire, $users_descrip,
-    $users_ofi1, $users_ofi1_exp, $users_ofi2, $users_ofi2_exp){
+    $users_contra, $users_lang, $users_birth, $users_tele, $users_tele_whats, $users_dire, $users_descrip,
+    $users_ofi1, $users_ofi1_exp, $users_ofi2, $users_ofi2_exp, $users_estancia){
 
-    $sql = "INSERT INTO migrantes (nombre, apellido, sexo, email, pwd, lengua, birthday, telefono,
-        domicilio, descripcion, oficio1, oficio1_exp, oficio2, oficio2_exp) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
+    $sql = "INSERT INTO migrantes (nombre, apellido, sexo, email, pwd, lengua, birthday, telefono, telefono_whats
+        domicilio, descripcion, oficio1, oficio1_exp, oficio2, oficio2_exp, estancia) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
 
     $stmt = mysqli_stmt_init($conn);
     if(!mysqli_stmt_prepare($stmt, $sql)){
@@ -74,9 +74,9 @@ function createMig($conn, $users_nom, $users_ape, $users_sex, $users_correo,
 
     $hashedPwd = password_hash($users_contra, PASSWORD_DEFAULT);
 
-    mysqli_stmt_bind_param($stmt, "ssssssssssssss", $users_nom, $users_ape, $users_sex, $users_correo,
-        $hashedPwd, $users_lang, $users_birth, $users_tele, $users_dire, $users_descrip,
-        $users_ofi1, $users_ofi1_exp, $users_ofi2, $users_ofi2_exp);
+    mysqli_stmt_bind_param($stmt, "ssssssssssssssss", $users_nom, $users_ape, $users_sex, $users_correo,
+        $hashedPwd, $users_lang, $users_birth, $users_tele, $users_tele_whats, $users_dire, $users_descrip,
+        $users_ofi1, $users_ofi1_exp, $users_ofi2, $users_ofi2_exp, $users_estancia);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
     header("location: /pmss/php/registroAplicante.php?error=none");
@@ -84,13 +84,14 @@ function createMig($conn, $users_nom, $users_ape, $users_sex, $users_correo,
 }
 
 function updateMig($conn, $users_id, $users_nom, $users_ape, $users_sex, $users_correo,
-    $users_lang, $users_birth, $users_tele, $users_dire, $users_descrip,
-    $users_ofi1, $users_ofi1_exp, $users_ofi2, $users_ofi2_exp){
+        $users_lang, $users_birth, $users_tele, $users_tele_whats, $users_dire, 
+        $users_estancia,$users_descrip, $users_ofi1, $users_ofi1_exp, $users_ofi2,
+        $users_ofi2_exp){
 
             $sql = "UPDATE migrantes SET nombre='$users_nom', apellido='$users_ape', email='$users_correo',
-            domicilio='$users_dire', telefono='$users_tele', sexo='$users_sex', lengua='$users_lang',
+            domicilio='$users_dire', telefono='$users_tele', telefono_whats='$users_tele_whats', sexo='$users_sex', lengua='$users_lang',
             birthday='$users_birth', oficio1='$users_ofi1', oficio1_exp='$users_ofi1_exp',
-            oficio2='$users_ofi2', oficio2_exp='$users_ofi2_exp', descripcion='$users_descrip' 
+            oficio2='$users_ofi2', oficio2_exp='$users_ofi2_exp', estancia='$users_estancia',descripcion='$users_descrip' 
             WHERE id_mig= '{$users_id}';";
 
             if ($conn->query($sql) === TRUE) {
@@ -157,10 +158,10 @@ function updateEmp($conn, $users_id, $users_emp, $users_giro, $users_correo, $us
 }
 
 function addProject($conn, $emp_id, $users_ofi, $users_exp, $users_sex, $users_hora1, $users_hora2, 
-        $users_lengua, $users_tipo, $users_sueldo, $users_descrip ){
+        $users_lengua, $users_tipo, $users_sueldo, $users_descrip, $users_dispon){
     
             $sql = "INSERT INTO proyectos_empleadores (id_empresa, oficio, experiencia, sexo, hora1,
-            hora2, lengua, tipo, sueldo, descripcion) VALUES (?,?,?,?,?,?,?,?,?,?);";
+            hora2, lengua, tipo, sueldo, descripcion, disponibilidad) VALUES (?,?,?,?,?,?,?,?,?,?,?);";
     
             $stmt = mysqli_stmt_init($conn);
             if(!mysqli_stmt_prepare($stmt, $sql)){
@@ -168,9 +169,9 @@ function addProject($conn, $emp_id, $users_ofi, $users_exp, $users_sex, $users_h
                 exit();        
             }
         
-            mysqli_stmt_bind_param($stmt,"ssssssssss", $emp_id, $users_ofi, $users_exp, 
+            mysqli_stmt_bind_param($stmt,"sssssssssss", $emp_id, $users_ofi, $users_exp, 
             $users_sex, $users_hora1, $users_hora2, $users_lengua, $users_tipo, $users_sueldo, 
-            $users_descrip);
+            $users_descrip, $users_dispon);
 
             mysqli_stmt_execute($stmt);
             mysqli_stmt_close($stmt);
@@ -180,11 +181,11 @@ function addProject($conn, $emp_id, $users_ofi, $users_exp, $users_sex, $users_h
 }
 
 function updateProject($conn, $users_proyecto_id ,$users_ofi, $users_exp, $users_sex, $users_hora1, $users_hora2, 
-    $users_lengua, $users_tipo, $users_sueldo, $users_descrip ){
+    $users_lengua, $users_tipo, $users_sueldo, $users_disponibilidad, $users_descrip ){
 
         $sql = "UPDATE proyectos_empleadores SET oficio='$users_ofi', experiencia='$users_exp',
             sexo='$users_sex', hora1='$users_hora1', hora2='$users_hora2', lengua='$users_lengua',
-            tipo='$users_tipo', sueldo='$users_sueldo', descripcion='$users_descrip' 
+            tipo='$users_tipo', sueldo='$users_sueldo', descripcion='$users_descrip', disponibilidad='$users_disponibilidad'
             WHERE id_proyecto = '{$users_proyecto_id}';";
 
         if ($conn->query($sql) === TRUE) {
@@ -257,53 +258,3 @@ function login($conn, $users_correo, $users_contra){
     }
 
 }
-
-
-
-
-// function filtro_empleadores(){
-    
-//     $servername = "localhost";
-//     $username = "root";
-//     $password = "";
-//     $dbname = "bdmigrantes2.0";
- 
-//     $conn = new mysqli($servername, $username, $password, $dbname);
-//         if ($conn->connect_error) {
-//             die("Connection failed: " . $conn->connect_error);
-//     };
-
-//     $sql="SELECT pro.id_empresa, pro.id_proyecto, pro.oficio, pro.experiencia, pro.sexo, pro.hora1, pro.hora2, pro.lengua,
-//         pro.tipo, pro.sueldo, pro.descripcion, 
-//         emp.empresa as 'Empresa', emp.giro as 'Giro', emp.correo as 'Correo',
-//         emp.direccion as 'Direccion', emp.telefono as 'Telefono', emp.giro as 'Giro'  
-//         FROM `proyectos_empleadores` pro, `empleadores` emp 
-//         WHERE pro.id_empresa = emp.id_emp;";
-
-//     $result = $conn->query($sql);
-
-//     if ($result->num_rows > 0) {
-//         while($row = $result->fetch_assoc()) {
-
-//         echo "
-    
-//     <div class='card' style='width: 18rem;margin:10px;'>
-//         <div class='card-body'>
-            
-//             <h5 class='card-title'>".$row['Empresa']."</h5>
-
-//             <h6 class='card-title'>".$row['oficio']."</h6>
-//             <p class='card-text'>Experiencia: ".$row['experiencia']."</p>
-//         </div>
-//     </div>
-
-//         ";}
-//     }
-//     else {
-//     echo "0 users";
-//     }
-
-//     $conn->close();
-// }
-
-?>

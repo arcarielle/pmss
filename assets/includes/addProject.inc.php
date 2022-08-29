@@ -12,6 +12,7 @@
         $users_tipo = $_POST['tipo'];
         $users_sueldo = $_POST['sueldo'];
         $users_descrip = $_POST['description'];
+        $users_dispon = $_POST['disponibilidad'];
 
         require_once 'dbh.inc.php';
         require_once 'functions.inc.php';
@@ -22,7 +23,7 @@
         }
 
         addProject($conn, $_SESSION["userid"],$users_ofi, $users_exp, $users_sex, $users_hora1, $users_hora2, 
-        $users_lengua, $users_tipo, $users_sueldo, $users_descrip );
+        $users_lengua, $users_tipo, $users_sueldo, $users_descrip, $users_dispon);
         }
     
     else{

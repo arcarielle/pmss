@@ -10,13 +10,15 @@
         $users_lang = $_POST['lang'];
         $users_birth = $_POST['birthday'];
         $users_tele = $_POST['phone'];
+        $users_tele_whats = $_POST['phone2'];
         $users_dire = $_POST['address'];
         $users_ofi1 = $_POST['oficio1'];
         $users_ofi1_exp = $_POST['oficio1-exp'];
         $users_ofi2 = $_POST['oficio2'];
         $users_ofi2_exp = $_POST['oficio2-exp'];
         $users_descrip = $_POST['description'];
-        
+        $users_estancia = $_POST['estancia'];
+
         require_once 'dbh.inc.php';
         require_once 'functions.inc.php';
 
@@ -31,8 +33,8 @@
         }
 
         createMig($conn, $users_nom, $users_ape, $users_sex, $users_correo,
-            $users_contra, $users_lang, $users_birth, $users_tele, $users_dire, $users_descrip,
-            $users_ofi1, $users_ofi1_exp, $users_ofi2, $users_ofi2_exp);
+            $users_contra, $users_lang, $users_birth, $users_tele, $users_tele_whats, $users_dire, $users_descrip,
+            $users_ofi1, $users_ofi1_exp, $users_ofi2, $users_ofi2_exp, $users_estancia);
         }
     
     else{

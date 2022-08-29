@@ -37,15 +37,50 @@
 					<li style="margin: 5px;">
                         <select class="form-select form-select-lg mb-3" name="oficio" method="post" action="ofertas_filtro.php" required aria-label=".form-select-lg example" style="width:auto">                                        
                             <option selected value="Cualquiera">Cualquiera</option>
-                            <option value="Albañilería">Albañilería</option>
-                            <option value="Recepcionista">Recepcionista</option>
-                            <option value="Barbería">Barbería</option>
-                            <option value="Plomería">Plomería</option>
-                            <option value="Electricista">Electricista</option>
-                            <option value="Mecánica">Mecánica</option>
-                            <option value="Limpieza">Limpieza</option>
-                            <option value="Herrería">Herrería</option>
-                            <option value="Carpintería">Carpintería</option>
+                            <optgroup label="Oficios">
+                                <option value="Albañilería">Albañilería</option>
+                                <option value="Barbería">Barbería</option>
+                                <option value="Carpintería">Carpintería</option>
+                                <option value="Cocina">Cocina</option>
+                                <option value="Electricista">Electricista</option>
+                                <option value="Herrería">Herrería</option>
+                                <option value="Limpieza">Limpieza</option>
+                                <option value="Mecánica">Mecánica</option>
+                                <option value="Panadería">Panadería</option>
+                                <option value="Plomería">Plomería</option>
+                            </optgroup>
+                            <optgroup label="Licencias Técnicas">
+                                <option value="Técnico en Administración de Empresas">Técnico en Administración de Empresas</option>
+                                <option value="Técnico en Computación e Informática">Técnico en Computación e Informática</option>
+                                <option value="Técnico en Diseño Gráfico">Técnico en Diseño Gráfico</option>
+                                <option value="Técnico en Electrónica Insutrial">Técnico en Electrónica Insutrial</option>
+                                <option value="Técnico en Marketing">Técnico en Marketing</option>
+                                <option value="Técnico en Mecatrónica">Técnico en Mecatrónica</option>
+                                <option value="Técnico en Negocios Internacionales">Técnico en Negocios Internacionales</option>
+
+                            </optgroup>
+                            <optgroup label="Profesiones">
+                                    <optgroup label="Ingenierías">
+                                        <option value="Ing. Aeronáutica">Ing. Aeronáutica</option>
+                                        <option value="Ing. Agrónomo">Ing. Agrónomo</option>
+                                        <option value="Ing. Civil">Ing. Civil</option>
+                                        <option value="Ing. Eléctrica">Ing. Eléctrica</option>
+                                        <option value="Ing. Electrónica">Ing. Electrónica</option>
+                                        <option value="Ing. Informática">Ing. Informática</option>
+                                        <option value="Ing. Mecatrónica">Ing. Mecatrónica</option>
+                                        <option value="Ing. Sistemas">Ing. Sistemas</option>
+                                    </optgroup>
+                                    <optgroup label="Licenciaturas">
+                                        <option value="Lic. Administración de Empresas">Lic. Administración de Empresas</option>
+                                        <option value="Lic. Comunicación">Lic. Comunicación</option>
+                                        <option value="Lic. Criminología">Lic. Criminología</option>
+                                        <option value="Lic. Economía">Lic. Economía</option>
+                                        <option value="Lic. Educación">Lic. Educación</option>
+                                        <option value="Lic. Finanazas">Lic. Finanazas</option>
+                                        <option value="Lic. Médico General">Lic. Médico General</option>
+                                        <option value="Lic. Turismo">Lic. Turismo</option>
+                                    </optgroup>
+                            </optgroup>
                         </select>
                     </li>
 
@@ -82,13 +117,16 @@
                         require_once '../assets/includes/dbh.inc.php';
                         require_once '../assets/includes/functions.inc.php';
 
-                        if($users_of != 'Oficio' && $users_exp != 'Experiencia'){
+                        $users_of = $_POST['oficio'];
+                        $users_exp = $_POST['experiencia'];
+
+                        if($users_of != 'Cualquiera' && $users_exp != 'Cualquiera'){
                             $sql="SELECT * FROM migrantes WHERE (oficio1 = '{$users_of}' and oficio1_exp = '{$users_exp}') or (oficio2 = '{$users_of}' and oficio2_exp = '{$users_exp}');";
                         }
-                        elseif($users_of != 'Oficio'){
+                        elseif($users_of != 'Cualquiera'){
                             $sql="SELECT * FROM migrantes WHERE (oficio1 = '{$users_of}') or (oficio2 = '{$users_of}');";
                         }
-                        elseif($users_exp != 'Experiencia'){
+                        elseif($users_exp != 'Cualquiera'){
                             $sql="SELECT * FROM migrantes WHERE (oficio1_exp = '{$users_exp}') or (oficio2_exp = '{$users_exp}');";}
                         else{
                             $sql="SELECT * FROM migrantes;";

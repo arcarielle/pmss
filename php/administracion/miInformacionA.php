@@ -28,13 +28,14 @@
             $users_lang = $row['lengua'];
             $users_birth = $row['birthday'];
             $users_tele = $row['telefono'];
+            $users_tele_whats = $row['telefono_whats'];
             $users_dire = $row['domicilio'];
             $users_ofi1 = $row['oficio1'];
             $users_ofi1_exp = $row['oficio1_exp'];
             $users_ofi2 = $row['oficio2'];
             $users_ofi2_exp = $row['oficio2_exp'];
             $users_descrip = $row['descripcion'];
-
+            $users_estancia = $row['estancia'];
 ?>
 
 <div class="container justify-content-center">
@@ -68,7 +69,7 @@
                             Tu contraseña debe ser de entre 8 y 20 caracteres, contener letras y numeros, sin espacios ni caracteres especiales. 
                         </div> -->
 
-                        <div class="mb-3 col-md-8">
+                        <div class="mb-3 col-md-7">
                             <label for="email">Correo electrónico<span class="text-danger"> *</span></label>
                             <input type="email" name="email" id="email" class="form-control" value="<?php echo $users_correo;?>" required>
                         </div>
@@ -95,7 +96,7 @@
                             </div>
                         </div>
 
-                        <div class="col-md-5">
+                        <div class="col-md-4">
                             <label>¿Sabes español? (Actualmente: 
                                 <?php
                                     echo $users_lang;  
@@ -124,7 +125,7 @@
                         </div>
 
                         
-                        <div class="col-md-4">
+                        <div class="col-md-3">
                             <label>Fecha de nacimiento<span class="text-danger"> *</span></label>
                             <div class="input-group">
                                 <input type="date" name="birthday" class="form-control" value="<?php echo $users_birth; ?>" required>
@@ -146,13 +147,25 @@
                             </div>
                             <p class="form-text ms-2 fw-light mb-1">Incluir LADA.</p>
                         </div>
+
+                        <div class="col-md-3">
+                            <label>Telefono Whatsapp<span class="text-danger"> *</span></label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-secondary" style="--bs-bg-opacity: 0.3" id="lada">+</span>
+                                <input type="tel" name="phone2" id="phone2" class="form-control" value="<?php echo $users_tele_whats; ?>"minlength="9" maxlength="13" required>
+                                    <span class="input-group-text d-block">
+                                        <i class="fa fa-phone"></i>
+                                    </span>
+                            </div>
+                            <p class="form-text ms-2 fw-light mb-1">Incluir LADA.</p>
+                        </div>
                         
                         <div class="col-md-12 mb-3">
                             <label>Domicilio o nombre de albergue<span class="text-danger"> *</span></label>
                             <input type="text" name="address" class="form-control" value="<?php echo $users_dire; ?>" required>
                         </div>
                         
-                        <div class="col-md-6 mb-3">
+                        <div class="col-md-8 mb-3">
                             <label>Oficio, Carrera Técnica o Profesión (en el que se ha desempeñado)<span class="text-danger"> *</span></label>
                             <select class="form-select" name="oficio1" aria-label="job" required>                                        
                                 <option selected value="<?php echo $users_ofi1; ?>"><?php echo $users_ofi1; ?></option>
@@ -203,7 +216,7 @@
                             </select>
                         </div>
 
-                        <div class="col-md-6 mb-3">
+                        <div class="col-md-4 mb-3">
                             <label>Experiencia del oficio<span class="text-danger"> *</span></label>
                             <select class="form-select" name="oficio1-exp" aria-label="exp1" required>
                                 <option selected value="<?php echo $users_ofi1_exp; ?>"><?php echo $users_ofi1_exp; ?></option>
@@ -212,8 +225,8 @@
                                 <option value="5 años o más">5 años o más</option>
                             </select>
                         </div>
-                        <div class="col-md-6">
-                            <label>Oficio #2 (en el que se ha desempeñado)</label>
+                        <div class="col-md-8">
+                            <label>Oficio, Carrera Técnica o Profesión #2</label>
                             <select class="form-select" name="oficio2" aria-label="job" required>                                        
                                 <option selected value="<?php echo $users_ofi2; ?>"><?php echo $users_ofi2; ?></option>
                                 <optgroup label="Oficios">
@@ -262,7 +275,7 @@
                                 </optgroup>
                             </select>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <label>Experiencia del oficio</label>
                             <select class="form-select" name="oficio2-exp" aria-label="exp1" required>
                                 <option selected value="<?php echo $users_ofi2_exp; ?>"><?php echo $users_ofi2_exp; ?></option>
@@ -276,9 +289,17 @@
                         </div>
                         
                         <div class="col-md-12 mb-4">
+                            <label for="estancia">¿Cuánto tiempo estarás en la ciudad? ¿Buscas un trabajo fijo o proyectos cortos?</label>
+                            <div class="form-floating mt-1">
+                                <textarea class="form-control" name="estancia" maxlength="330" id="estancia" style="height:80px;"><?php echo $users_estancia; ?></textarea>
+                                <label for="floatingTextarea2">Estancia</label>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 mb-4">
                             <label for="description">Descripción de ti (puede incluir otras habilidades u oficios desempeñados)</label>
                             <div class="form-floating mt-1">
-                                <textarea class="form-control" name="description" maxlength="330" id="desc"><?php echo $users_descrip; ?></textarea>
+                                <textarea class="form-control" name="description" maxlength="330" id="desc" style="height:80px;"><?php echo $users_descrip; ?></textarea>
                                 <label for="floatingTextarea2">Descripción</label>
                             </div>
                         </div>

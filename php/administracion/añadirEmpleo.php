@@ -128,32 +128,48 @@
                             </div>
                         </div>
 
-                        <div class="mb-5 col-md-5">
+                        <div class="mb-9 col-md-7">
                             <label>Tipo de Trabajo<span class="text-danger"> *</span></label>
                             <div class="hstack mt-2">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="tipo" value="Determiando" id="deter" required>
+                                    <input class="form-check-input" type="radio" name="tipo" value="Un solo trabajo" id="deter" required>
                                     <label class="form-check-label" for="deter">
-                                        Contrato por Obra
+                                        Un sólo trabajo
                                     </label>
                                 </div>
                                 <div class="form-check ms-3">
-                                    <input class="form-check-input" type="radio" name="tipo" value="Indetermiando" id="indeter" required>
+                                    <input class="form-check-input" type="radio" name="tipo" value="Contrato Semanal" id="indeter" required>
                                     <label class="form-check-label" for="indeter">
-                                        Contrato Indeterminado (Semanal)
+                                        Contrato Semanal (pago por semana)
+                                    </label>
+                                </div>
+                                <div class="form-check ms-3">
+                                    <input class="form-check-input" type="radio" name="tipo" value="Contrato Diario" id="indeter" required>
+                                    <label class="form-check-label" for="indeter">
+                                        Contrato diario (pago por día)
                                     </label>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="col-md-6 mb-4">
-                            <label>Sueldo (Según Aptitudes)<span class="text-danger"> *</span></label>
+                        <div class="col-md-4 mb-4">
+                            <label>Sueldo o Pago (Según Aptitudes)<span class="text-danger"> *</span></label>
                             <div class="input-group">
                                 <span class="input-group-text bg-secondary" style="--bs-bg-opacity: 0.3" id="dinero">$</span>
                                 <input type="number" name="sueldo" class="form-control" placeholder="Cantidad" required>
                                     <span class="input-group-text d-block">
                                         <i class="fa-solid fa-money-check-dollar"></i>
                                     </span>
+                            </div>
+                        </div>
+
+
+                        <!-- Descripcion de dias de la semana -->
+                        <div class="col-md-8 mb-4">
+                            <label for="disponibilidad">¿Qué días de la semana es el trabajo?<span class="text-danger"> *</span></label>
+                            <div class="form-floating mt-1">
+                                <textarea class="form-control" name="disponibilidad" maxlength="330" placeholder="Disponibilidad" id="avail" style="height: 60px"></textarea>
+                                <label for="floatingTextarea">El trabajo es los días...</label>
                             </div>
                         </div>
 

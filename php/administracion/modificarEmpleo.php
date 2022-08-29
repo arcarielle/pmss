@@ -37,6 +37,7 @@
             $users_tipo = $row['tipo'];
             $users_sueldo = $row['sueldo'];
             $users_descrip = $row['descripcion'];
+            $users_estancia = $row['disponibilidad'];
 
             $time1 = date('H:i', strtotime($users_hora1));
             $time2 = date('H:i', strtotime($users_hora2));
@@ -54,16 +55,51 @@
                 <div class="mb-3 col-md-6">
                     <label>Oficio<span class="text-danger"> *</span></label>
                     <select class="form-select" name="oficio" aria-label="job" required>                                        
-                                <option value="<?php echo $users_ofi;?>" selected><?php echo $users_ofi; ?></option>
-                                <option value="Albañilería">Albañilería</option>
-                                <option value="Recepcionista">Recepcionista</option>
-                                <option value="Barbería">Barbería</option>
-                                <option value="Plomería">Plomería</option>
-                                <option value="Electricista">Electricista</option>
-                                <option value="Mecánica">Mecánica</option>
-                                <option value="Limpieza">Limpieza</option>
-                                <option value="Herrería">Herrería</option>
-                                <option value="Carpintería">Carpintería</option>
+                            <option value="<?php echo $users_ofi;?>" selected><?php echo $users_ofi; ?></option>
+                            <optgroup label="Oficios">
+                                    <option value="Albañilería">Albañilería</option>
+                                    <option value="Barbería">Barbería</option>
+                                    <option value="Carpintería">Carpintería</option>
+                                    <option value="Cocina">Cocina</option>
+                                    <option value="Electricista">Electricista</option>
+                                    <option value="Herrería">Herrería</option>
+                                    <option value="Limpieza">Limpieza</option>
+                                    <option value="Mecánica">Mecánica</option>
+                                    <option value="Panadería">Panadería</option>
+                                    <option value="Plomería">Plomería</option>
+                                </optgroup>
+                                <optgroup label="Licencias Técnicas">
+                                    <option value="Técnico en Administración de Empresas">Técnico en Administración de Empresas</option>
+                                    <option value="Técnico en Computación e Informática">Técnico en Computación e Informática</option>
+                                    <option value="Técnico en Diseño Gráfico">Técnico en Diseño Gráfico</option>
+                                    <option value="Técnico en Electrónica Insutrial">Técnico en Electrónica Insutrial</option>
+                                    <option value="Técnico en Marketing">Técnico en Marketing</option>
+                                    <option value="Técnico en Mecatrónica">Técnico en Mecatrónica</option>
+                                    <option value="Técnico en Negocios Internacionales">Técnico en Negocios Internacionales</option>
+
+                                </optgroup>
+                                <optgroup label="Profesiones">
+                                        <optgroup label="Ingenierías">
+                                            <option value="Ing. Aeronáutica">Ing. Aeronáutica</option>
+                                            <option value="Ing. Agrónomo">Ing. Agrónomo</option>
+                                            <option value="Ing. Civil">Ing. Civil</option>
+                                            <option value="Ing. Eléctrica">Ing. Eléctrica</option>
+                                            <option value="Ing. Electrónica">Ing. Electrónica</option>
+                                            <option value="Ing. Informática">Ing. Informática</option>
+                                            <option value="Ing. Mecatrónica">Ing. Mecatrónica</option>
+                                            <option value="Ing. Sistemas">Ing. Sistemas</option>
+                                        </optgroup>
+                                        <optgroup label="Licenciaturas">
+                                            <option value="Lic. Administración de Empresas">Lic. Administración de Empresas</option>
+                                            <option value="Lic. Comunicación">Lic. Comunicación</option>
+                                            <option value="Lic. Criminología">Lic. Criminología</option>
+                                            <option value="Lic. Economía">Lic. Economía</option>
+                                            <option value="Lic. Educación">Lic. Educación</option>
+                                            <option value="Lic. Finanazas">Lic. Finanazas</option>
+                                            <option value="Lic. Médico General">Lic. Médico General</option>
+                                            <option value="Lic. Turismo">Lic. Turismo</option>
+                                        </optgroup>
+                                </optgroup>
                             </select>
                 </div>
 
@@ -98,6 +134,12 @@
                                 Mujer
                             </label>
                         </div>
+                        <div class="form-check ms-3">
+                            <input class="form-check-input" type="radio" name="sex" id="sex3" value="No importa" required>
+                            <label class="form-check-label" for="sex3">
+                                No importa
+                            </label>
+                        </div>
                     </div>
                 </div>
 
@@ -119,33 +161,27 @@
                     )<span class="text-danger"> *</span></label>
                     <div class="hstack mt-2">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="lang" id="lang1" value="Nada" required>
+                            <input class="form-check-input" type="radio" name="lang" id="lang1" value="Si" required>
                             <label class="form-check-label" for="lang1">
-                                Nada
+                                Si
                             </label>
                         </div>
                         <div class="form-check ms-3">
-                            <input class="form-check-input" type="radio" name="lang" id="lang2" value="Poco" required>
+                            <input class="form-check-input" type="radio" name="lang" id="lang2" value="No" required>
                             <label class="form-check-label" for="lang2">
-                                Poco
+                                No
                             </label>
                         </div>
                         <div class="form-check ms-3">
-                            <input class="form-check-input" type="radio" name="lang" id="lang3" value="Regular" required>
+                            <input class="form-check-input" type="radio" name="lang" id="lang3" value="Al menos un poco" required>
                             <label class="form-check-label" for="lang3">
-                                Regular
-                            </label>
-                        </div>
-                        <div class="form-check ms-3">
-                            <input class="form-check-input" type="radio" name="lang" id="lang4" value="Muy Bueno" required>
-                            <label class="form-check-label" for="lang4">
-                                Muy bueno
+                                Al menos un poco
                             </label>
                         </div>
                     </div>
                 </div>
 
-                <div class="mb-5 col-md-5">
+                <div class="mb-5 col-md-7">
                     <label>Tipo de Trabajo (Actualmente:    
                         <?php
                             echo $users_tipo;  
@@ -153,28 +189,42 @@
                     )<span class="text-danger"> *</span></label>
                     <div class="hstack mt-2">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="tipo" value="Determinado" id="deter" required>
+                            <input class="form-check-input" type="radio" name="tipo" value="Un solo trabajo" id="deter" required>
                             <label class="form-check-label" for="deter">
-                                Contrato por Obra
+                                Un sólo trabajo
                             </label>
                         </div>
                         <div class="form-check ms-3">
-                            <input class="form-check-input" type="radio" name="tipo" value="Indeterminado" id="indeter" required>
+                            <input class="form-check-input" type="radio" name="tipo" value="Contrato Semanal" id="indeter" required>
                             <label class="form-check-label" for="indeter">
-                                Contrato Indeterminado (Semanal)
+                                Contrato Semanal (pago por semana)
+                            </label>
+                        </div>
+                        <div class="form-check ms-3">
+                            <input class="form-check-input" type="radio" name="tipo" value="Contrato Diario" id="indeter" required>
+                            <label class="form-check-label" for="indeter">
+                                Contrato diario (pago por día)
                             </label>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-md-6 mb-4">
-                    <label>Sueldo (Según Aptitudes)<span class="text-danger"> *</span></label>
+                <div class="col-md-4 mb-4">
+                    <label>Sueldo o Pago (Según Aptitudes)<span class="text-danger"> *</span></label>
                     <div class="input-group">
                         <span class="input-group-text bg-secondary" style="--bs-bg-opacity: 0.3" id="dinero">$</span>
                         <input type="number" name="sueldo" class="form-control" value="<?php echo $users_sueldo; ?>" required>
                             <span class="input-group-text d-block">
                                 <i class="fa-solid fa-money-check-dollar"></i>
                             </span>
+                    </div>
+                </div>
+
+                <div class="col-md-8 mb-4">
+                    <label for="disponibilidad">¿Qué días de la semana es el trabajo?<span class="text-danger"> *</span></label>
+                    <div class="form-floating mt-1">
+                        <textarea class="form-control" name="disponibilidad" maxlength="330" placeholder="Disponibilidad" id="avail" style="height: 60px"><?php echo $users_estancia; ?></textarea>
+                        <label for="floatingTextarea">El trabajo es los días...</label>
                     </div>
                 </div>
 

@@ -41,6 +41,9 @@
     <h3>Teléfono</h3>
     <p><?php echo $row["telefono"];?></p>
 
+    <h3>Teléfono Whatsapp</h3>
+    <p><?php echo $row["telefono_whats"];?></p>
+
     <h3>Sexo</h3>
     <p><?php echo $row["sexo"];?></p>
 
@@ -65,6 +68,9 @@
     <?php
         }
     ?>
+
+    <h4>Estancia en el país</h4>
+    <p><?php echo $row["estancia"];?></p>
 
     <h4>Descripción</h4>
     <p><?php echo $row["descripcion"];?></p>
