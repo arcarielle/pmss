@@ -57,7 +57,7 @@
     <p><?php echo $row["oficio1_exp"];?></p>
 
     <?php
-        if($row["oficio2"]!=="def"){
+        if($row["oficio2"]!==""){
     ?>
         <h4>Oficio 2</h4>
         <p><?php echo $row["oficio2"];?></p>

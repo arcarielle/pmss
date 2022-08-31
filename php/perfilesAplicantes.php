@@ -140,7 +140,7 @@
                             <p class="card-text">Experiencia: <?php echo $row["oficio1_exp"];?></p>
 
                     <?php
-                        if($row["oficio2"]!=="def"){
+                        if($row["oficio2"]!==""){
                     ?>
                         <h6 class="card-title"><?php echo $row["oficio2"];?></h6>
                         <p class="card-text">Experiencia: <?php echo $row["oficio2_exp"];?></p>
