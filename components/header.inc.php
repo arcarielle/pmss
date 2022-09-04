@@ -3,7 +3,7 @@
         <div class="container-fluid">
             
             <a class="navbar-brand" href="/pmss/index.php">
-                <img class="img-fluid" src="/pmss/assets/img/escudo_uacj_chido.png" style="height:70px;">
+                <img class="img-fluid" src="/pmss/assets/img/escudo_uacj_chido_2.png" style="height:70px;">
             </a>
         
             <a class="navbar-brand" href="/pmss/index.php">

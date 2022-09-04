@@ -174,7 +174,7 @@
                         </div>
                         <div class="card-body">
                             <form action="/pmss/php/desplegarMigrante.php" method="post">
-                                <button type="submit" name="ver_mas" value="<?php echo $row["id_mig"];?>" class="btn btn-primary float-end">Ver mas</button>
+                                <button type="submit" name="ver_mas" value="<?php echo $row["id_mig"];?>" class="btn btn-primary float-end">Ver más</button>
                             </form>
                             <!-- <a href="#" class="card-link">Más Información</a> -->
                             <!-- <a href="#" class="card-link">Another link</a> -->

@@ -264,7 +264,7 @@
                                 </div>
                                 
                                 <div class="col-md-12 mb-4">
-                                    <label for="estancia">¿Cuánto timepo estarás en la ciudad? ¿Buscas un trabajo fijo o proyectos cortos?</label>
+                                    <label for="estancia">¿Cuánto tiempo estarás en la ciudad? ¿Buscas un trabajo fijo o proyectos cortos?</label>
                                     <div class="form-floating mt-1">
                                         <textarea class="form-control" name="estancia" maxlength="330" id="estancia"></textarea>
                                         <label for="floatingTextarea2">Estancia</label>

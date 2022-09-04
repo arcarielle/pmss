@@ -53,7 +53,7 @@
             
             <div class="row">
                 <div class="mb-3 col-md-6">
-                    <label>Oficio<span class="text-danger"> *</span></label>
+                    <label>Oficio, Carrera o Técnica<span class="text-danger"> *</span></label>
                     <select class="form-select" name="oficio" aria-label="job" required>                                        
                             <option value="<?php echo $users_ofi;?>" selected><?php echo $users_ofi; ?></option>
                             <optgroup label="Oficios">

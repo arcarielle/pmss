@@ -187,7 +187,7 @@
                     </div>
                     <div class="card-body">
                         <form action="/pmss/php/desplegarEmpleador.php" method="post">
-                            <button type="submit" name="ver_mas" value="<?php echo $row["id_proyecto"];?>" class="btn btn-primary float-end">Ver mas</button>
+                            <button type="submit" name="ver_mas" value="<?php echo $row["id_proyecto"];?>" class="btn btn-primary float-end">Ver más</button>
                         </form>
                     </div>
                     </div>

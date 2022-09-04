@@ -8,7 +8,7 @@
                     <h6 class="mb-4 text-black-50">Rellena toda la información solicitada.</h2>
                     <div class="row">
                         <div class="mb-3 col-md-6">
-                            <label>Oficio, Carrera Técnica o<span class="text-danger"> *</span></label>
+                            <label>Oficio, Carrera o Técnica<span class="text-danger"> *</span></label>
                                 <select class="form-select" name="oficio" aria-label="job" required> 
                                     <option selected disabled>Abre este menu de selección</option>                                       
                                     <optgroup label="Oficios">

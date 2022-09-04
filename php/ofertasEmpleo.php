@@ -140,7 +140,7 @@
                         // }
                     ?>
 
-                    <div class="card" style="width: 18rem;margin:10px;">
+                    <div class="card" style="width: 30%;margin:10px;">
                     <div class="card-body">
                         
                         <h5 class="card-title"><?php echo $row["Empresa"];?></h5>
@@ -166,7 +166,7 @@
                     </div>
                     <div class="card-body">
                         <form action="/pmss/php/desplegarEmpleador.php" method="post">
-                            <button type="submit" name="ver_mas" value="<?php echo $row["id_proyecto"];?>" class="btn btn-primary float-end">Ver mas</button>
+                            <button type="submit" name="ver_mas" value="<?php echo $row["id_proyecto"];?>" class="btn btn-primary float-end">Ver más</button>
                         </form>
                         <!-- <a href="#" class="card-link">Más Información</a> -->
                         <!-- <a href="#" class="card-link">Another link</a> -->
