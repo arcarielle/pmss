@@ -1,8 +1,8 @@
 <header>
     <nav class="navbar navbar-expand-lg py-2 bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand w-25 me-0" href="/pmss/index.php">
-                <img class="img-fluid" src="/pmss/assets/img/logo.png">
+            <a class="navbar-brand w-10 me-0" href="/pmss/index.php">
+                <img class="img-fluid" src="/pmss/assets/img/logo.png" style="height:45px;">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>

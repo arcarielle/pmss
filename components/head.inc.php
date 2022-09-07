@@ -24,11 +24,13 @@
         <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js" defer></script>
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js" defer></script>
         <script type="text/javascript" src="https://unpkg.com/@popperjs/core@2"></script> -->
-        <script src="/pmss/assets/js/jquery-3.6.0.min.js" defer></script>
+        <script src="/pmss/assets/js/jquery-3.6.0.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js" integrity="sha512-3j3VU6WC5rPQB4Ld1jnLV7Kd5xr+cq9avvhwqzbH/taCRNURoeEpoPBK9pDyeukwSxwRPJ8fDgvYXd6SkaZ2TA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script src="/pmss/assets/js/jquery-ui.min.js" defer></script>
-        <script src="/pmss/assets/js/daterangepicker.min.js" defer></script>
+        <!-- <script src="/pmss/assets/js/daterangepicker.min.js" defer></script> -->
         <script src="/pmss/assets/js/moment.min.js" defer></script>
-        <script src="/pmss/assets/js/popper.min.js" defer></script>
+        <!-- <script src="/pmss/assets/js/popper.min.js" defer></script> -->
         <script type="text/javascript" src="/pmss/assets/js/impmig.js" defer></script>
-        <script type="text/javascript" src="/pmss/assets/js/functions.js" defer></script>
+        
+        <!-- <script type="text/javascript" src="/pmss/assets/js/functions.js" defer></script> -->
     </head>

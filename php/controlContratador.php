@@ -82,11 +82,13 @@
         </div>
     </div>
     
-    <div class="container-fluid" id="añadirEmpleo" style="background-image: linear-gradient( 135deg, #FCCF31 10%, #F55555 100%);"></div>
-    <div class="container-fluid" id="modificarEmpleo" style="background-image: linear-gradient( 135deg, #ABDCFF 10%, #0396FF 100%)"></div>
-    <div class="container-fluid" id="eliminarEmpleo" style="background-image: linear-gradient( 135deg, #81FBB8 10%, #28C76F 100%);"></div>
-    <div class="container-fluid" id="mensajeria"></div>
-    <div class="container-fluid" id="miInformacionC" style="background-image: linear-gradient( 135deg, #81FBB8 10%, #28C76F 100%);"></div>
+    <div class="" id="controlAccion">
+        <div class="container-fluid" id="añadirEmpleo" style="background-image: linear-gradient( 135deg, #FCCF31 10%, #F55555 100%);"></div>
+        <div class="container-fluid" id="modificarEmpleo" style="background-image: linear-gradient( 135deg, #ABDCFF 10%, #0396FF 100%)"></div>
+        <div class="container-fluid" id="eliminarEmpleo" style="background-image: linear-gradient( 135deg, #81FBB8 10%, #28C76F 100%);"></div>
+        <div class="container-fluid" id="mensajeria"></div>
+        <div class="container-fluid" id="miInformacionC" style="background-image: linear-gradient( 135deg, #81FBB8 10%, #28C76F 100%);"></div>
+    </div>
 
     <?php
         include_once '../components/footer.inc.php';
