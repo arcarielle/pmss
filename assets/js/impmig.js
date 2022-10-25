@@ -24,6 +24,7 @@ function limpiarDoc(){
         $('#modificarEmpleo').empty();
         $('#mensajeria').empty();
         $('#miInformacionC').empty();
+        $('#miInformacionA').empty();
     });
 }
 
@@ -41,6 +42,7 @@ function mensajeria(){
 }
 
 function miInformacionA(){
+    limpiarDoc();
     $(document).ready(function() {
         $("#miInformacionA").load("/pmss/php/administracion/miInformacionA.php");
     });
