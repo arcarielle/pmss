@@ -4,9 +4,11 @@
             <a class="navbar-brand w-10 me-0" href="/pmss/index.php">
                 <img class="img-fluid" src="/pmss/assets/img/logo.png" style="height:45px;">
             </a>
+            
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            
             <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
                 <ul class="navbar-nav mb-2 mb-lg-0">
                     <li class="nav-item ">
@@ -63,11 +65,15 @@
                         </ul>
                     </li> -->
                 </ul>
-                <div class="align-self-start">
+
+
+                <!-- Logo UACJ -->
+                <!-- <div class="align-self-start">
                     <a class="navbar-brand mt-5" href="https://www.uacj.mx/">
                         <img class="img-fluid" src="/pmss/assets/img/Uacj_logo.png" style="height:75px;">
                     </a>
-                </div>
+                </div> -->
+                
                 <?php
                     if(isset($_SESSION['userid'])){
                 ?>

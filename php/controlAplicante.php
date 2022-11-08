@@ -8,7 +8,7 @@
     <div style="background-color: rgb(33, 93, 110)">
         <div class="container justify-content-center">
             <div class="row" >
-                <div class="col-md-12 justify-content-start mb-5">
+                <div class="col-md-12 justify-content-start mb-2">
 
                 <?php
                     if(!isset($_GET["error"])){
@@ -75,7 +75,7 @@
         <div class="col-md-12 border-top border-bottom">
             <nav class="nav nav-fill"><a name="administracion"></a>
                 <a class="nav-link" aria-current="page" href="/pmss/php/ofertasEmpleo.php"><i class="fa-solid fa-magnifying-glass"></i> Buscar empleos</a>
-                <a class="nav-link" onclick="mensajeria()" href="#administracion"><i class="fa-brands fa-rocketchat"></i> Mensajería</a>
+                <!-- <a class="nav-link" onclick="mensajeria()" href="#administracion"><i class="fa-brands fa-rocketchat"></i> Mensajería</a> -->
                 <a class="nav-link" onclick="miInformacionA()" href="#administracion"><i class="fa-solid fa-address-card"></i> Mi información</a>
             </nav>
         </div>

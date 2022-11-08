@@ -5,7 +5,7 @@
     $username = "root";
     $password = "";
     $dbname = "bdmigrantes2.0";
- 
+
     $conn = new mysqli($servername, $username, $password, $dbname);
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
@@ -36,17 +36,32 @@
             $users_ofi2_exp = $row['oficio2_exp'];
             $users_descrip = $row['descripcion'];
             $users_estancia = $row['estancia'];
+            $users_perfil = $row['dir_perfil'];
+
 ?>
 
 <div class="container justify-content-center">
     <div class="row">
         <div class="col-md-10 offset-md-1">
             <div class="signup-form">
-                <form action="/pmss/assets/includes/update_migrante.inc.php" method="post" class="mt-5 border p-4 bg-light shadow">
-                    <h3 class="mb-2 text-secondary">Mi información Id:
-                        <input class="form-check-input" type="text" name="id-mig" value="<?php echo $users_id;?>" readonly>
+                <form action="/pmss/assets/includes/update_migrante.inc.php" method="post" enctype="multipart/form-data" class="mt-5 border p-4 bg-light shadow">
+                    <h3 class="mb-2 text-secondary">Mi información 
+                        <input class="form-check-input" type="text" name="id-mig" value="<?php echo $users_id;?>" readonly style="display:none;">
                     </h4>
                     <div class="row">
+
+                        <div class="mb-3 col-md-8">
+                            <img src="/pmss/assets/includes/<?php echo $users_perfil;?>" alt="Smiley face" height="300px" style="float:left;border:1px solid #ddd;border-radius:4px;padding: 5px;">
+                        </div>
+
+                        <div class="col-md-4 mb-3">
+                            <label for="file">Cambia tu foto de perfil<span class="text-danger"> *</span></label>
+                            <div>
+                                <input type="file" id="img" name="file" accept="image/*" capture="camera">
+                                <input type="text" name="perfil-actual" value="<?php echo $users_perfil;?>" readonly style="display:none;">
+                            </div>
+                        </div>
+
                         <div class="mb-3 col-md-6">
                             <label>Nombre(s)<span class="text-danger"> *</span></label>
                             <input type="text" name="nombre" class="form-control" value="<?php echo $users_nom;?>" required>
@@ -74,7 +89,7 @@
                             <input type="email" name="email" id="email" class="form-control" value="<?php echo $users_correo;?>" required>
                         </div>
                         
-                        <div class="mb-3 col-md-3">
+                        <div class="mb-3 col-md-5">
                             <label>Sexo (Actualmente: 
                                 <?php
                                     echo $users_sex;  
@@ -136,7 +151,7 @@
                             <p class="form-text ms-2 fw-light mb-1">Toca para seleccionar una fecha.</p>
                         </div>
 
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <label>Telefono<span class="text-danger"> *</span></label>
                             <div class="input-group">
                                 <span class="input-group-text bg-secondary" style="--bs-bg-opacity: 0.3" id="lada">+</span>
@@ -148,7 +163,7 @@
                             <p class="form-text ms-2 fw-light mb-1">Incluir LADA.</p>
                         </div>
 
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <label>Telefono Whatsapp<span class="text-danger"> *</span></label>
                             <div class="input-group">
                                 <span class="input-group-text bg-secondary" style="--bs-bg-opacity: 0.3" id="lada">+</span>
@@ -227,7 +242,7 @@
                         </div>
                         <div class="col-md-8">
                             <label>Oficio, Carrera Técnica o Profesión #2</label>
-                            <select class="form-select" name="oficio2" aria-label="job" required>                                        
+                            <select class="form-select" name="oficio2" aria-label="job">                                        
                                 <option selected value="<?php echo $users_ofi2; ?>"><?php echo $users_ofi2; ?></option>
                                 <optgroup label="Oficios">
                                     <option value="Albañilería">Albañilería</option>
@@ -277,7 +292,7 @@
                         </div>
                         <div class="col-md-4">
                             <label>Experiencia del oficio</label>
-                            <select class="form-select" name="oficio2-exp" aria-label="exp1" required>
+                            <select class="form-select" name="oficio2-exp" aria-label="exp1">
                                 <option selected value="<?php echo $users_ofi2_exp; ?>"><?php echo $users_ofi2_exp; ?></option>
                                 <option value="Menos de un año">Menos de un año</option>
                                 <option value="2 a 5 años">2 a 5 años</option>
@@ -304,6 +319,14 @@
                             </div>
                         </div>
 
+                        <!-- <div class="col-md-12 mb-4">
+                            <label for="file">Agrega tu foto de perfil<span class="text-danger"> *</span></label>
+                            <div class="col-md-8 ">
+                                <input type="file" id="img" name="file" accept="image/*" capture="camera">
+                                <input type="text" name="perfil-actual" value="<?php echo $users_perfil;?>" readonly style="display:none;">
+                            </div>
+                        </div> -->
+
                         <div class="col-md-8 ">
                             <p class="fs-6 text-danger">Toda la información marcada con un asterisco (*) es obligatoria.</h6>
                         </div>
@@ -312,7 +335,7 @@
                         </div>
                     </div>
                 </form>
-                <p class="text-center mt-3 text-secondary">Si ya tienes una cuenta, puedes iniciar sesión <a href="/pmss/php/login.php">aquí</a>.</p>
+                <!-- <p class="text-center mt-3 text-secondary">Si ya tienes una cuenta, puedes iniciar sesión <a href="/pmss/php/login.php">aquí</a>.</p> -->
             </div>
         </div>
     </div>

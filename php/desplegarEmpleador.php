@@ -14,10 +14,10 @@
 
     ?>
 
-    <div class="container justify-content-center py-2">
-        <div class="row">
-            <div class="col-md-10 offset-md-1">
-                <div class="signup-form">
+    <div class="justify-content-center py-2 px-2 fondodespliegue">
+        <div class="row justify-content-center m-2">
+            <!-- <div class="col-md-6 offset-md-1" style="background-color:blue;"> -->
+                <!-- <div class="signup-form"> -->
     <?php
 
     $sql="SELECT pro.id_empresa, pro.id_proyecto, pro.oficio, pro.experiencia, pro.sexo, pro.hora1, pro.hora2, pro.lengua,
@@ -33,55 +33,58 @@
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
         
-?>
+    ?>
         
-    <h3>Empresa</h3>
-    <p><?php echo $row["Empresa"];?></p>
+                <!-- <hr> -->
 
-    <h3>Giro</h3>
-    <p><?php echo $row["Giro"];?></p>
+            <div class="m-2 p-2 perfildesplegado1" style="background-color:gray;">
+                <h4>Oficio</h4>
+                <p><?php echo $row["oficio"];?></p>
 
-    <h3>Descripción Empresa</h3>
-    <p><?php echo $row["Descripcion"];?></p>
+                <h4>Experiencia</h4>
+                <p><?php echo $row["experiencia"];?></p>
 
-    <h3>Teléfono</h3>
-    <p><?php echo $row["Telefono"];?></p>
+                <h4>Sexo</h4>
+                <p><?php echo $row["sexo"];?></p>
 
-    <h3>Correo</h3>
-    <p><?php echo $row["Correo"];?></p>
+                <h4>Horario</h4>
+                <p><?php echo $row["hora1"];?> a <?php echo $row["hora2"];?></p>
 
-    <h3>Dirección</h3>
-    <p><?php echo $row["Direccion"];?></p>
+                <h4>¿Qué días de la semana es el trabajo?</h4>
+                <p><?php echo $row["disponibilidad"];?></p>
 
-    <hr>
+                <h4>¿Tiene que saber español?</h4>
+                <p><?php echo $row["lengua"];?></p>
 
-    <h4>Oficio</h4>
-    <p><?php echo $row["oficio"];?></p>
+                <h4>Tipo de Trabajo</h4>
+                <p><?php echo $row["tipo"];?></p>
 
-    <h4>Experiencia</h4>
-    <p><?php echo $row["experiencia"];?></p>
+                <h4>Paga</h4>
+                <p>$<?php echo $row["sueldo"];?></p>
 
-    <h4>Sexo</h4>
-    <p><?php echo $row["sexo"];?></p>
+                <h4>Descripción Trabajo</h4>
+                <p><?php echo $row["descripcion"];?></p>
+            </div>
 
-    <h4>Horas</h4>
-    <p><?php echo $row["hora1"];?> a <?php echo $row["hora2"];?></p>
+            <div class="m-2 p-2 perfildesplegado2" style="background-color:gray">
+                <h4>Empresa</h4>
+                <p><?php echo $row["Empresa"];?></p>
 
-    <h4>¿Qué días de la semana?</h4>
-    <p><?php echo $row["disponibilidad"];?></p>
+                <h4>Giro</h4>
+                <p><?php echo $row["Giro"];?></p>
 
-    <h4>Lengua</h4>
-    <p><?php echo $row["lengua"];?></p>
+                <h4>Descripción Empresa</h4>
+                <p><?php echo $row["Descripcion"];?></p>
 
-    <h4>Tipo</h4>
-    <p><?php echo $row["tipo"];?></p>
+                <h4>Teléfono</h4>
+                <p><?php echo $row["Telefono"];?></p>
 
-    <h4>Sueldo</h4>
-    <p><?php echo $row["sueldo"];?></p>
+                <h4>Correo</h4>
+                <p><?php echo $row["Correo"];?></p>
 
-    <h4>Descripción Trabajo</h4>
-    <p><?php echo $row["descripcion"];?></p>
-
+                <h4>Dirección</h4>
+                <p><?php echo $row["Direccion"];?></p>
+            </div>
 <?php
 }}
 else {
@@ -89,7 +92,7 @@ else {
 }
     $conn->close();
 ?>
-            </div>
+            
         </div>
     </div>
 </div>

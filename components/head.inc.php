@@ -33,4 +33,15 @@
         <script type="text/javascript" src="/pmss/assets/js/impmig.js" defer></script>
         
         <!-- <script type="text/javascript" src="/pmss/assets/js/functions.js" defer></script> -->
+
+        <style>
+            @media screen and (max-width: 600px) {
+                footer{
+                    display: none !important;
+                    
+                    /* font-size: 200px; */
+                }
+            }
+        </style>
+
     </head>

@@ -5,7 +5,7 @@
     $username = "root";
     $password = "";
     $dbname = "bdmigrantes2.0";
- 
+
     $conn = new mysqli($servername, $username, $password, $dbname);
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
@@ -55,9 +55,7 @@
         <div class="col-md-10 offset-md-1">
             <div class="signup-form">
                 <form action="/pmss/assets/includes/update_empleador.inc.php" method="post" class="mt-5 border p-4 bg-light shadow">    
-                    <h3 class="mb-2 text-secondary">Mi información Id: 
-                        <input class="form-check-input" type="text" name="id-emp" value="<?php echo $users_id;?>" readonly>
-                    </h4>
+                    <h3 class="mb-6 text-secondary">Mi información</h3>
                     <div class="row">
 
                         <div class="mb-3 col-md-6">
@@ -145,37 +143,83 @@
                             <hr style="border: 1px solid gray">
                         </div>
                         <!--Contacto 2-->
-                        <div class="col-md-12 mb-1">
-                            Contacto #2 (si quiere agregar uno más)
-                        </div>
 
-                        <div class="mb-3 col-md-6">
-                            <label>Nombre</label>
-                            <input type="text" name="cont2-nombre" class="form-control" id="namecont2" value="<?php echo $users_cont2_nom; ?>">
-                        </div>
+                        <?php
+                            if($users_cont2_nom!==""){
+                        ?>
 
-                        <div class="mb-3 col-md-6">
-                            <label>Apellidos</label>
-                            <input type="text" name="cont2-apellido" class="form-control" id="surncont2" value="<?php echo $users_cont2_ape; ?>">
-                        </div>
-
-                        <div class="mb-3 col-md-8">
-                            <label for="email">Correo electrónico</label>
-                            <input type="email" name="cont2-email" id="emailcont2" class="form-control" value="<?php echo $users_cont2_corr; ?>">
-                        </div>
-                        <div class="col-md-4 mb-3">
-                        <div>
-                                <label>Horario (de preferencia)</label>
-                                <input class="mt-1" type="time" id="schedule" name="cont2-schdcont1" value="<?php echo $time5; ?>">
-                                    <span>-</span>
-                                <input class="mt-1" type="time" id="schedule" name="cont2-schdcont2" value="<?php echo $time6; ?>">
+                            <div class="col-md-12 mb-1">
+                                Contacto #2 (si quiere agregar uno más)
                             </div>
-                            <p class="form-text fw-light mb-1">Puede teclear o dar clic en el reloj.</p>
-                        </div>
 
-                        <div>
-                            <hr style="border: 1px solid black">
-                        </div>
+                            <div class="mb-3 col-md-6">
+                                <label>Nombre</label>
+                                <input type="text" name="cont2-nombre" class="form-control" id="namecont2" value="<?php echo $users_cont2_nom; ?>">
+                            </div>
+
+                            <div class="mb-3 col-md-6">
+                                <label>Apellidos</label>
+                                <input type="text" name="cont2-apellido" class="form-control" id="surncont2" value="<?php echo $users_cont2_ape; ?>">
+                            </div>
+
+                            <div class="mb-3 col-md-8">
+                                <label for="email">Correo electrónico</label>
+                                <input type="email" name="cont2-email" id="emailcont2" class="form-control" value="<?php echo $users_cont2_corr; ?>">
+                            </div>
+                            <div class="col-md-4 mb-3">
+                            <div>
+                                    <label>Horario (de preferencia)</label>
+                                    <input class="mt-1" type="time" id="schedule" name="cont2-schdcont1" value="<?php echo $time5; ?>">
+                                        <span>-</span>
+                                    <input class="mt-1" type="time" id="schedule" name="cont2-schdcont2" value="<?php echo $time6; ?>">
+                                </div>
+                                <p class="form-text fw-light mb-1">Puede teclear o dar clic en el reloj.</p>
+                            </div>
+
+                            <div>
+                                <hr style="border: 1px solid black">
+                            </div>
+
+                        <?php
+                            }else{
+                        ?>
+
+                            <div class="col-md-12 mb-1">
+                                Contacto #2 (si quiere agregar uno más)
+                            </div>
+
+                            <div class="mb-3 col-md-6">
+                                <label>Nombre</label>
+                                <input type="text" name="cont2-nombre" class="form-control" id="namecont2">
+                            </div>
+
+                            <div class="mb-3 col-md-6">
+                                <label>Apellidos</label>
+                                <input type="text" name="cont2-apellido" class="form-control" id="surncont2">
+                            </div>
+
+                            <div class="mb-3 col-md-8">
+                                <label for="email">Correo electrónico</label>
+                                <input type="email" name="cont2-email" id="emailcont2" class="form-control">
+                            </div>
+                            <div class="col-md-4 mb-3">
+                            <div>
+                                    <label>Horario (de preferencia)</label>
+                                    <input class="mt-1" type="time" id="schedule" name="cont2-schdcont1">
+                                        <span>-</span>
+                                    <input class="mt-1" type="time" id="schedule" name="cont2-schdcont2">
+                                </div>
+                                <p class="form-text fw-light mb-1">Puede teclear o dar clic en el reloj.</p>
+                            </div>
+
+                            <div>
+                                <hr style="border: 1px solid black">
+                            </div>
+
+                        <?php
+                            }
+                        ?>
+                        <!-- contacto 2 -->
 
                         <div class="col-md-12 mb-4">
                             <label for="description">Descripción del trabajo o la empresa(que busca/necesita que se realice, de que trata)<span class="text-danger"> *</span></label>
@@ -193,7 +237,7 @@
                         </div>
                     </div>
                 </form>
-                <p class="text-center mt-3 text-secondary">Si ya tienes una cuenta, puedes iniciar sesión <a href="/pmss/php/login.php">aquí</a>.</p>
+                <!-- <p class="text-center mt-3 text-secondary">Si ya tienes una cuenta, puedes iniciar sesión <a href="/pmss/php/login.php">aquí</a>.</p> -->
             </div>
         </div>
     </div>

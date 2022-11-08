@@ -27,7 +27,7 @@
                                         echo "<h2 class='fs-12 text-success'>Registro exitoso, inicia sesión volviendo al inicio</h2>";
                                     }
                                 }
-                             ?>
+                            ?>
                             <h6 class="mb-4 text-black-50">Rellena toda la información solicitada.</h2>
                             <div class="row">
                                 <!-- <div class="mb-3 col-md-6 input-group">

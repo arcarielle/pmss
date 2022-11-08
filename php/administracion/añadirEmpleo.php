@@ -163,6 +163,8 @@
                             </div>
                         </div>
 
+                        <!-- Experimento -->
+                        <!-- Experimento -->
 
                         <!-- Descripcion de dias de la semana -->
                         <div class="col-md-8 mb-4">

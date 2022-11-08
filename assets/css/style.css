@@ -1,8 +1,9 @@
 .landing{
     background-image: url("../img/xjuarez.jpg");
     background-repeat: no-repeat;
+    background-attachment: fixed;
     background-size: cover;
-    background-position: top top;
+    background-position: center;
     
 }
     /* background: linear-gradient(45deg, rgba(29,236,197,0.7), rgba(91, 14, 214, 0.7) 100%); 
@@ -36,4 +37,24 @@ mask-image: -webkit-linear-gradient(to left, transparent 25%, black 75%);
     background-position: right center; /* change the direction of the change here */
     color: #fff;
     text-decoration: none;
+}
+
+.perfildesplegado1, .perfildesplegado2 {
+    margin: 5px;
+    padding: 20px;
+}
+
+.fondodespliegue{
+    background-color:white;
+}
+
+@media screen and (min-width: 600px) {
+    div.perfildesplegado1{
+        font-size: medium;
+        width: 40%;
+    }
+    div.perfildesplegado2{
+        font-size: medium;
+        width: 30%;
+    }
 }

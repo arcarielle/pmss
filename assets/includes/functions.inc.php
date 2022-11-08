@@ -61,10 +61,10 @@ function user_exists_emp($conn, $users_correo){
 
 function createMig($conn, $users_nom, $users_ape, $users_sex, $users_correo,
     $users_contra, $users_lang, $users_birth, $users_tele, $users_tele_whats, $users_dire, $users_descrip,
-    $users_ofi1, $users_ofi1_exp, $users_ofi2, $users_ofi2_exp, $users_estancia){
+    $users_ofi1, $users_ofi1_exp, $users_ofi2, $users_ofi2_exp, $users_estancia, $fileDestination){
 
-    $sql = "INSERT INTO migrantes (nombre, apellido, sexo, email, pwd, lengua, birthday, telefono, telefono_whats
-        domicilio, descripcion, oficio1, oficio1_exp, oficio2, oficio2_exp, estancia) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
+    $sql = "INSERT INTO migrantes (nombre, apellido, sexo, email, pwd, lengua, birthday, telefono, telefono_whats,
+        domicilio, descripcion, oficio1, oficio1_exp, oficio2, oficio2_exp, estancia, dir_perfil) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
 
     $stmt = mysqli_stmt_init($conn);
     if(!mysqli_stmt_prepare($stmt, $sql)){
@@ -74,9 +74,9 @@ function createMig($conn, $users_nom, $users_ape, $users_sex, $users_correo,
 
     $hashedPwd = password_hash($users_contra, PASSWORD_DEFAULT);
 
-    mysqli_stmt_bind_param($stmt, "ssssssssssssssss", $users_nom, $users_ape, $users_sex, $users_correo,
+    mysqli_stmt_bind_param($stmt, "sssssssssssssssss", $users_nom, $users_ape, $users_sex, $users_correo,
         $hashedPwd, $users_lang, $users_birth, $users_tele, $users_tele_whats, $users_dire, $users_descrip,
-        $users_ofi1, $users_ofi1_exp, $users_ofi2, $users_ofi2_exp, $users_estancia);
+        $users_ofi1, $users_ofi1_exp, $users_ofi2, $users_ofi2_exp, $users_estancia, $fileDestination);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
     header("location: /pmss/php/registroAplicante.php?error=none");
@@ -84,25 +84,24 @@ function createMig($conn, $users_nom, $users_ape, $users_sex, $users_correo,
 }
 
 function updateMig($conn, $users_id, $users_nom, $users_ape, $users_sex, $users_correo,
-        $users_lang, $users_birth, $users_tele, $users_tele_whats, $users_dire, 
-        $users_estancia,$users_descrip, $users_ofi1, $users_ofi1_exp, $users_ofi2,
-        $users_ofi2_exp){
+    $users_lang, $users_birth, $users_tele, $users_tele_whats, $users_dire, 
+    $users_estancia,$users_descrip, $users_ofi1, $users_ofi1_exp, $users_ofi2,
+    $users_ofi2_exp, $users_perfil){
 
-            $sql = "UPDATE migrantes SET nombre='$users_nom', apellido='$users_ape', email='$users_correo',
-            domicilio='$users_dire', telefono='$users_tele', telefono_whats='$users_tele_whats', sexo='$users_sex', lengua='$users_lang',
-            birthday='$users_birth', oficio1='$users_ofi1', oficio1_exp='$users_ofi1_exp',
-            oficio2='$users_ofi2', oficio2_exp='$users_ofi2_exp', estancia='$users_estancia',descripcion='$users_descrip' 
-            WHERE id_mig= '{$users_id}';";
+    $sql = "UPDATE migrantes SET nombre='$users_nom', apellido='$users_ape', email='$users_correo',
+    domicilio='$users_dire', telefono='$users_tele', telefono_whats='$users_tele_whats', sexo='$users_sex', 
+    lengua='$users_lang', birthday='$users_birth', oficio1='$users_ofi1', oficio1_exp='$users_ofi1_exp',
+    oficio2='$users_ofi2', oficio2_exp='$users_ofi2_exp', estancia='$users_estancia',
+    descripcion='$users_descrip', dir_perfil='$users_perfil' WHERE id_mig= '{$users_id}';";
 
-            if ($conn->query($sql) === TRUE) {
-                
-                header("location: /pmss/php/controlAplicante.php");
-                // echo "<script>alert('Proyecto Actualizado Exitosamente')</script>";
-            } else {
-                echo "Error: " . $sql . "<br>" . $conn->error;
-            }
-    
-            $conn->close();
+    if ($conn->query($sql) === TRUE) {
+        header("location: /pmss/php/controlAplicante.php?Actualizado-Exitosamente");
+        // echo "<script>alert('Proyecto Actualizado Exitosamente')</script>";
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+
+    $conn->close();
 }
 
 function createEmp($conn, $users_emp, $users_giro, $users_correo, $users_contra, $users_tele, 

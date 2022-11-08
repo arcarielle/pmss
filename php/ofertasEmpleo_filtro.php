@@ -9,111 +9,106 @@
         <div style="background-color: rgb(32,132,84)">
             <div class="container justify-content-center">
                 <div class="row" >
-                    <div class="col-md-12 justify-content-start mb-5">
-                        <h1 class="text-light mb-2 mt-5">Ofertas de empleo</h1>
+                    <div class="col-md-12 justify-content-start">
+                        <h1 class="text-light mb-2 mt-2">Ofertas de empleo</h1>
                         <div class="col-md-12">
                             <p class="fs-4 text-light">En esta sección puedes buscar diferentes empleos que se ajusten a tu experiencia o necesidad.</p>
                         </div>
                     </div>
 
-                    <div class="col-md-12 my-5">
+                    <div class="col-md-12 my-3">
                         <section>
-                            <div class="input-group p-3 mask bg-white bg-opacity-25"> 
-                                <input type="text" class="form-control fs-5" placeholder="Busca por un trabajo en particular . . ." aria-label="Busqueda" aria-describedby="busquedaempleo">
+                            <div class="input-group p-2 mask bg-white bg-opacity-25"> 
+                                <input type="text" class="form-control fs-5 m-1" placeholder="Busca por un trabajo en particular . . ." aria-label="Busqueda" aria-describedby="busquedaempleo">
                                 <div class="input-group-append mx-2 px-2"> 
-                                    <button class="btn btn-outline-light p-3 fs-5" type="button"><i class="fa-solid fa-magnifying-glass"></i> &nbspBuscar &nbsp</button>
+                                    <button class="btn btn-outline-light p-2 mt-1 fs-5" type="button">&nbspBuscar &nbsp <i class="fa-solid fa-magnifying-glass"></i>&nbsp</button>
                                 </div>
                             </div>
                         </section>
                     </div>
 
-                </div>
-            </div>
+                    <div class="container-fluid justify-content-center">
+                        <nav class="navbar navbar-expand-lg" >
+                            <form method="post" action="ofertasEmpleo_filtro.php">
+                                <ul class="navbar-nav">
+                                    <li>
+                                        <select class="form-select form-select-lg mb-3 me-3" name="oficio" method="post" action="ofertas_filtro.php" style="width:80%;margin:5px;">                                        
+                                            <option selected value="Cualquiera">Tipo de Empleo</option>
+                                            <optgroup label="Oficios">
+                                                <option value="Albañilería">Albañilería</option>
+                                                <option value="Barbería">Barbería</option>
+                                                <option value="Carpintería">Carpintería</option>
+                                                <option value="Cocina">Cocina</option>
+                                                <option value="Electricista">Electricista</option>
+                                                <option value="Herrería">Herrería</option>
+                                                <option value="Limpieza">Limpieza</option>
+                                                <option value="Mecánica">Mecánica</option>
+                                                <option value="Panadería">Panadería</option>
+                                                <option value="Plomería">Plomería</option>
+                                            </optgroup>
+                                            <optgroup label="Licencias Técnicas">
+                                                <option value="Técnico en Administración de Empresas">Técnico en Administración de Empresas</option>
+                                                <option value="Técnico en Computación e Informática">Técnico en Computación e Informática</option>
+                                                <option value="Técnico en Diseño Gráfico">Técnico en Diseño Gráfico</option>
+                                                <option value="Técnico en Electrónica Insutrial">Técnico en Electrónica Insutrial</option>
+                                                <option value="Técnico en Marketing">Técnico en Marketing</option>
+                                                <option value="Técnico en Mecatrónica">Técnico en Mecatrónica</option>
+                                                <option value="Técnico en Negocios Internacionales">Técnico en Negocios Internacionales</option>
 
-        <nav class="navbar navbar-expand-lg" style="width:80%;margin:5px auto;border:2px outset gray;">
-			<div class="container-fluid">
-			<form method="post" action="ofertasEmpleo_filtro.php">
-				<ul class="navbar-nav" style="align-content: center;margin: 5px auto; ">
-				  
-					<li style="margin: 5px;">
-                        <select class="form-select form-select-lg mb-3" name="oficio" method="post" action="ofertas_filtro.php" required aria-label=".form-select-lg example" style="width:auto">                                        
-                            <option selected value="Cualquiera">Cualquiera</option>
-                            <optgroup label="Oficios">
-                                <option value="Albañilería">Albañilería</option>
-                                <option value="Barbería">Barbería</option>
-                                <option value="Carpintería">Carpintería</option>
-                                <option value="Cocina">Cocina</option>
-                                <option value="Electricista">Electricista</option>
-                                <option value="Herrería">Herrería</option>
-                                <option value="Limpieza">Limpieza</option>
-                                <option value="Mecánica">Mecánica</option>
-                                <option value="Panadería">Panadería</option>
-                                <option value="Plomería">Plomería</option>
-                            </optgroup>
-                            <optgroup label="Licencias Técnicas">
-                                <option value="Técnico en Administración de Empresas">Técnico en Administración de Empresas</option>
-                                <option value="Técnico en Computación e Informática">Técnico en Computación e Informática</option>
-                                <option value="Técnico en Diseño Gráfico">Técnico en Diseño Gráfico</option>
-                                <option value="Técnico en Electrónica Insutrial">Técnico en Electrónica Insutrial</option>
-                                <option value="Técnico en Marketing">Técnico en Marketing</option>
-                                <option value="Técnico en Mecatrónica">Técnico en Mecatrónica</option>
-                                <option value="Técnico en Negocios Internacionales">Técnico en Negocios Internacionales</option>
+                                            </optgroup>
+                                            <optgroup label="Profesiones">
+                                                    <optgroup label="Ingenierías">
+                                                        <option value="Ing. Aeronáutica">Ing. Aeronáutica</option>
+                                                        <option value="Ing. Agrónomo">Ing. Agrónomo</option>
+                                                        <option value="Ing. Civil">Ing. Civil</option>
+                                                        <option value="Ing. Eléctrica">Ing. Eléctrica</option>
+                                                        <option value="Ing. Electrónica">Ing. Electrónica</option>
+                                                        <option value="Ing. Informática">Ing. Informática</option>
+                                                        <option value="Ing. Mecatrónica">Ing. Mecatrónica</option>
+                                                        <option value="Ing. Sistemas">Ing. Sistemas</option>
+                                                    </optgroup>
+                                                    <optgroup label="Licenciaturas">
+                                                        <option value="Lic. Administración de Empresas">Lic. Administración de Empresas</option>
+                                                        <option value="Lic. Comunicación">Lic. Comunicación</option>
+                                                        <option value="Lic. Criminología">Lic. Criminología</option>
+                                                        <option value="Lic. Economía">Lic. Economía</option>
+                                                        <option value="Lic. Educación">Lic. Educación</option>
+                                                        <option value="Lic. Finanazas">Lic. Finanazas</option>
+                                                        <option value="Lic. Médico General">Lic. Médico General</option>
+                                                        <option value="Lic. Turismo">Lic. Turismo</option>
+                                                    </optgroup>
+                                            </optgroup>
+                                        </select>
+                                    </li>
 
-                            </optgroup>
-                            <optgroup label="Profesiones">
-                                    <optgroup label="Ingenierías">
-                                        <option value="Ing. Aeronáutica">Ing. Aeronáutica</option>
-                                        <option value="Ing. Agrónomo">Ing. Agrónomo</option>
-                                        <option value="Ing. Civil">Ing. Civil</option>
-                                        <option value="Ing. Eléctrica">Ing. Eléctrica</option>
-                                        <option value="Ing. Electrónica">Ing. Electrónica</option>
-                                        <option value="Ing. Informática">Ing. Informática</option>
-                                        <option value="Ing. Mecatrónica">Ing. Mecatrónica</option>
-                                        <option value="Ing. Sistemas">Ing. Sistemas</option>
-                                    </optgroup>
-                                    <optgroup label="Licenciaturas">
-                                        <option value="Lic. Administración de Empresas">Lic. Administración de Empresas</option>
-                                        <option value="Lic. Comunicación">Lic. Comunicación</option>
-                                        <option value="Lic. Criminología">Lic. Criminología</option>
-                                        <option value="Lic. Economía">Lic. Economía</option>
-                                        <option value="Lic. Educación">Lic. Educación</option>
-                                        <option value="Lic. Finanazas">Lic. Finanazas</option>
-                                        <option value="Lic. Médico General">Lic. Médico General</option>
-                                        <option value="Lic. Turismo">Lic. Turismo</option>
-                                    </optgroup>
-                            </optgroup>
-                        </select>
-                    </li>
+                                    <li>
+                                        <select class="form-select form-select-lg mb-3 me-3" name="experiencia" method="post" action="ofertas_filtro.php" style="width:auto;margin:5px;">
+                                                <option selected value="Cualquiera">Experiencia</option>
+                                                <option value="Sin importar">Sin importar</option>
+                                                <option value="1 año o menos">1 año o menos</option>
+                                                <option value="1 a 2 años">1 a 2 años</option>
+                                                <option value="2 a 5 años">2 a 5 años</option>
+                                                <option value="5 años o más">5 años o más</option>
+                                            </select>
+                                    </li>
 
-					  <li style="margin: 5px;">
-                        <select class="form-select form-select-lg mb-3" name="experiencia" method="post" action="ofertas_filtro.php" required aria-label=".form-select-lg example" style="width:auto">
-                                <option selected value="Cualquiera">Cualquiera</option>
-                                <option value="Sin importar">Sin importar</option>
-                                <option value="1 año o menos">1 año o menos</option>
-                                <option value="1 a 2 años">1 a 2 años</option>
-                                <option value="2 a 5 años">2 a 5 años</option>
-                                <option value="5 años o más">5 años o más</option>
-                            </select>
-                    </li>
-
-                      <li style="margin: 5px;"><button type="submit" class="btn btn-primary">Buscar</button></li>
-				</ul>
-			</form>
-			</div>
-		</nav>
-
-            <div class="container-fluid p-3 mask bg-dark bg-opacity-50 rounded-3">
-                <div class="container">
-                    <h6 class="text-white mt-1 text-center">Usa la barra de búsqueda para facilitar el encontrar un empleo adecuado para ti.</h6>                
+                                    <li>
+                                        
+                                        <button type="submit" class="btn btn-primary mt-2">Buscar</button>
+                                    </li>
+                                </ul>
+                            </form>
+                        </nav>
+                    </div>
                 </div>
             </div>
         </div>
 
-            <div class="container px-4 py-5" id="custom-cards">
-                <h1 class="pb-2 border-bottom fw-light text-dark">Lista de Empleos </h1>
+        <div class="container px-4 py-5" id="custom-cards">
+            <h1 class="border-bottom fw-light text-dark">Lista de Empleos </h1>
 
-                <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5" id="contenedor_cards">
-                <?php
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 align-items-stretch g-4 py-5" id="contenedor_cards">
+            <?php
 
                     require_once '../assets/includes/dbh.inc.php';
                     require_once '../assets/includes/functions.inc.php';
@@ -196,7 +191,7 @@
                     }
                     }
                     else {
-                    echo "0 users";
+                    echo "No hay resultados que coincidan con tu búsqueda";
                     }
 
                     $conn->close();

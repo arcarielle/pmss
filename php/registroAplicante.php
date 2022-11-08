@@ -10,7 +10,7 @@
             <div class="row">
                 <div class="col-md-10 offset-md-1">
                     <div class="signup-form">
-                        <form action="/pmss/assets/includes/signup_migrante.inc.php" method="post" class="mt-5 border p-4 bg-light shadow">
+                        <form action="/pmss/assets/includes/signup_migrante.inc.php" method="post" enctype="multipart/form-data" class="mt-5 border p-4 bg-light shadow">
                             <h3 class="mb-2 text-secondary">Crea tu cuenta para Aplicar</h4>
                             <?php
                                 if(isset($_GET["error"])){
@@ -27,9 +27,9 @@
                                         echo "<h2 class='fs-12 text-success'>Registro exitoso, inicia sesión volviendo al inicio</h2>";
                                     }
                                 }
-                             ?>
+                            ?>
                             <h6 class="mb-4 text-black-50">Rellena toda la información solicitada.</h2>
-                             
+                            
                             <div class="row">
 
                                 <div class="mb-3 col-md-6">
@@ -202,7 +202,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <label>Oficio #2 (en el que se ha desempeñado)</label>
-                                    <select class="form-select" name="oficio2" aria-label="job" required>                                        
+                                    <select class="form-select" name="oficio2" aria-label="job">                                        
                                         <option selected value="">Abre este menu de selección</option>
                                         <optgroup label="Oficios">
                                             <option value="Albañilería">Albañilería</option>
@@ -252,7 +252,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <label>Experiencia del oficio</label>
-                                    <select class="form-select" name="oficio2-exp" aria-label="exp1" required>
+                                    <select class="form-select" name="oficio2-exp" aria-label="exp1">
                                         <option selected value="">Abre este menu de selección</option>
                                         <option value="Menos de un año">Menos de un año</option>
                                         <option value="2 a 5 años">2 a 5 años</option>
@@ -264,24 +264,32 @@
                                 </div>
                                 
                                 <div class="col-md-12 mb-4">
-                                    <label for="estancia">¿Cuánto tiempo estarás en la ciudad? ¿Buscas un trabajo fijo o proyectos cortos?</label>
+                                    <label for="estancia">¿Cuánto tiempo estarás en la ciudad? ¿Buscas un trabajo fijo o proyectos cortos?<span class="text-danger"> *</span></label>
                                     <div class="form-floating mt-1">
-                                        <textarea class="form-control" name="estancia" maxlength="330" id="estancia"></textarea>
+                                        <textarea class="form-control" name="estancia" maxlength="330" id="estancia" required></textarea>
                                         <label for="floatingTextarea2">Estancia</label>
                                     </div>
                                 </div>
 
                                 <div class="col-md-12 mb-4">
-                                    <label for="description">Descripción de ti (puede incluir otras habilidades u oficios desempeñados)</label>
+                                    <label for="description">Descripción de ti (puede incluir otras habilidades u oficios desempeñados)<span class="text-danger"> *</span></label>
                                     <div class="form-floating mt-1">
-                                        <textarea class="form-control" name="description" maxlength="330" placeholder="Pon tu descripción aquí" id="desc" style="height: 100px"></textarea>
+                                        <textarea class="form-control" name="description" maxlength="330" placeholder="Pon tu descripción aquí" id="desc" style="height: 100px" required></textarea>
                                         <label for="floatingTextarea2">Descripción</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12 mb-4">
+                                    <label for="file">Agrega tu foto de perfil<span class="text-danger"> *</span></label>
+                                    <div class="col-md-8 ">
+                                        <input type="file" id="img" name="file" accept="image/*" capture="camera" required>
                                     </div>
                                 </div>
 
                                 <div class="col-md-8 ">
                                     <p class="fs-6 text-danger">Toda la información marcada con un asterisco (*) es obligatoria.</h6>
                                 </div>
+
                                 <div class="col-md-4">
                                     <button type="submit" name="registrarse" class="btn btn-primary float-end"><i class="fa-solid fa-pen-to-square"></i> Registrarse</button>
                                 </div>

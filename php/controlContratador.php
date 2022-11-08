@@ -8,7 +8,7 @@
     <div style="background-color: rgb(156, 0, 0)">
         <div class="container justify-content-center">
             <div class="row" >
-                <div class="col-md-12 justify-content-start mb-5">
+                <div class="col-md-12 justify-content-start mb-2">
                     <!-- <h1 class="text-light mb-2 mt-4">Hola!</h1> -->
                     <?php
                         if(!isset($_GET["error"])){
@@ -76,7 +76,7 @@
                 <a class="nav-link" onclick="añadirEmpleo()" href="#administracion"><i class="fa-solid fa-user-plus"></i> Añadir empleo</a>
                 <a class="nav-link" onclick="modificarEmpleo()" href="#administracion"><i class="fa-solid fa-user-gear"></i> Modificar empleo</a>
                 <!-- <a class="nav-link" onclick="eliminarEmpleo()" href="#administracion"><i class="fa-solid fa-user-minus"></i> Eliminar empleo</a> -->
-                <a class="nav-link" onclick="mensajeria()" href="#administracion"><i class="fa-brands fa-rocketchat"></i> Mensajería</a>
+                <!-- <a class="nav-link" onclick="mensajeria()" href="#administracion"><i class="fa-brands fa-rocketchat"></i> Mensajería</a> -->
                 <a class="nav-link" onclick="miInformacionC()" href="#administracion"><i class="fa-solid fa-address-card"></i> Mi información</a>
             </nav>
         </div>
@@ -86,7 +86,7 @@
         <div class="container-fluid" id="añadirEmpleo" style="background-image: linear-gradient( 135deg, #FCCF31 10%, #F55555 100%);"></div>
         <div class="container-fluid" id="modificarEmpleo" style="background-image: linear-gradient( 135deg, #ABDCFF 10%, #0396FF 100%)"></div>
         <div class="container-fluid" id="eliminarEmpleo" style="background-image: linear-gradient( 135deg, #81FBB8 10%, #28C76F 100%);"></div>
-        <div class="container-fluid" id="mensajeria"></div>
+        <!-- <div class="container-fluid" id="mensajeria"></div> -->
         <div class="container-fluid" id="miInformacionC" style="background-image: linear-gradient( 135deg, #81FBB8 10%, #28C76F 100%);"></div>
     </div>
 

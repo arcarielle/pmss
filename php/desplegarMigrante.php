@@ -14,10 +14,9 @@
 
     ?>
 
-    <div class="container justify-content-center py-2">
-        <div class="row">
-            <div class="col-md-10 offset-md-1">
-                <div class="signup-form">
+    <div class="justify-content-center py-2 px-2 fondodespliegue">
+        <div class="row justify-content-center m-2">
+                
     <?php
 
     $sql="SELECT * FROM migrantes WHERE '{$var}' = id_mig;";
@@ -28,52 +27,63 @@
         $row = $result->fetch_assoc();
         
 ?>
+        <div class="m-2 perfildesplegado1" style="background-color:gray;"> 
+            
+            <?php
+                if($row["dir_perfil"]!==""){
+            ?>
+                
+                <img src="/pmss/assets/includes/<?php echo $row["dir_perfil"];?>" alt="Smiley face" height="150px" style="float:right;border:1px solid #ddd;border-radius:4px;padding: 5px;">
+
+            <?php
+                }
+            ?>
         
-    <h3>Nombre</h3>
-    <p><?php echo $row["nombre"];?></p>
+            <h4>Nombre</h4>
+            <p><?php echo $row["nombre"];?> <?php echo $row["apellido"];?></p>
 
-    <h3>Apellido</h3>
-    <p><?php echo $row["apellido"];?></p>
+            <h4>Correo</h4>
+            <p><?php echo $row["email"];?></p>
 
-    <h3>Correo</h3>
-    <p><?php echo $row["email"];?></p>
+            <h4>Teléfono</h4>
+            <p><?php echo $row["telefono"];?></p>
 
-    <h3>Teléfono</h3>
-    <p><?php echo $row["telefono"];?></p>
+            <h4>Teléfono Whatsapp</h4>
+            <p><?php echo $row["telefono_whats"];?></p>
 
-    <h3>Teléfono Whatsapp</h3>
-    <p><?php echo $row["telefono_whats"];?></p>
+            <h4>Sexo</h4>
+            <p><?php echo $row["sexo"];?></p>
 
-    <h3>Sexo</h3>
-    <p><?php echo $row["sexo"];?></p>
+            <h4>¿Sabe español?</h4>
+            <p><?php echo $row["lengua"];?></p>
 
-    <h3>Español</h3>
-    <p><?php echo $row["lengua"];?></p>
+            <h4>Especialidad</h4>
+            <p><?php echo $row["oficio1"];?></p>
 
-    <h4>Oficio</h4>
-    <p><?php echo $row["oficio1"];?></p>
+            <h4>Experiencia</h4>
+            <p><?php echo $row["oficio1_exp"];?></p>
 
-    <h4>Experiencia</h4>
-    <p><?php echo $row["oficio1_exp"];?></p>
+            <?php
+                if($row["oficio2"]!==""){
+            ?>
+                <h4>Especialidad #2</h4>
+                <p><?php echo $row["oficio2"];?></p>
 
-    <?php
-        if($row["oficio2"]!==""){
-    ?>
-        <h4>Oficio 2</h4>
-        <p><?php echo $row["oficio2"];?></p>
+                <h4>Experiencia</h4>
+                <p><?php echo $row["oficio2_exp"];?></p>
 
-        <h4>Experiencia</h4>
-        <p><?php echo $row["oficio2_exp"];?></p>
+            <?php
+                }
+            ?>
+        </div>
+        <div class="m-2 p-2 perfildesplegado2" style="background-color:gray;">
 
-    <?php
-        }
-    ?>
+            <h4>Estancia en el país</h4>
+            <p><?php echo $row["estancia"];?></p>
 
-    <h4>Estancia en el país</h4>
-    <p><?php echo $row["estancia"];?></p>
-
-    <h4>Descripción</h4>
-    <p><?php echo $row["descripcion"];?></p>
+            <h4>Descripción</h4>
+            <p><?php echo $row["descripcion"];?></p>
+        </div>
 
 <?php
 }}
@@ -82,8 +92,7 @@ else {
 }
     $conn->close();
 ?>
-            </div>
-        </div>
+
     </div>
 </div>
 
